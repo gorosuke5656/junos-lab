@@ -1,0 +1,464 @@
+〇　CiscoのVLAN設定
+
+IBGP-R(config)#vlan 10
+IBGP-R(config-vlan)#exit
+IBGP-R(config)#vlan 20
+IBGP-R(config-vlan)#exit
+IBGP-R(config)#int
+IBGP-R(config)#interface fa
+IBGP-R(config)#interface fastEthernet 0
+IBGP-R(config-if)#switchport access vlan 10
+IBGP-R(config-if)#exit
+IBGP-R(config)#
+IBGP-R(config)#int fastEthernet 1
+IBGP-R(config-if)#switchport access vlan 10
+IBGP-R(config-if)#exit
+IBGP-R(config)#
+IBGP-R(config)#int fastEthernet 2
+IBGP-R(config-if)#sw
+IBGP-R(config-if)#switchport access vlan 20
+IBGP-R(config-if)#exit
+IBGP-R(config)#int fastEthernet 3
+IBGP-R(config-if)#switchport access vlan 20
+IBGP-R(config-if)#exit
+IBGP-R(config)#
+IBGP-R(config)#
+IBGP-R(config)#
+IBGP-R(config)#exit
+
+
+〇　SRX100のconfigをバックアップ及び初期化（ルートパスワード及び管理者パスワード設定）
+
+★SRX100H2
+[edit]
+admin@SRX100H2# save 20230513-BGP-conifg-BU.cfg
+Wrote 384 lines of configuration to '20230513-BGP-conifg-BU.cfg'
+
+[edit]
+admin@SRX100H2# run list
+                    ^
+syntax error, expecting <command>.
+admin@SRX100H2# run file list
+
+/cf/var/home/admin/:
+.ssh/
+20230513-BGP-conifg-BU.cfg
+IBGP-config.cfg
+JSEC-begin-config
+ipsec-zizen.cfg
+ospf-config
+policy-BaseVPN-2.cfg
+policy-BaseVPN.cfg
+security-policy.cfg
+virtual-router.cfg
+
+[edit]
+admin@SRX100H2#
+
+
+admin@SRX100H2# load factory-default
+warning: activating factory configuration
+
+[edit]
+admin@SRX100H2# commit check
+[edit]
+  'system'
+    Missing mandatory statement: 'root-authentication'
+error: configuration check-out failed: (missing statements)
+
+[edit]
+admin@SRX100H2# set system root-authentication plain-text-password
+New password:
+Retype new password:
+
+[edit]
+admin@SRX100H2# commit
+
+commit complete
+
+[edit]
+admin@SRX100H2#
+
+admin@SRX100H2> exit
+
+
+SRX100H2 (ttyu0)
+
+login: root
+Password:
+
+--- JUNOS 12.1X46-D40.2 built 2015-09-26 02:25:28 UTC
+
+
+
+root@SRX100H2%
+root@SRX100H2%
+root@SRX100H2% cli
+root@SRX100H2> set cli screen-width 200
+Screen width set to 200
+root@SRX100H2> configure
+Entering configuration mode
+
+[edit]
+root@SRX100H2# set system login user admin class super-user
+
+[edit]
+root@SRX100H2# set system login user admin authentication plain-text-password
+New password:
+Retype new password:
+
+[edit]
+root@SRX100H2# commit
+commit complete
+
+[edit]
+root@SRX100H2#
+
+〇　セキュリチィ周りの設定を削除
+
+admin@SRX100H2# delete vlans
+admin@SRX100H2# delete protocols
+admin@SRX100H2# delete security
+admin@SRX100H2# delete interfaces
+
+
+admin@SRX100H2> set cli screen-width 200
+Screen width set to 200
+
+admin@SRX100H2> configure
+Entering configuration mode
+
+
+admin@SRX100H2# set security zones security-zone trust host-inbound-traffic system-services any-service
+
+[edit]
+admin@SRX100H2# set security zones security-zone trust host-inbound-traffic protocols all
+
+admin@SRX100H2# set security zones security-zone trust interfaces all
+
+[edit]
+admin@SRX100H2# commit
+
+
+[edit]
+admin@SRX100H2# set security forwarding-options family mpls mode packet-based
+
+[edit]
+admin@SRX100H2# colm
+                ^
+unknown command.
+admin@SRX100H2# commit
+warning: You have changed mpls flow mode.
+You have to reboot the system for your change to take effect.
+If you have deployed a cluster, be sure to reboot all nodes.
+warning: Inet flow mode has been changed to packet-based mode for mpls mode modification.
+warning: You must reboot the system for your change to take effect.
+If you have deployed a cluster, be sure to reboot all nodes.
+
+commit complete
+
+[edit]
+admin@SRX100H2#
+
+
+[edit]
+admin@SRX240H2# run show ospf neighbor instance VR100
+Address          Interface              State     ID               Pri  Dead
+10.0.102.1       ge-0/0/7.0             Full      1.1.1.1          128    38
+10.0.103.1       ge-0/0/8.0             Full      2.2.2.2          128    38
+
+[edit]
+admin@SRX240H2# run show ospf neighbor instance VR100
+Address          Interface              State     ID               Pri  Dead
+10.0.102.1       ge-0/0/7.0             Full      1.1.1.1          128    36
+10.0.103.1       ge-0/0/8.0             Full      2.2.2.2          128    37
+
+[edit]
+admin@SRX240H2#
+
+
+[edit]
+admin@SRX240H2# set interfaces lo0 unit 0 family inet address 192.168.10.254/24
+
+[edit]
+admin@SRX240H2# set interfaces lo0 unit 1 family inet address 192.168.20.254/24
+
+[edit]
+admin@SRX240H2# set routing-instances VR10 iun
+                                           ^
+syntax error.
+admin@SRX240H2# set routing-instances VR10 in
+                                             ^
+'in' is ambiguous.
+Possible completions:
+  instance-role        Primary role of L2Backhaul-vpn router
+  instance-type        Type of routing instance
+> interface            Interface name for this routing instance
+[edit]
+admin@SRX240H2# set routing-instances VR10 interface lo 0
+error: syntax error: 0
+missing or invalid device number in 'lo'.
+admin@SRX240H2# set routing-instances VR10 interface lo0.0
+
+[edit]
+admin@SRX240H2# set routing-instances VR20 interface lo0.1
+
+[edit]
+admin@SRX240H2# commit
+commit complete
+
+[edit]
+admin@SRX240H2#
+
+〇各ルータのOSPF→ＯＫ
+〇ＰＥ～Ｐ～ＰＥ間ＢＧＰ
+〇ＰＥでのルーチィングポリシ及びルーチィングインスタンス
+〇ＰＥ及びＰでのMPLS
+
+
+〇ＰＥ～Ｐ～ＰＥ間ＢＧＰ
+ＰＥでの設定
+set routing-options autonomous-system 65000
+set protocols bgp group IBGP type internal
+set protcols bgp groupIBGP local-address　自分のループバック
+set protocols bgp group IBGP family inet unicast
+set protocols bgp group IBGP family inet-vpn unicast
+set protocols bgp group IBGP neighbor　ピアのループバック
+set protocols bgp group IBGP neighbor　ピアのループバック
+
+Ｐの設定
+set routing-options autonomous-system 65000
+set protocols bgp group IBGP type internal
+set protcols bgp groupIBGP local-address　自分のループバック
+set protocols bgp group IBGP family inet unicast
+set protocols bgp group IBGP neighbor　ピアのループバック
+set protocols bgp group IBGP neighbor　ピアのループバック
+
+
+
+怒られた内容。。
+
+はじめ
+admin@SRX240H2# set routing-instances VR100 protocols bgp group IBGP type internal
+[edit]
+admin@SRX240H2# set routing-instances VR100 protocols bgp group IBGP family inet unicast
+[edit]
+admin@SRX240H2# set routing-instances VR100 protocols bgp group IBGP family inet-vpn unicast
+[edit]
+admin@SRX240H2# set routing-instances VR100 protocols bgp group IBGP neighbor 1.1.1.1
+[edit]
+admin@SRX240H2# set routing-instances VR100 protocols bgp group IBGP neighbor 2.2.2.2
+
+[edit]
+admin@SRX240H2# commit check
+[edit routing-instances VR100 protocols]
+  'bgp'
+    Error in neighbor 1.1.1.1 of group IBGP:
+VPN NLRIs cannot be configured or inherited in non-default instance: VR100　　　　　　　ここ：：inet-vpnはだめ・・
+error: configuration check-out failed
+
+[edit]
+admin@SRX240H2# delete
+
+
+
+修正
+[edit]
+admin@SRX240H2# delete routing-instances VR100 protocols bgp group IBGP family inet-vpn unicast
+
+[edit]
+admin@SRX240H2# commit
+commit complete
+
+[edit]
+admin@SRX240H2#
+
+終わり
+
+
+〇ＰＥでのルーチィングポリシ及び
+ＰＥ
+[edit]
+admin@SRX100B# show policy-options
+policy-statement VRF_export {
+    term 10 {
+        from protocol direct;
+        then {
+            community add VPN-1;
+        }
+    }
+    term 999 {
+        then reject;
+    }
+}
+policy-statement VRF_import {
+    term 10 {
+        from {
+            protocol bgp;
+            community VPN-1;
+        }
+        then accept;
+    }
+    term 999 {
+        then reject;
+    }
+}
+community VPN-1 members target:65000:1;
+
+[edit]
+admin@SRX100B#
+
+admin@SRX100B# run show configuration policy-options | display set
+set policy-options policy-statement VRF_export term 10 from protocol direct
+set policy-options policy-statement VRF_export term 10 then community add VPN-1
+set policy-options policy-statement VRF_export term 999 then reject
+set policy-options policy-statement VRF_import term 10 from protocol bgp
+set policy-options policy-statement VRF_import term 10 from community VPN-1
+set policy-options policy-statement VRF_import term 10 then accept
+set policy-options policy-statement VRF_import term 999 then reject
+set policy-options community VPN-1 members target:65000:1
+
+
+
+ルーチィングインスタンス
+set routing-instances MPLS-L3 instance-type vrf
+set routing-instances MPLS-L3 interface fe-0/0/1.0
+set routing-instances MPLS-L3 route-distinguisher 65000:1
+set routing-instances MPLS-L3 vrf-import VRF_import
+set routing-instances MPLS-L3 vrf-export VRF_export
+
+
+
+〇ＰＥ及びＰでのMPLS
+set interfaces fe-0/0/0 unit 0 family mpls
+
+
+
+だめな経路情報。。。
+admin@SRX100B> show route
+
+inet.0: 10 destinations, 10 routes (10 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+1.1.1.0/24         *[Direct/0] 01:33:07
+                    > via lo0.0
+1.1.1.1/32         *[Local/0] 01:33:07
+                      Local via lo0.0
+2.2.2.0/24         *[OSPF/10] 01:37:23, metric 2
+                    > to 10.0.102.2 via fe-0/0/0.0
+2.2.2.2/32         *[OSPF/10] 01:37:23, metric 2
+                    > to 10.0.102.2 via fe-0/0/0.0
+10.0.102.0/24      *[Direct/0] 03:23:01
+                    > via fe-0/0/0.0
+10.0.102.1/32      *[Local/0] 03:31:22
+                      Local via fe-0/0/0.0
+10.0.103.0/24      *[OSPF/10] 03:04:49, metric 2
+                    > to 10.0.102.2 via fe-0/0/0.0
+10.10.10.0/24      *[OSPF/10] 01:39:35, metric 1
+                    > to 10.0.102.2 via fe-0/0/0.0
+10.10.10.10/32     *[OSPF/10] 01:39:35, metric 1
+                    > to 10.0.102.2 via fe-0/0/0.0
+224.0.0.5/32       *[OSPF/10] 03:32:39, metric 1
+                      MultiRecv
+
+inet.3: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+2.2.2.2/32         *[LDP/9] 00:07:31, metric 1
+                    > to 10.0.102.2 via fe-0/0/0.0, Push 299776
+10.10.10.10/32     *[LDP/9] 00:07:31, metric 1
+                    > to 10.0.102.2 via fe-0/0/0.0
+
+MPLS-L3.inet.0: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.7.101.0/24      *[Direct/0] 00:19:11
+                    > via fe-0/0/1.0
+10.7.101.1/32      *[Local/0] 00:19:11
+                      Local via fe-0/0/1.0
+
+mpls.0: 3 destinations, 3 routes (3 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+299776             *[LDP/9] 00:07:31, metric 1
+                    > to 10.0.102.2 via fe-0/0/0.0, Pop
+299776(S=0)        *[LDP/9] 00:07:31, metric 1
+                    > to 10.0.102.2 via fe-0/0/0.0, Pop
+299792             *[LDP/9] 00:07:31, metric 1
+                    > to 10.0.102.2 via fe-0/0/0.0, Swap 299776
+
+admin@SRX100B>
+
+
+予想・・・
+MPLSでSRX240を経由
+　→　BGPでinet-VPN設定が拒否られる。。
+　　　　　→　BGPピアでPE～PEを張っていたとしても、、MPLSラベルはSRX240を経由するパスとなるため。。。
+　　　　　　結局　　inet-VPNが広告されない。。
+
+
+　　　直結、。。。して確認しよ。。。
+
+
+
+設定追加
+
+[edit policy-options]
+admin@SRX100B# show
+policy-statement VRF_export {
+    term 10 {
+        from protocol [ direct ospf ];
+        then {
+            community add VPN-1;
+            accept;
+        }
+    }
+    term 999 {
+        then reject;
+    }
+}
+policy-statement VRF_import {
+    term 10 {
+        from {
+            protocol bgp;
+            community VPN-1;
+        }
+        then accept;
+    }
+    term 999 {
+        then reject;
+    }
+}
+policy-statement bgp2ospf {
+    from protocol bgp;
+    then accept;
+}
+community VPN-1 members target:65000:1;
+
+
+[edit routing-instances]
+admin@SRX100B# show
+MPLS-L3 {
+    instance-type vrf;
+    interface fe-0/0/1.0;
+    route-distinguisher 65000:1;
+    vrf-import VRF_import;
+    vrf-export VRF_export;
+    protocols {
+        ospf {
+            export bgp2ospf;
+            area 0.0.0.0 {
+                interface fe-0/0/1.0;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

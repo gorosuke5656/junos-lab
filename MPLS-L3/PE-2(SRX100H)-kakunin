@@ -1,0 +1,148 @@
+show route 
+
+inet.0: 7 destinations, 7 routes (7 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+1.1.1.0/24         *[OSPF/10] 01:01:33, metric 1
+                    > to 10.0.102.1 via fe-0/0/0.0
+1.1.1.1/32         *[OSPF/10] 01:01:33, metric 1
+                    > to 10.0.102.1 via fe-0/0/0.0
+2.2.2.0/24         *[Direct/0] 03:09:08
+                    > via lo0.0
+2.2.2.2/32         *[Local/0] 03:09:08
+                      Local via lo0.0
+10.0.102.0/24      *[Direct/0] 01:01:33
+                    > via fe-0/0/0.0
+10.0.102.20/32     *[Local/0] 01:01:33
+                      Local via fe-0/0/0.0
+224.0.0.5/32       *[OSPF/10] 06:04:59, metric 1
+                      MultiRecv
+
+inet.3: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+1.1.1.1/32         *[LDP/9] 01:00:29, metric 1
+---(more)---                                                            > to 10.0.102.1 via fe-0/0/0.0
+
+MPLS-L3.inet.0: 8 destinations, 8 routes (8 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.7.101.0/24      *[BGP/170] 00:22:48, localpref 100, from 1.1.1.1
+                      AS path: I
+                    > to 10.0.102.1 via fe-0/0/0.0, Push 299824
+10.8.101.0/24      *[Direct/0] 01:54:16
+                    > via fe-0/0/1.0
+10.8.101.2/32      *[Local/0] 01:54:16
+                      Local via fe-0/0/1.0
+192.168.10.0/24    *[BGP/170] 00:22:49, MED 1, localpref 100, from 1.1.1.1
+                      AS path: I
+                    > to 10.0.102.1 via fe-0/0/0.0, Push 299824
+192.168.10.254/32  *[BGP/170] 00:22:49, MED 1, localpref 100, from 1.1.1.1
+                      AS path: I
+                    > to 10.0.102.1 via fe-0/0/0.0, Push 299824
+192.168.20.0/24    *[OSPF/10] 00:43:52, metric 1
+                    > to 10.8.101.1 via fe-0/0/1.0
+192.168.20.254/32  *[OSPF/10] 00:43:52, metric 1
+                    > to 10.8.101.1 via fe-0/0/1.0
+224.0.0.5/32       *[OSPF/10] 00:44:02, metric 1
+---(more 63%)---                                                              MultiRecv
+
+mpls.0: 3 destinations, 3 routes (3 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+299808             *[LDP/9] 01:00:29, metric 1
+                    > to 10.0.102.1 via fe-0/0/0.0, Pop      
+299808(S=0)        *[LDP/9] 01:00:29, metric 1
+                    > to 10.0.102.1 via fe-0/0/0.0, Pop      
+299824             *[VPN/170] 00:12:24
+                    > to 10.8.101.1 via fe-0/0/1.0, Pop      
+
+bgp.l3vpn.0: 3 destinations, 3 routes (3 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+65000:1:10.7.101.0/24                
+                   *[BGP/170] 00:22:48, localpref 100, from 1.1.1.1
+                      AS path: I
+                    > to 10.0.102.1 via fe-0/0/0.0, Push 299824
+65000:1:192.168.10.0/24                
+                   *[BGP/170] 00:22:49, MED 1, localpref 100, from 1.1.1.1
+                      AS path: I
+                    > to 10.0.102.1 via fe-0/0/0.0, Push 299824
+---(more 94%)---                                        65000:1:192.168.10.254/32                
+                   *[BGP/170] 00:22:49, MED 1, localpref 100, from 1.1.1.1
+                      AS path: I
+                    > to 10.0.102.1 via fe-0/0/0.0, Push 299824
+
+admin@SRX100H> show ldp neighbor 
+Address            Interface          Label space ID         Hold time
+10.0.102.1         fe-0/0/0.0         1.1.1.1:0                14
+
+admin@SRX100H> show ldp session 
+  Address           State        Connection     Hold time
+1.1.1.1             Operational  Open             28
+
+admin@SRX100H> show ospf                ospf neighbor 
+Address          Interface              State     ID               Pri  Dead
+10.0.102.1       fe-0/0/0.0             Full      1.1.1.1          128    34
+
+admin@SRX100H> admin@SRX100H> show ospf neighbor                                              bgp neighbor 2.2.2.2 
+
+admin@SRX100H> admin@SRX100H> show bgp neighbor 2.2.2.2                            1.1.1.1 
+Peer: 1.1.1.1+179 AS 65000     Local: 2.2.2.2+54890 AS 65000
+  Type: Internal    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: Cease
+  Options: <Preference LocalAddress AddressFamily Rib-group Refresh>
+  Address families configured: inet-unicast inet-vpn-unicast
+  Local Address: 2.2.2.2 Holdtime: 90 Preference: 170
+  Number of flaps: 4
+  Last flap event: RecvNotify
+  Error: 'Hold Timer Expired Error' Sent: 1 Recv: 0
+  Error: 'Cease' Sent: 2 Recv: 1
+  Peer ID: 1.1.1.1         Local ID: 2.2.2.2           Active Holdtime: 90
+  Keepalive Interval: 30         Peer index: 0   
+  BFD: disabled, down
+  NLRI for restart configured on peer: inet-unicast inet-vpn-unicast
+  NLRI advertised by peer: inet-unicast inet-vpn-unicast
+  NLRI for this session: inet-unicast inet-vpn-unicast
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  NLRI that restart is negotiated for: inet-unicast inet-vpn-unicast
+  NLRI of received end-of-rib markers: inet-unicast inet-vpn-unicast
+  NLRI of all end-of-rib markers sent: inet-unicast inet-vpn-unicast
+---(more)---                                          Peer supports 4 byte AS extension (peer-as 65000)
+  Peer does not support Addpath
+  Table inet.0 Bit: 10000
+    RIB State: BGP restart is complete
+    Send state: in sync
+    Active prefixes:              0
+    Received prefixes:            0
+    Accepted prefixes:            0
+    Suppressed due to damping:    0
+    Advertised prefixes:          0
+  Table bgp.l3vpn.0
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: not advertising
+    Active prefixes:              3
+    Received prefixes:            3
+    Accepted prefixes:            3
+    Suppressed due to damping:    0
+  Table MPLS-L3.inet.0 Bit: 30000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              3
+---(more 82%)---                                            Received prefixes:            3
+    Accepted prefixes:            3
+    Suppressed due to damping:    0
+    Advertised prefixes:          3
+  Last traffic (seconds): Received 24   Sent 24   Checked 17  
+  Input messages:  Total 147	Updates 11	Refreshes 0	Octets 3090
+  Output messages: Total 146	Updates 3	Refreshes 0	Octets 3369
+  Output Queue[0]: 0
+  Output Queue[1]: 0
+  Output Queue[2]: 0
+
+admin@SRX100H> 

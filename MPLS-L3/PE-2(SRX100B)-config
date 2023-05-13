@@ -1,0 +1,264 @@
+show confgi
+                    ^
+syntax error, expecting <command>.
+admin@SRX100B> show confgi            figuration | no-more 
+## Last commit: 2023-05-13 08:05:39 UTC by admin
+version 10.4R9.2;
+system {
+    host-name SRX100B;
+    root-authentication {
+        encrypted-password "$1$wbVuwT9F$ws85LJ/4Azrx9T/Z43Cgd0"; ## SECRET-DATA
+    }
+    name-server {
+        208.67.222.222;
+        208.67.220.220;
+    }
+    login {
+        user admin {
+            uid 2002;
+            class super-user;
+            authentication {
+                encrypted-password "$1$zDiXz2w5$dDSbW76LjJMXZTPXmg4gV/"; ## SECRET-DATA
+            }
+        }
+    }
+    services {
+        ssh;
+        telnet;
+        xnm-clear-text;
+        web-management {
+            http {
+                interface vlan.0;
+            }
+            https {
+                system-generated-certificate;
+                interface vlan.0;
+            }
+        }
+        dhcp {
+            router {
+                192.168.1.1;
+            }
+            pool 192.168.1.0/24 {
+                address-range low 192.168.1.2 high 192.168.1.254;
+            }
+            propagate-settings fe-0/0/0.0;
+        }
+    }
+    syslog {
+        archive size 100k files 3;
+        user * {
+            any emergency;
+        }
+        file messages {
+            any critical;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands error;
+        }
+    }
+    max-configurations-on-flash 5;
+    max-configuration-rollbacks 5;
+    license {
+        autoupdate {
+            url https://ae1.juniper.net/junos/key_retrieval;
+        }
+    }
+}
+interfaces {
+    fe-0/0/0 {
+        unit 0 {
+            family inet {
+                address 10.0.102.1/24;
+            }
+            family mpls;
+        }
+    }
+    fe-0/0/1 {
+        unit 0 {
+            family inet {
+                address 10.7.101.1/24;
+            }
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                address 1.1.1.1/24;
+            }
+        }
+    }
+}
+routing-options {
+    router-id 1.1.1.1;
+    autonomous-system 65000;
+}
+protocols {
+    bgp {
+        group IBGP {
+            type internal;
+            local-address 1.1.1.1;
+            family inet {
+                unicast;
+            }
+            family inet-vpn {
+                unicast;
+            }
+            neighbor 10.10.10.10;
+            neighbor 2.2.2.2;
+        }
+    }
+    ospf {
+        traffic-engineering;
+        area 0.0.0.0 {
+            interface fe-0/0/0.0;
+            interface lo0.0;
+        }
+    }
+    ldp {
+        interface fe-0/0/0.0;
+    }
+}
+policy-options {
+    policy-statement VRF_export {
+        term 10 {
+            from protocol [ direct ospf ];
+            then {
+                community add VPN-1;
+                accept;
+            }
+        }
+        term 999 {
+            then reject;
+        }
+    }
+    policy-statement VRF_import {
+        term 10 {
+            from {
+                protocol bgp;
+                community VPN-1;
+            }
+            then accept;
+        }
+        term 999 {
+            then reject;
+        }
+    }
+    policy-statement bgp2ospf {
+        from protocol bgp;
+        then accept;
+    }
+    community VPN-1 members target:65000:1;
+}
+security {
+    zones {
+        security-zone trust {
+            host-inbound-traffic {
+                system-services {
+                    any-service;
+                }
+                protocols {
+                    all;
+                }
+            }
+            interfaces {
+                all;
+            }
+        }
+    }
+    forwarding-options {
+        family {
+            mpls {
+                mode packet-based;
+            }
+        }
+    }
+}
+routing-instances {
+    MPLS-L3 {
+        instance-type vrf;
+        interface fe-0/0/1.0;
+        route-distinguisher 65000:1;
+        vrf-import VRF_import;
+        vrf-export VRF_export;
+        protocols {
+            ospf {
+                export bgp2ospf;
+                area 0.0.0.0 {
+                    interface fe-0/0/1.0;
+                }
+            }
+        }
+    }
+}
+
+admin@SRX100B> admin@SRX100B> show configuration | no-more    | display set 
+set version 10.4R9.2
+set system host-name SRX100B
+set system root-authentication encrypted-password "$1$wbVuwT9F$ws85LJ/4Azrx9T/Z43Cgd0"
+set system name-server 208.67.222.222
+set system name-server 208.67.220.220
+set system login user admin uid 2002
+set system login user admin class super-user
+set system login user admin authentication encrypted-password "$1$zDiXz2w5$dDSbW76LjJMXZTPXmg4gV/"
+set system services ssh
+set system services telnet
+set system services xnm-clear-text
+set system services web-management http interface vlan.0
+set system services web-management https system-generated-certificate
+set system services web-management https interface vlan.0
+set system services dhcp router 192.168.1.1
+set system services dhcp pool 192.168.1.0/24 address-range low 192.168.1.2
+set system services dhcp pool 192.168.1.0/24 address-range high 192.168.1.254
+set system services dhcp propagate-settings fe-0/0/0.0
+set system syslog archive size 100k
+set system syslog archive files 3
+set system syslog user * any emergency
+set system syslog file messages any critical
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands error
+set system max-configurations-on-flash 5
+set system max-configuration-rollbacks 5
+set system license autoupdate url https://ae1.juniper.net/junos/key_retrieval
+set interfaces fe-0/0/0 unit 0 family inet address 10.0.102.1/24
+set interfaces fe-0/0/0 unit 0 family mpls
+set interfaces fe-0/0/1 unit 0 family inet address 10.7.101.1/24
+set interfaces lo0 unit 0 family inet address 1.1.1.1/24
+set routing-options router-id 1.1.1.1
+set routing-options autonomous-system 65000
+set protocols bgp group IBGP type internal
+set protocols bgp group IBGP local-address 1.1.1.1
+set protocols bgp group IBGP family inet unicast
+set protocols bgp group IBGP family inet-vpn unicast
+set protocols bgp group IBGP neighbor 10.10.10.10
+set protocols bgp group IBGP neighbor 2.2.2.2
+set protocols ospf traffic-engineering
+set protocols ospf area 0.0.0.0 interface fe-0/0/0.0
+set protocols ospf area 0.0.0.0 interface lo0.0
+set protocols ldp interface fe-0/0/0.0
+set policy-options policy-statement VRF_export term 10 from protocol direct
+set policy-options policy-statement VRF_export term 10 from protocol ospf
+set policy-options policy-statement VRF_export term 10 then community add VPN-1
+set policy-options policy-statement VRF_export term 10 then accept
+set policy-options policy-statement VRF_export term 999 then reject
+set policy-options policy-statement VRF_import term 10 from protocol bgp
+set policy-options policy-statement VRF_import term 10 from community VPN-1
+set policy-options policy-statement VRF_import term 10 then accept
+set policy-options policy-statement VRF_import term 999 then reject
+set policy-options policy-statement bgp2ospf from protocol bgp
+set policy-options policy-statement bgp2ospf then accept
+set policy-options community VPN-1 members target:65000:1
+set security zones security-zone trust host-inbound-traffic system-services any-service
+set security zones security-zone trust host-inbound-traffic protocols all
+set security zones security-zone trust interfaces all
+set security forwarding-options family mpls mode packet-based
+set routing-instances MPLS-L3 instance-type vrf
+set routing-instances MPLS-L3 interface fe-0/0/1.0
+set routing-instances MPLS-L3 route-distinguisher 65000:1
+set routing-instances MPLS-L3 vrf-import VRF_import
+set routing-instances MPLS-L3 vrf-export VRF_export
+set routing-instances MPLS-L3 protocols ospf export bgp2ospf
+set routing-instances MPLS-L3 protocols ospf area 0.0.0.0 interface fe-0/0/1.0
+
+admin@SRX100B> 

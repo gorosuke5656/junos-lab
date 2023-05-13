@@ -1,0 +1,33 @@
+show route protocol ospf 
+
+VR10.inet.0: 8 destinations, 8 routes (8 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.8.101.0/24      *[OSPF/150] 00:11:36, metric 0, tag 3489725928
+                    > to 10.7.101.1 via ge-0/0/0.0
+192.168.20.0/24    *[OSPF/10] 00:11:36, metric 2
+                    > to 10.7.101.1 via ge-0/0/0.0
+192.168.20.254/32  *[OSPF/10] 00:11:36, metric 2
+                    > to 10.7.101.1 via ge-0/0/0.0
+224.0.0.5/32       *[OSPF/10] 04:22:48, metric 1
+                      MultiRecv
+
+VR100.inet.0: 5 destinations, 5 routes (5 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+224.0.0.5/32       *[OSPF/10] 04:36:03, metric 1
+                      MultiRecv
+
+VR20.inet.0: 8 destinations, 8 routes (8 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+10.7.101.0/24      *[OSPF/150] 00:22:01, metric 0, tag 3489725928
+---(more)---                                                            > to 10.8.101.2 via ge-0/0/15.0
+192.168.10.0/24    *[OSPF/10] 00:22:01, metric 2
+                    > to 10.8.101.2 via ge-0/0/15.0
+192.168.10.254/32  *[OSPF/10] 00:22:01, metric 2
+                    > to 10.8.101.2 via ge-0/0/15.0
+224.0.0.5/32       *[OSPF/10] 04:21:08, metric 1
+                      MultiRecv
+
+admin@SRX240H2> 
