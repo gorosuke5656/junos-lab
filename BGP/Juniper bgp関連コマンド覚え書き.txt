@@ -1,0 +1,247 @@
+〇　show bgp summary - BGPの設定やステータスのサマリー情報の表示
+【実行例】
+admin@SRX100H2> show bgp summary
+Groups: 4 Peers: 4 Down peers: 0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+2.2.2.2               65000        333        339       0       0     2:30:16 Establ
+  VR1.inet.0: 5/6/6/0
+2.2.2.2               65000        335        342       0       0     2:30:40 Establ
+  VR2.inet.0: 4/6/6/0
+50.5.1.1              65001        337        337       0       0     2:30:20 Establ
+  VR1.inet.0: 0/5/5/0
+50.6.1.1              65001        337        338       0       0     2:30:20 Establ
+  VR2.inet.0: 1/6/6/0
+
+admin@SRX100H2>
+
+
+
+admin@SRX100H2> show bgp group
+Group Type: Internal    AS: 65001                  Local AS: 65001
+  Name: INTERNAL        Index: 0                   Flags: <>
+  Export: [ INTERNAL-NETWORK-VR1 NEXT-HOP ]
+  Holdtime: 0
+  Total peers: 1        Established: 1
+  50.5.1.1+179
+  VR1.inet.0: 0/5/5/0
+
+Group Type: External                               Local AS: 65001
+  Name: EXTERNAL        Index: 1                   Flags: <Export Eval>
+  Export: [ ADV-ROUTE06 INTERNAL-NETWORK-VR1 INTERNAL-NETWORK-VR2 ]
+  Options: <Multihop>
+  Holdtime: 0
+  Total peers: 1        Established: 1
+  2.2.2.2+179
+  VR1.inet.0: 5/6/6/0
+
+Group Type: Internal    AS: 65001                  Local AS: 65001
+  Name: INTERNAL        Index: 2                   Flags: <>
+  Export: [ INTERNAL-NETWORK-VR2 ]
+  Holdtime: 0
+  Total peers: 1        Established: 1
+  50.6.1.1+57711
+  VR2.inet.0: 1/6/6/0
+
+Group Type: External                               Local AS: 65001
+  Name: EXTERNAL        Index: 3                   Flags: <>
+  Export: [ ADV-ROUTE01 INTERNAL-NETWORK-VR2 INTERNAL-NETWORK-VR1 ]
+  Options: <Multihop>
+  Holdtime: 0
+  Total peers: 1        Established: 1
+  2.2.2.2+179
+  VR2.inet.0: 4/6/6/0
+
+Groups: 4  Peers: 4    External: 2    Internal: 2    Down peers: 0   Flaps: 0
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+VR1.inet.0            11          5          0          0          0          0
+VR2.inet.0            12          5          0          0          0          0
+VR1.mdt.0              0          0          0          0          0          0
+VR2.mdt.0              0          0          0          0          0          0
+
+admin@SRX100H2>
+
+〇　show bgp neighbor - BGPネイバーの状態を表示するコマンド
+
+admin@SRX100H2> show bgp neighbor 2.2.2.2
+Peer: 2.2.2.2+179 AS 65000     Local: 50.6.1.1+58641 AS 65001
+  Type: External    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: None
+  Export: [ ADV-ROUTE06 INTERNAL-NETWORK-VR1 INTERNAL-NETWORK-VR2 ] Import: [ LOCAL-PREF ]
+  Options: <Multihop Preference LocalAddress Ttl PeerAS Refresh>
+  Local Address: 50.6.1.1 Holdtime: 90 Preference: 170
+  Number of flaps: 0
+  Peer ID: 1.1.1.1         Local ID: 6.6.6.6           Active Holdtime: 90
+  Keepalive Interval: 30         Peer index: 0
+  BFD: disabled, down
+  NLRI for restart configured on peer: inet-unicast
+  NLRI advertised by peer: inet-unicast
+  NLRI for this session: inet-unicast
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  NLRI that restart is negotiated for: inet-unicast
+  NLRI of received end-of-rib markers: inet-unicast
+  NLRI of all end-of-rib markers sent: inet-unicast
+  Peer supports 4 byte AS extension (peer-as 65000)
+  Peer does not support Addpath
+  Table VR1.inet.0 Bit: 10001
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              5
+    Received prefixes:            6
+    Accepted prefixes:            6
+    Suppressed due to damping:    0
+    Advertised prefixes:          2
+  Last traffic (seconds): Received 4    Sent 13   Checked 18
+  Input messages:  Total 336    Updates 3       Refreshes 2     Octets 6474
+  Output messages: Total 342    Updates 6       Refreshes 0     Octets 6727
+  Output Queue[0]: 0
+
+Peer: 2.2.2.2+179 AS 65000     Local: 50.5.1.1+52347 AS 65001
+  Type: External    State: Established    Flags: <Sync>
+  Last State: OpenConfirm   Last Event: RecvKeepAlive
+  Last Error: None
+  Export: [ ADV-ROUTE01 INTERNAL-NETWORK-VR2 INTERNAL-NETWORK-VR1 ]
+  Options: <Multihop Preference LocalAddress Ttl PeerAS Refresh>
+  Local Address: 50.5.1.1 Holdtime: 90 Preference: 170
+  Number of flaps: 0
+  Peer ID: 1.1.1.1         Local ID: 5.5.5.5           Active Holdtime: 90
+  Keepalive Interval: 30         Peer index: 0
+  BFD: disabled, down
+  NLRI for restart configured on peer: inet-unicast
+  NLRI advertised by peer: inet-unicast
+  NLRI for this session: inet-unicast
+  Peer supports Refresh capability (2)
+  Stale routes from peer are kept for: 300
+  Peer does not support Restarter functionality
+  NLRI that restart is negotiated for: inet-unicast
+  NLRI of received end-of-rib markers: inet-unicast
+  NLRI of all end-of-rib markers sent: inet-unicast
+  Peer supports 4 byte AS extension (peer-as 65000)
+  Peer does not support Addpath
+  Table VR2.inet.0 Bit: 20000
+    RIB State: BGP restart is complete
+    RIB State: VPN restart is complete
+    Send state: in sync
+    Active prefixes:              4
+    Received prefixes:            6
+    Accepted prefixes:            6
+    Suppressed due to damping:    0
+    Advertised prefixes:          2
+  Last traffic (seconds): Received 4    Sent 8    Checked 45
+  Input messages:  Total 338    Updates 3       Refreshes 2     Octets 6512
+  Output messages: Total 345    Updates 8       Refreshes 0     Octets 6843
+  Output Queue[1]: 0
+
+admin@SRX100H2>
+
+
+
+admin@SRX100H2> show bgp summary
+Groups: 4 Peers: 4 Down peers: 0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+2.2.2.2               65000        337        344       0       0     2:32:13 Establ
+  VR1.inet.0: 5/6/6/0
+2.2.2.2               65000        339        346       0       0     2:32:37 Establ
+  VR2.inet.0: 4/6/6/0
+50.5.1.1              65001        341        342       0       0     2:32:17 Establ
+  VR1.inet.0: 0/5/5/0
+50.6.1.1              65001        342        342       0       0     2:32:17 Establ
+  VR2.inet.0: 1/6/6/0
+
+〇　show route advertising-protocol bgp x.x.x.x - BGPネイバーにアドバタイズしたルート情報の確認
+【実行例】
+admin@SRX100H2> show route advertising-protocol bgp 2.2.2.2
+
+VR1.inet.0: 19 destinations, 25 routes (19 active, 0 holddown, 0 hidden)
+  Prefix                  Nexthop              MED     Lclpref    AS path
+* 10.1.5.0/24             Self                 2                  I
+* 10.1.6.0/24             Self                                    I
+
+VR2.inet.0: 19 destinations, 26 routes (19 active, 0 holddown, 0 hidden)
+  Prefix                  Nexthop              MED     Lclpref    AS path
+* 10.1.5.0/24             Self                                    I
+* 10.1.6.0/24             Self                 2                  I
+
+admin@SRX100H2> 
+
+
+〇　show route receive-protocol bgp x.x.x.x - BGPネイバーから受信したしたルート情報の確認
+【実行例】
+admin@SRX100H2> show route receive-protocol bgp 2.2.2.2
+
+inet.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)
+
+VR1.inet.0: 19 destinations, 25 routes (19 active, 0 holddown, 0 hidden)
+  Prefix                  Nexthop              MED     Lclpref    AS path
+* 1.1.1.1/32              2.2.2.2                                 65000 I
+  2.2.2.2/32              2.2.2.2                                 65000 I
+* 172.16.200.0/24         2.2.2.2                                 65000 I
+* 200.200.200.0/24        2.2.2.2                                 65000 65100 I
+* 210.210.210.0/24        2.2.2.2                                 65000 65100 I
+* 220.220.220.0/24        2.2.2.2                                 65000 65100 I
+
+VR2.inet.0: 19 destinations, 26 routes (19 active, 0 holddown, 0 hidden)
+  Prefix                  Nexthop              MED     Lclpref    AS path
+* 1.1.1.1/32              2.2.2.2                                 65000 I
+  2.2.2.2/32              2.2.2.2                                 65000 I
+* 172.16.200.0/24         2.2.2.2                                 65000 I
+  200.200.200.0/24        2.2.2.2                                 65000 65100 I
+* 210.210.210.0/24        2.2.2.2                                 65000 65100 I
+* 220.220.220.0/24        2.2.2.2                                 65000 65100 I
+
+admin@SRX100H2>
+
+〇　show route protocol bgp - ルーティングテーブル上のBGPルートを確認
+　本コマンドの結果は、BGPネイバーからルート情報を受信して、importポリシーが適用された後の結果です。
+
+
+〇　VR個別で経路情報を確認する場合
+
+admin@SRX100B> show route table VR2.inet.0 protocol bgp
+
+VR2.inet.0: 15 destinations, 18 routes (15 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+1.1.1.1/32          [BGP/170] 00:32:13, localpref 100
+                      AS path: 65100 I
+                    > to 172.16.200.1 via fe-0/0/0.0
+10.1.5.0/24        *[BGP/170] 00:31:13, localpref 100, from 50.5.1.1
+                      AS path: 65001 I
+                    > to 172.16.5.254 via fe-0/0/1.0
+                    [BGP/170] 00:17:11, MED 2, localpref 100, from 50.6.1.1
+                      AS path: 65001 I
+                    > to 172.16.6.254 via fe-0/0/2.0
+10.1.6.0/24        *[BGP/170] 00:30:49, localpref 100, from 50.6.1.1
+                      AS path: 65001 I
+                    > to 172.16.6.254 via fe-0/0/2.0
+                    [BGP/170] 00:22:20, MED 2, localpref 100, from 50.5.1.1
+                      AS path: 65001 I
+                    > to 172.16.5.254 via fe-0/0/1.0
+200.200.200.0/24   *[BGP/170] 00:32:13, localpref 100
+                      AS path: 65100 I
+                    > to 172.16.200.1 via fe-0/0/0.0
+210.210.210.0/24   *[BGP/170] 00:32:13, localpref 100
+                      AS path: 65100 I
+                    > to 172.16.200.1 via fe-0/0/0.0
+220.220.220.0/24   *[BGP/170] 00:32:13, localpref 100
+                      AS path: 65100 I
+                    > to 172.16.200.1 via fe-0/0/0.0
+
+admin@SRX100B>
+
+BGPポリシーをすぐに反映させる方法
+
+　BGPでは、ネットワーク上で何らかの変更が発生しない限りはBGPアップデートは送信されません。BGPの
+　アトリビュートの変更（MEDの変更、LOCAL_PREFの変更等）は、ネットワークの変更とみなされないため
+　そのアトリビュートの設定変更はすぐに反映されません。このBGPポリシー変更（アトリビュート変更）を
+　すぐに反映させるためには、以下の方法でルート情報を再送信する必要があります。
+
+〇　VR単位で受信ネイバーをクリアさせたい場合
+
+admin@SRX100B> clear bgp neighbor soft-inbound instance VR2
+
+
+
