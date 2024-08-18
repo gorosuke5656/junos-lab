@@ -6,7 +6,7 @@ Juniperネットワーク社製のFirewallであるSRXのFirewall機能につい
 １　Firewallの概要<br>
 　  (1)　Firewallとは？　<br>
  　 (2)　Fireallによるフィルタリング方式　<br>
-    (1)　Firewallとは？　<br>
+    (3)　
  　 (2)　Fireallによるフィルタリング方式　<br>   
    
    
