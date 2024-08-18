@@ -6,6 +6,6 @@ Juniperネットワーク社製のFirewallであるSRXのFirewall機能につい
 １.Firewallの概要<br>
 　(1)　Firewallとは？<br>
 　(2)　Fireallによるフィルタリング方式<br>
-  (3)　ステートフルインスペクション型Firewallの動作<br>
+　  (3)　ステートフルインスペクション型Firewallの動作<br>
   (4)　コネクションテーブル（セッションテーブル）とは<br>
 ２　　　　　　　　　　　　　　　　　　　　　　　　　　　
