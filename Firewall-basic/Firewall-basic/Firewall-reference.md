@@ -21,7 +21,7 @@ root > request pfe execute target fpc0 command "show usp app-def tcp"<br>
 【ネットワーク】Juniper SRX（Junos OS） 非対称ルーティング 疎通不可<br> 
  https://hack2notes.com/495/<br> 
  
-[juniper] SRX(JunOS) ルーティング不具合修正(非対称ルートへの対応)
+[juniper] SRX(JunOS) ルーティング不具合修正(非対称ルートへの対応)<br> 
 https://www.harumaki.net/2014/03/31/juniper-srx-junos-routing-troubleshoot/<br> 
   
 
