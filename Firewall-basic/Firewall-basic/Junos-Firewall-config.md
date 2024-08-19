@@ -2,10 +2,10 @@
 ## Firewallルール設定について　　[元に戻る](./JunosSRX-Firewall-Basic.md) <br>
 ### Firewallルールの概要
 JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するトラヒックを制御します！<br> 
-　【Security Zone】<br>
- 　インタフェースに割り当てる仮想的なグループ（SRXではZoneを使用）<br> 
-  【Security Policy】<br>
-  　SRXを通過するトラヒックを制御するためのルール<br> 
+【Security Zone】<br>
+　インタフェースに割り当てる仮想的なグループ（SRXではZoneを使用）<br> 
+【Security Policy】<br>
+　SRXを通過するトラヒックを制御するためのルール<br> 
    
 ### Firewallルール反映までの流れ
 〇事前にZoneとInterfaceを設定した上で以下の流れで実施します<br> 
