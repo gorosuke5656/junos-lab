@@ -10,5 +10,15 @@ root#show groups junos-defaults applications<br>
  
 ＴＣＰアプリケーションのタイムアウト値を確認する場合は以下で確認します<br> 
 root > request pfe execute target fpc0 command "show usp app-def tcp"<br> 
+
+
+### Juniper SRX（Junos OS） 非対称ルーティング を許可する方法
+
+
+
+
+　（参考）<br> 
+【ネットワーク】Juniper SRX（Junos OS） 非対称ルーティング 疎通不可<br> 
+ https://hack2notes.com/495/
   
 
