@@ -17,6 +17,6 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
   ３　設定の反映<br>
   　作成したルールを保存します(commit)<br>
     *注意！： commitしないとSRXに設定情報が反映されません！！<br>
-#### 1  objectの作成
+#### 1 　objectの作成
 #### 2　ルールの作成、適用
 #### 3　設定の反映
