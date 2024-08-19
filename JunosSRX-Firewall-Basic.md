@@ -4,11 +4,8 @@
 Juniperネットワーク社製のFirewallであるSRXのFirewall機能について説明します
 ### 内容
 １　Firewallの概要　[次のチャプターへ進む](./Firewall-ovewview.md) <br>　
-　　(1)　Firewallとは？　<br>
- 　 (2)　Fireallによるフィルタリング方式　<br>
- 　 (3)　ステートフルインスペクション型Firewallとは　<br>
- 　 (4)　セッションテーブル（コネクションテーブル）とは　<br>  
-2　JunosにおけるFirewall設定<br>
+
+2　JunosにおけるFirewall設定[次のチャプターへ進む](./Junos FIrewall-config.md)<br>
 　  (1)　Firewallルールの概要　<br>
  　 (2)　Objectの作成<br>
  　 (3)　Firewallルールの作成、適用　<br>
