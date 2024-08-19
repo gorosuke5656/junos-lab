@@ -55,6 +55,7 @@ address-book、address-setの適用については以下の２つの方法があ
 
  
 #### 2　ルールの作成、適用
+ ![Diagram](./image/Firewall-rule.jpg)
 #### 3　設定の反映
 #### 4　ルール設定の例
 　以下の状況におけるFirewallルール設定例について紹介します<br>
