@@ -58,7 +58,7 @@ address-book、address-setの適用については以下の２つの方法があ
  ![Diagram](./image/Firewall-rule.jpg)
 
 ##### Firewallルールにおけるinsertコマンドについて
-一般的にFirewallにおけるFirewallルールは先頭に記述したFirewallルールが優先されます。<br>
+一般的にFirewallにおけるルールは先頭に記述したFirewallルールが優先されます。<br>
 Juniper SRXも例外ではありません。。<br>
 
 SRXにおいてFirewallルールを入れ替える場合は　"insert”コマンドを使用します！<br>
@@ -67,19 +67,19 @@ SRXにおいてFirewallルールを入れ替える場合は　"insert”コマ�
 新規に作成したFirewallルール（ポリシー）”TRUST_UNTRUST_POLICY-0001”を"ALL_DENY"の前に入れ替えます<br>
 
 【新規に適用したいルールを設定します】<br>
-set security address-book global address UNTRUST_ADD-0001 XXX.XXX.XXX.XXX/XX<br>
- set security address-book global address-set UNTRUST_ADD_SET-0001 address UNTRUST_ADD-0001<br>
- set security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001 match 
+ #set security address-book global address UNTRUST_ADD-0001 XXX.XXX.XXX.XXX/XX<br>
+ #set security address-book global address-set UNTRUST_ADD_SET-0001 address UNTRUST_ADD-0001<br>
+ #set security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001 match 
 source-address any<br>
- set security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001<br> 
+ #set security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001<br> 
 match destination-address UNTRUST_ADD_SET-0001<br>
- set security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001
+ #set security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001
 match application any<br>
- set security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001 then permit<br>
+ #set security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001 then permit<br>
  
 【現行のルールの前に設定したルールを追加します】<br>
-insert security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001 before 
-policy ALL_DEN
+#insert security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001 before 
+policy ALL_DENY
 #### 3　設定の反映
 #### 4　ルール設定の例
 　以下の状況におけるFirewallルール設定例について紹介します<br>
