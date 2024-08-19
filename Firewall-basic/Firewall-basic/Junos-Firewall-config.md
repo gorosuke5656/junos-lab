@@ -17,6 +17,9 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
   ３　設定の反映<br>
   　作成したルールを保存します(commit)<br>
     *注意！： commitしないとSRXに設定情報が反映されません！！<br>
+
+  ４　通信中のコネクション（セッション）に対して新規Firewallルールを適用<br>
+  
 #### 1 　objectの作成
 #### 2　ルールの作成、適用
 #### 3　設定の反映
@@ -91,3 +94,5 @@ address-setにまとめたものを使用してFirewallルールを作成<br>
   #set security policies from-zone untrust to-zone trust policy Attaker-deny then deny<br>
   #set security policies default-polices permit-all　<br>　　　　　　　　　　　　　　　　　　　　　
  　　　　　　　　　　　　　　　/　デフォルトポリシー（通過）<br>
+#### 4　通信中のコネクション（セッション）に対する新規新規Firewallルールを適用
+
