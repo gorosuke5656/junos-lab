@@ -8,7 +8,7 @@ root#show groups junos-defaults applications<br>
 ### アプリケーションにおけるコネクション（セッション）タイムアウト値の設定
 　SRXにおいては各アプリケーション毎にコネクションのタイムアウト値がそれぞれ設定させています
  
-ＴＣＰアプリケーションのタイムアウト値を確認する場合は以下で確認します
-root > request pfe execute target fpc0 command "show usp app-def tcp"
+ＴＣＰアプリケーションのタイムアウト値を確認する場合は以下で確認します<br> 
+root > request pfe execute target fpc0 command "show usp app-def tcp"<br> 
   
 
