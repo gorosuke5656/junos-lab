@@ -22,6 +22,14 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
   ４　通信中のコネクション（セッション）に対して新規Firewallルールを適用<br>
   
 #### 1 　objectの作成
+　ルール適用時の対象サブネット（ホスト）等を指定する際に使用 <br>
+(address-bookを複数組み合わせて使用する場合にはaddress-setを使用）<br>
+《設定例》<br>
+異なるＩＰアドレス（サブネット）を複数指定してFirewalポリシーに適用したい。<br>
+　　ADDRESS BOOKの定義　1.1.1.1/32　⇒　AAA　172.16.0.0/16　⇒　BBB　　192.168.1.0/24　⇒　CCC<br>
+ ADDRESS SETの定義　　BCSET　⇒　BBB、CCCを組み合わせ<br>
+
+ 
 #### 2　ルールの作成、適用
 #### 3　設定の反映
 #### 4　ルール設定の例
