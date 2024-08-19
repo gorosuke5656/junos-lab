@@ -65,6 +65,7 @@ application-setを使用して複数のサーバ（サービス）を選択す�
 【例：通常使用しないポート番号（Wel-Knownポート以外）を指定したい！】<br>
 宛先ポートTCP/23000を新たなアプリケーションとして定義（定義名：untrust-server)<br>
   #set applications application untrust-Server protocols tcp source-port 1-65535 destination-port 23000<br>
+新たなアプリケーションを使用してFirewallルールを作成<br>
   #set security policies from-zone trust to-zone untrust policy Server-permit match source-address any<br>
   #set security policies from-zone trust to-zone untrust policy Server-permit match destination-address any<br>
   #set security policies from-zone trust to-zone untrust policy Server-permit match application untrust-Server<br>
