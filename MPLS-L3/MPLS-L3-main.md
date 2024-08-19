@@ -7,9 +7,9 @@ Juniperネットワーク社のSRXを使用してMPLSを設定および確認し
 　　　　　　　　　　　　リンク先については公式ドキュメントになります）<br>
             
 ## 内容
-１ Firewallの概要：　[次のチャプターへ進む](./Firewall-ovewview.md) <br>
-２ JunosにおけるFirewall設定：　[次のチャプターへ進む](./Junos-Firewall-config.md)<br> 
-３ SRXのFirewall機能における参考：　[次のチャプターへ進む](./Firewall-reference.md)<br>　
+１ MPLS L3-VPNの概要：　[次のチャプターへ進む](./Firewall-ovewview.md) <br>
+２ 事前設定：　[次のチャプターへ進む](./Junos-Firewall-config.md)<br> 
+３ MPLS L3ーVPN設定と確認：　[次のチャプターへ進む](./Firewall-reference.md)<br>　
 
 ## 参考資料
   [JunosにおけるMPLSの概要](https://www.juniper.net/documentation/jp/ja/software/junos/mpls/topics/topic-map/mpls-overview.html)<br>
