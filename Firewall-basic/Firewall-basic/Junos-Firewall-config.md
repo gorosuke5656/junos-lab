@@ -79,8 +79,13 @@ match application any<br>
  
 【現行のルールの前に設定したルールを追加します】<br>
 #insert security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001 before 
-policy ALL_DENY
+policy ALL_DENY<br>
+
 #### 3　設定の反映
+commitコマンドにより設定を反映させます<br>
+commit checkコマンドによりcommitエラーがないか確認するのもよいでしょう<br>
+ 
+
 #### 4　ルール設定の例
 　以下の状況におけるFirewallルール設定例について紹介します<br>
 (1) 定義済みアプリケーションを指定してルールを適用する場合（その１、その２）<br>
