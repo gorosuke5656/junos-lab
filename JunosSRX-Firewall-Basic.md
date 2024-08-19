@@ -3,7 +3,7 @@
 ### 目的
 Juniperネットワーク社製のFirewallであるSRXのFirewall機能について説明します
 ### 内容
-１　Firewallの概要[内容に進む](./Firewall overview.md) <br>
+１　Firewallの概要[次のチャプターへ進む](./Firewall overview.md) <br>
 　  (1)　Firewallとは？　<br>
  　 (2)　Fireallによるフィルタリング方式　<br>
  　 (3)　ステートフルインスペクション型Firewallとは　<br>
