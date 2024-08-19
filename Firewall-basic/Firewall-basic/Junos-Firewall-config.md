@@ -43,13 +43,13 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
                                      /　デフォルトポリシー（廃棄）<br>　　
    　
 ##### (2) 新たなアプリケーションポート番号を指定し、ルールを適用する場合
- 【例：複数のアプリケーションをまとめて指定したい！】　
+ 【例：複数のアプリケーションをまとめて指定したい！】<br>　
     （設定例）<br>
-   application-setを使用して複数のサーバ（サービス）を選択する<br>
+application-setを使用して複数のサーバ（サービス）を選択する<br>
    #set applications application-set MANAGE-SET application junos-ssh<br>
    #set applications application-set MANAGE-SET application junos-telnet<br>
    #set applications application-set MANAGE-SET application junos-telnet<br>
-   設定したapplication-setを使用してFirewallルールを作成する<br>
+設定したapplication-setを使用してFirewallルールを作成する<br>
    #set security policies from-zone trust to-zone untrust policy Server-permit match source-address any<br>
    #set security policies from-zone trust to-zone untrust policy Server-permit match destination-address any<br>
    #set security policies from-zone trust to-zone untrust policy Server-permit match application MANAGE-SET<br>
@@ -62,3 +62,16 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
                                /　デフォルトポリシー（廃棄）<br>
                                
 ##### (3) 指定すべきアドレス範囲が点在している場合
+【例：通常使用しないポート番号（Wel-Knownポート以外）を指定したい！】<br>
+宛先ポートTCP/23000を新たなアプリケーションとして定義（定義名：untrust-server)<br>
+  #set applications application untrust-Server protocols tcp source-port 1-65535 destination-port 23000<br>
+  #set security policies from-zone trust to-zone untrust policy Server-permit match source-address any<br>
+  #set security policies from-zone trust to-zone untrust policy Server-permit match destination-address any<br>
+  #set security policies from-zone trust to-zone untrust policy Server-permit match application untrust-Server<br>
+  #Set security policies from-zone trust to-zone untrust policy Server-permit then permit<br>
+  #set security policies from-zone untrust to-zone trust policy a l-permit match source-address any<br>
+  #set security policies from-zone untrust to-zone trust policy a l-permit match destination-address any<br>
+  #set security policies from-zone untrust to-zone trust policy a l-permit match application any<br>
+  #Set security policies from-zone trust to-zone untrust policy a l-permit then permit<br>
+  #Set security policies default-polices deny-all<br>
+                             /　デフォルトポリシー（廃棄）<br>
