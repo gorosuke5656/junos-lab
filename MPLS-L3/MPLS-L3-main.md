@@ -11,7 +11,7 @@ Juniperネットワーク社のSRXを使用してMPLSを設定および確認し
 ２ 事前設定：　[次のチャプターへ進む](./Junos-Firewall-config.md)<br> 
 ３ MPLS L3ーVPN設定と確認：　[次のチャプターへ進む](./Firewall-reference.md)<br>
 
-★MPLS L3-VPN時におけるpcap　[Pcap](./MPLSーL3.pcap.pcapng)
+★MPLS L3-VPN時におけるpcap　[Pcap](./MPLS-L3.pcap.pcapng)
 
 ## 参考資料
   [JunosにおけるMPLSの概要](https://www.juniper.net/documentation/jp/ja/software/junos/mpls/topics/topic-map/mpls-overview.html)<br>
