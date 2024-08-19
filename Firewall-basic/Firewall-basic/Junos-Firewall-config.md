@@ -14,11 +14,10 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
    　　（address-book/addree-setで作成）　→　すべてを選択（any)する場合は必要ありません<br> 
 　２　ルールの作成、適用<br> 
  　　通信許可/拒否に関するルール等の追加等を実施します<br> 
-   　　（security-policy)<br> 
+   　　（security-policy)<br>
   ３　設定の反映<br>
   　作成したルールを保存します(commit)<br>
     *注意！： commitしないとSRXに設定情報が反映されません！！<br>
-
   ４　通信中のコネクション（セッション）に対して新規Firewallルールを適用<br>
   
 #### 1 　objectの作成
