@@ -78,3 +78,16 @@ application-setを使用して複数のサーバ（サービス）を選択す�
                              /　デフォルトポリシー（廃棄）<br>
 
 ##### (3) 指定すべきアドレス範囲が点在している場合
+（設定例）<br>
+点在しているアドレスをrange-addressでそれぞれ定義し、address-setにまとめる<br>
+  #set security address-book global address Attaker-1 range-address 130.135.110.101 to 130.135.110.110<br>
+  #set security address-book global address Attaker-2 range-address 130.190.100.100 to 130.190.100.103<br>
+  #set security address-book global address-set Attaker-segment address Attaker-1<br>
+  #set security address-book global address-set Attaker-segment address Attaker-2<br>
+address-setにまとめたものを使用してFirewallルールを作成<br>
+  #set security policies from-zone untrust to-zone trust policy Attaker-deny match source-address Attaker-segment<br>
+  #set security policies from-zone untrust to-zone trust policy Attaker-deny match destination-address any<br>
+  #set security policies from-zone untrust to-zone trust policy Attaker-deny match application any<br>
+  #set security policies from-zone untrust to-zone trust policy Attaker-deny then deny<br>
+  #set security policies default-polices permit-all　<br>　　　　　　　　　　　　　　　　　　　　　
+ 　　　　　　　　　　　　　　　/　デフォルトポリシー（通過）<br>
