@@ -1,6 +1,6 @@
 ## JuniperSRXにおけるFirewall機能の概要
 
-### 本資料の目的
+### 本資料は
 Juniperネットワーク社製のFirewallであるSRXのFirewall機能について紹介するためです～ <br>
 （Juniperネットワークス社の公式資料ではありません。。<br>
 　　　　　　　　　　　　リンク先については公式ドキュメントになります）<br>
