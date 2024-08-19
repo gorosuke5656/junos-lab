@@ -58,7 +58,7 @@ application-setを使用して複数のサーバ（サービス）を選択す�
    #set security policies from-zone untrust to-zone trust policy a l-permit match destination-address any<br>
    #set security policies from-zone untrust to-zone trust policy a l-permit match application any<br>
    #set security policies from-zone trust to-zone untrust policy a l-rejecｔ then permit<br>
-   #set security policies default-polices deny-a l<br>　　　　　　　　　　　　　　　　　　　　　　
+   #set security policies default-polices deny-all<br>　　　　　　　　　　　　　　　　　　　　　　
                                /　デフォルトポリシー（廃棄）<br>
                                
 【例2：通常使用しないポート番号（Wel-Knownポート以外）を指定したい！】<br>
