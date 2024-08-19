@@ -1,5 +1,5 @@
 
-## Firewallルール設定について[元に戻る](./JunosSRX-Firewall-Basic.md) <br>
+## Firewallルール設定について　　[元に戻る](./JunosSRX-Firewall-Basic.md) <br>
 ### Firewallルールの概要
 JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するトラヒックを制御します！<br> 
 　【Security Zone】<br>
