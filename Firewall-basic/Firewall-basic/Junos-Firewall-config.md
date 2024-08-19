@@ -29,5 +29,18 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
 (3) 指定すべきアドレス範囲が点在している場合<br>
 　　アドレスブックで指定したいアドレス範囲が点在している。。際に適用する場合<br>
 ##### (1) 定義済みアプリケーションを指定してルールを適用する場合(その１、その２）
+　【例：HTTP通信のみを許可するルールを作成したい！】<br>
+ 　　（設定例）<br>
+   　　#set security policies from-zone trust to-zone untrust policy HTTP-permit match source-address any
+　　　 #set security policies from-zone trust to-zone untrust policy HTTP-permit match destination-address any
+ 　　　#set security policies from-zone trust to-zone untrust policy HTTP-permit match application junos-http
+       #Set security policies from-zone trust to-zone untrust policy HTTP-permit then permit
+set security policies from-zone untrust to-zone trust policy a l-permit match source-address any
+ Set security policies from-zone untrust to-zone trust policy a l-permit match destination-address any
+ set security policies from-zone untrust to-zone trust policy a l-permit match application any
+ Set security policies from-zone trust to-zone untrust policy a l-permit then permit
+ Set security policies default-polices deny-a l　　　　　　　　　　　　　　　　　　　　　　
+/　デフォルトポリシー（廃棄）　
+   　
 ##### (2) 新たなアプリケーションポート番号を指定し、ルールを適用する場合
 ##### (3) 指定すべきアドレス範囲が点在している場合
