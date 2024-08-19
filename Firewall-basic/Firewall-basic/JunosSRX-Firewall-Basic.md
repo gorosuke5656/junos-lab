@@ -1,7 +1,7 @@
 ## JuniperSRXにおけるFirewall機能の概要
 
 ### 本資料の目的
-Juniperネットワーク社製のFirewallであるSRXのFirewall機能について説明します
+Juniperネットワーク社製のFirewallであるSRXのFirewall機能について紹介するためです～
 ### 内容
 １ Firewallの概要：　[次のチャプターへ進む](./Firewall-ovewview.md) <br>
 ２ JunosにおけるFirewall設定：　[次のチャプターへ進む](./Junos-Firewall-config.md)<br> 
