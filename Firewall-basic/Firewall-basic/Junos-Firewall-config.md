@@ -3,7 +3,7 @@
 ### Firewallルールの概要
 JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するトラヒックを制御します！<br> 
 　【Security Zone】<br>
-　　インタフェースに割り当てる仮想的なグループ（SRXではZoneを使用）<br> 
+ 　インタフェースに割り当てる仮想的なグループ（SRXではZoneを使用）<br> 
   【Security Policy】<br>
   　SRXを通過するトラヒックを制御するためのルール<br> 
 ### Firewallルール反映までの流れ
