@@ -24,11 +24,32 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
 #### 1 　objectの作成
 　ルール適用時の対象サブネット（ホスト）等を指定する際に使用 <br>
 (address-bookを複数組み合わせて使用する場合にはaddress-setを使用）<br>
-《設定例》<br>
-異なるＩＰアドレス（サブネット）を複数指定してFirewalポリシーに適用したい。<br>
-　　ADDRESS BOOKの定義　1.1.1.1/32　⇒　AAA　172.16.0.0/16　⇒　BBB　　192.168.1.0/24　⇒　CCC<br>
- ADDRESS SETの定義　　BCSET　⇒　BBB、CCCを組み合わせ<br>
 
+《設定条件の例》<br>
+　異なるIPサブネットを複数指定してFirewalポリシーに適用したい。<br>
+ ADDRESS BOOKの定義　1.1.1.1/32　⇒　AAA　172.16.0.0/16　⇒　BBB　　192.168.1.0/24　⇒　CCC<br>
+ ADDRESS SETの定義　　BCSET　⇒　BBB、CCCを組み合わせ<br>
+《設定例》<br>
+#set security address-book global address AAA 1.1.1.1/32<br>
+#set security address-book global address BBB 172.16.0.0/16 <br>
+#set security address-book global address CCC 192.168.1.0/24<br>
+#set security address-book global address-set BCSET address BBB <br>
+#set security address-book global address-set BCSET address CCC<br>
+ Address-ｓｅｔの適用<br>
+set security policies from-zone A to-zone B policy policy1 match source-address AAA <br>
+set security policies from-zone A to-zone B policy policy1 match destination-address BCSET<br>
+
+
+１　装置全体で適用する場合
+　　set security address-book global address AAA 1.1.1.1/32
+　　set security address-book global address BBB 172.16.0.0/16 
+　　set security address-book global address CCC 192.168.1.0/24
+２　個別のSecurity zoneで適用する場合
+　　 set security  zones security-zones untrust  address-book address AAA 1.1.1.1/32
+     set security  zones security-zones untrust  address-book address BBB  172.16.0.0/16
+     set security  zones security-zones untrust  address-book address CCC 192.168.1.0/24
+ルール適用時の対象サブネット（ホスト）等を指定する際に使用 
+　(address-bookを複数組み合わせて使用する場合にはaddress-setを使用
  
 #### 2　ルールの作成、適用
 #### 3　設定の反映
