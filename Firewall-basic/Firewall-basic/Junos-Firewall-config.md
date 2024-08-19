@@ -43,7 +43,7 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
                                      /　デフォルトポリシー（廃棄）<br>　　
    　
 ##### (2) 新たなアプリケーションポート番号を指定し、ルールを適用する場合
- 【例：複数のアプリケーションをまとめて指定したい！】<br>　
+ 【例１：複数のアプリケーションをまとめて指定したい！】<br>　
     （設定例）<br>
 application-setを使用して複数のサーバ（サービス）を選択する<br>
    #set applications application-set MANAGE-SET application junos-ssh<br>
@@ -61,8 +61,8 @@ application-setを使用して複数のサーバ（サービス）を選択す�
    #set security policies default-polices deny-a l<br>　　　　　　　　　　　　　　　　　　　　　　
                                /　デフォルトポリシー（廃棄）<br>
                                
-##### (3) 指定すべきアドレス範囲が点在している場合
-【例：通常使用しないポート番号（Wel-Knownポート以外）を指定したい！】<br>
+【例2：通常使用しないポート番号（Wel-Knownポート以外）を指定したい！】<br>
+（設定例）<br>
 宛先ポートTCP/23000を新たなアプリケーションとして定義（定義名：untrust-server)<br>
   #set applications application untrust-Server protocols tcp source-port 1-65535 destination-port 23000<br>
 新たなアプリケーションを使用してFirewallルールを作成<br>
@@ -76,3 +76,5 @@ application-setを使用して複数のサーバ（サービス）を選択す�
   #Set security policies from-zone trust to-zone untrust policy a l-permit then permit<br>
   #Set security policies default-polices deny-all<br>
                              /　デフォルトポリシー（廃棄）<br>
+
+##### (3) 指定すべきアドレス範囲が点在している場合
