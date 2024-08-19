@@ -56,7 +56,6 @@ address-book、address-setの適用については以下の２つの方法があ
  
 #### 2　ルールの作成、適用
  ![Diagram](./image/Firewall-rule.jpg)
-
 ##### Firewallルールにおけるinsertコマンドについて
 一般的にFirewallにおけるルールは先頭に記述したFirewallルールが優先されます。<br>
 Juniper SRXも例外ではありません。。<br>
