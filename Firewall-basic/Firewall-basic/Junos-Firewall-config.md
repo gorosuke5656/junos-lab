@@ -106,3 +106,4 @@ Policy-rematchフラグが有効の場合におけるJunos OSが実行するア�
 　　　　-送信元アドレス、宛先アドレス、アプリケーションフィールドの一部の組み合わせを変更する<br>
 　　　　　　　　　　　　　　　　　　：  Junos OSがポリシールックアップを再評価する・・<br>
 　　　　　　　　　　　　　　　　　　　　（こちらの方がベスト！）<br>
+                    https://www.juniper.net/assets/jp/jp/local/pdf/others/JNCIS-SEC-1_.pdf
