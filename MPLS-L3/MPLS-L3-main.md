@@ -14,8 +14,8 @@ Juniperネットワーク社のSRXを使用してMPLSを設定および確認し
 ★MPLS L3-VPN時におけるpcap　[Pcap](./MPLS-L3.pcap.pcapng)<br>
 
 ★設定時のconfig<br>
-  PE-1(SRX100H)　[Pcap](./MPLS-L3.pcap.pcapng)<br>
-  PE-2(SRX100B)　[Pcap](./MPLS-L3.pcap.pcapng)<br>
+  PE-1(SRX100H)　[config](./PE-1(SRX100H)-config)<br>
+  PE-2(SRX100B)　[config](./PE-2(SRX100B)-config)<br>
 
 ## 参考資料
   [JunosにおけるMPLSの概要](https://www.juniper.net/documentation/jp/ja/software/junos/mpls/topics/topic-map/mpls-overview.html)<br>
