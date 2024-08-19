@@ -5,7 +5,9 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
 【Security Zone】<br>
 　インタフェースに割り当てる仮想的なグループ（SRXではZoneを使用）<br> 
 【Security Policy】<br>
-　SRXを通過するトラヒックを制御するためのルール<br> 
+　SRXを通過するトラヒックを制御するためのルール<br>
+
+ ★JunosにおけるZoneとSecurity Policyのイメージ<br>
    
 ### Firewallルール反映までの流れ
 〇事前にZoneとInterfaceを設定した上で以下の流れで実施します<br> 
