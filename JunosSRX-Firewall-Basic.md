@@ -7,8 +7,7 @@ Juniperネットワーク社製のFirewallであるSRXのFirewall機能につい
 
 2　JunosにおけるFirewall設定[次のチャプターへ進む](./Junos-Firewall-config.md)<br>
  
-３　参考<br>
-　  (1)　PreDefineアプリケーションの設定と確認　<br>
+３　参考[次のチャプターへ進む](./Firewall-reference.md)<br>　  (1)　PreDefineアプリケーションの設定と確認　<br>
  　 
    
 ４　参考資料<br>
