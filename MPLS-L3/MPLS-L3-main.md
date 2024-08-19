@@ -16,7 +16,7 @@ Juniperネットワーク社のSRXを使用してMPLSを設定および確認し
 ★設定時のconfig<br>
   PE-1(SRX100H)　[config](./PE-1(SRX100H)-config)<br>
   PE-2(SRX100B)　[config](./PE-2(SRX100B)-config)<br>
-  CE(SRX240)　   [config](./CE(SRX240)-config)<br>
+  CE(SRX240)     [config](./CE(SRX240)-config)<br>
   
 ## 参考資料
   [JunosにおけるMPLSの概要](https://www.juniper.net/documentation/jp/ja/software/junos/mpls/topics/topic-map/mpls-overview.html)<br>
