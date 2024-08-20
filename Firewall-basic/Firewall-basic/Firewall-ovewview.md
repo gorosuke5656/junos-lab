@@ -30,7 +30,9 @@ Firewallにおけるフィルタリング方式は以下の３つに分類され
 　テーブルの内容：<br>
  　送信元IPアドレス、宛先IPアドレス、プロトコル、送信元ポート番号、宛先ポート番号、コネクションの状態（、アイドルタイムアウト　などがあります<br> 
  
- ![Diagram](./image/statefull.jpg)
+ ![Diagram](./image/statefull.jpg)<br>
+
+ 【ステートフルインスペクション形Firewallのイメージ】<br>
  
 
  ## JuniperSRXにおけるFirewallルールとコネクション（セッション）テーブルの確認例
