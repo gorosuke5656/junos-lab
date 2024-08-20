@@ -32,7 +32,7 @@ Firewallにおけるフィルタリング方式は以下の３つに分類され
  
  ![Diagram](./image/statefull.jpg)<br>
 
- 　　　　　　　　　　　　　　　**【ステートフルインスペクション形Firewallのイメージ】**<br>
+ 　　　　　　　　　　　**【ステートフルインスペクション形Firewallのイメージ】**<br>
 
 
 
