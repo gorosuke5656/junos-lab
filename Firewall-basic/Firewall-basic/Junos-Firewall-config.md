@@ -1,9 +1,9 @@
 
-## Firewallルール設定について　　
+# Firewallルール設定について　　
 
 [元に戻る](./JunosSRX-Firewall-Basic.md) <br>
 
-### Firewallルールの概要
+## Firewallルールの概要
 JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するトラヒックを制御します！<br> 
 【Security Zone】<br>
 　インタフェースに割り当てる仮想的なグループ（SRXではZoneを使用）<br> 
@@ -12,7 +12,7 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
 
  ★JunosにおけるZoneとSecurity Policyのイメージ<br>
    
-### Firewallルール反映までの流れ
+## Firewallルール反映までの流れ
 〇事前にZoneとInterfaceを設定した上で以下の流れで実施します<br> 
 　１　Objectの作成<br> 
  　　対象となるアドレス、アプリケーション情報を作成します<br> 
@@ -24,7 +24,7 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
   　作成したルールを保存します(commit)<br>
     *注意！： commitしないとSRXに設定情報が反映されません！！<br>
   
-#### 1 　objectの作成
+### 1 　objectの作成
 　ルール適用時の対象サブネット（ホスト）等を指定する際に使用 <br>
 (address-bookを複数組み合わせて使用する場合にはaddress-setを使用）<br>
 
@@ -63,9 +63,9 @@ address-book、address-setの適用については以下の２つの方法があ
 　#set security  zones security-zones untrust  address-book address CCC 192.168.1.0/24<br>
 
  
-#### 2　ルールの作成、適用
+### 2　ルールの作成、適用
  ![Diagram](./image/Firewall-rule.jpg)
-##### Firewallルールにおけるinsertコマンドについて
+#### Firewallルールにおけるinsertコマンドについて
 一般的にFirewallにおけるルールは先頭に記述したFirewallルールが優先されます。<br>
 Juniper SRXも例外ではありません。。<br>
 
@@ -89,20 +89,27 @@ match application any<br>
 #insert security policies from-zone TRUST to-zone UNTRUST policy TRUST_UNTRUST_POLICY-0001 before 
 policy ALL_DENY<br>
 
-#### 3　設定の反映
+### 3　設定の反映
 commitコマンドにより設定を反映させます<br>
 commit checkコマンドによりcommitエラーがないか確認するのもよいでしょう<br>
- 
 
-#### 4　ルール設定の例
-　以下の状況におけるFirewallルール設定例について紹介します<br>
+
+### 3　JuniperSRXでステートフルインスペクション形Firewallの動作を確認してみましょう！
+
+
+### 4　JuniperSRXにおけるFirewallルール設定の例
+　ここでは以下のシーンにおけるFirewallルール設定例について紹介します<br>
+
 (1) 定義済みアプリケーションを指定してルールを適用する場合（その１、その２）<br>
 　　＊Well-knonwポートを使用するアプリケーション（HTTPなど）に適用する場合<br>
+
 (2) 新たなアプリケーションポート番号を指定し、ルールを適用する場合<br>
 　　＊独自アプリケーションなど普段使用しないポート番号に適用する場合<br>
+
 (3) 指定すべきアドレス範囲が点在している場合<br>
 　　アドレスブックで指定したいアドレス範囲が点在している。。際に適用する場合<br>
-##### (1) 定義済みアプリケーションを指定してルールを適用する場合(その１、その２）
+
+#### (1) 定義済みアプリケーションを指定してルールを適用する場合(その１、その２）
 　【例：HTTP通信のみを許可するルールを作成したい！】<br>
  　　（設定例）<br>
    #set security policies from-zone trust to-zone untrust policy HTTP-permit match source-address any<br>
@@ -116,7 +123,7 @@ commit checkコマンドによりcommitエラーがないか確認するのも�
    #Set security policies default-polices deny-all<br>　　　　　　　　　　　　　　　　　　　　　　
                                      /　デフォルトポリシー（廃棄）<br>　　
    　
-##### (2) 新たなアプリケーションポート番号を指定し、ルールを適用する場合
+#### (2) 新たなアプリケーションポート番号を指定し、ルールを適用する場合
  【例１：複数のアプリケーションをまとめて指定したい！】<br>　
     （設定例）<br>
 application-setを使用して複数のサーバ（サービス）を選択する<br>
@@ -137,9 +144,9 @@ application-setを使用して複数のサーバ（サービス）を選択す�
                                
 【例2：通常使用しないポート番号（Wel-Knownポート以外）を指定したい！】<br>
 （設定例）<br>
-宛先ポートTCP/23000を新たなアプリケーションとして定義（定義名：untrust-server)<br>
+　　宛先ポートTCP/23000を新たなアプリケーションとして定義（定義名：untrust-server)<br>
   #set applications application untrust-Server protocols tcp source-port 1-65535 destination-port 23000<br>
-新たなアプリケーションを使用してFirewallルールを作成<br>
+　　新たなアプリケーションを使用してFirewallルールを作成<br>
   #set security policies from-zone trust to-zone untrust policy Server-permit match source-address any<br>
   #set security policies from-zone trust to-zone untrust policy Server-permit match destination-address any<br>
   #set security policies from-zone trust to-zone untrust policy Server-permit match application untrust-Server<br>
@@ -151,7 +158,7 @@ application-setを使用して複数のサーバ（サービス）を選択す�
   #Set security policies default-polices deny-all<br>
                              /　デフォルトポリシー（廃棄）<br>
 
-##### (3) 指定すべきアドレス範囲が点在している場合
+#### (3) 指定すべきアドレス範囲が点在している場合
 （設定例）<br>
 点在しているアドレスをrange-addressでそれぞれ定義し、address-setにまとめる<br>
   #set security address-book global address Attaker-1 range-address 130.135.110.101 to 130.135.110.110<br>
@@ -165,10 +172,10 @@ address-setにまとめたものを使用してFirewallルールを作成<br>
   #set security policies from-zone untrust to-zone trust policy Attaker-deny then deny<br>
   #set security policies default-polices permit-all　<br>　　　　　　　　　　　　　　　　　　　　　
  　　　　　　　　　　　　　　　/　デフォルトポリシー（通過）<br>
-#### 4　通信中のコネクション（セッション）に対する新規新規Firewallルールを適用
+### 4　通信中のコネクション（セッション）に対する新規新規Firewallルールを適用
 通信中のコネクション（セッション）に対して新たにルールを適用して切断したい！<br>
 　　　　　　　　　　　　　　　→　　　　ルールを適用するには各種条件があります！！<br>
-##### JunosSRXにおけるPolicy-rematchフラグの設定について
+#### JunosSRXにおけるPolicy-rematchフラグの設定について
 Policy-rematchフラグが有効の場合におけるJunos OSが実行するアクションは以下の通りです<br>
 　　　　-ポリシーを挿入する：　影響なし<br>
 　　　　-ポリシーのActionフィールドをpermitからdenyまたはrejectのいずれかに変更する<br>
