@@ -10,7 +10,8 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
 【Security Policy】<br>
 　SRXを通過するトラヒックを制御するためのルール<br>
 
- ★JunosにおけるZoneとSecurity Policyのイメージ<br>
+ **JunosにおけるZoneとSecurity Policyのイメージ**<br>
+ ![Diagram](./image/zone,policy.jpg)<br>
    
 ## Firewallルール反映までの流れ
 〇事前にZoneとInterfaceを設定した上で以下の流れで実施します<br> 
