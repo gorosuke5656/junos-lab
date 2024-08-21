@@ -13,6 +13,9 @@ Juniperネットワーク社製のFirewallであるSRXのFirewall機能につい
 ## 参考資料
   [Security Policy の CLI 設定](https://www.juniper.net/content/dam/www/assets/additional-resources/jp/ja/301-security-policy.pdf)<br>
   [JuniperSRX日本語マニュアル](https://junipernetworks.zendesk.com/hc/ja/articles/6484920105103-SRX-%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB)<br>
+　Juniperでは定期的にハンズオンを実施しているようなのでお近くの方は是非<br>
+ 　以下のサイトから申し込み及び実際のテキストがダウンロードできます！<br>
+  https://register.events.juniper.net/jp-junos-handson<br>
    
 
 ## その他
