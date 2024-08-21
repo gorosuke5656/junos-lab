@@ -33,15 +33,20 @@ Firewallにおけるフィルタリング方式は以下の３つに分類され
   
 
   　**【ステートフルインスペクション形Firewallのイメージ】**<br>
+  
+  ![Diagram](./image/statefull.jpg)<br>
+
+　**【ステートフルインスペクション形Firewallの動作(その１）】**<br>
+　![Diagram](./image/statefull-motion-1.jpg)<br>
+
+ **【ステートフルインスペクション形Firewallの動作(その２）】**<br>
+　![Diagram](./image/statefull-motion-2.jpg)<br>
+
+  **【ステートフルインスペクション形Firewallの動作(その３）】**<br>
+　![Diagram](./image/statefull-motion-3.jpg)<br>
  
- ![Diagram](./image/statefull.jpg)<br>
+
+ Juniper SRXのステートフルインスペクション形Firewallの動作については<br>
+ 　こちらで紹介します
 
  　　　　　　　　　　
-
-
-
- 
-
- ## JuniperSRXにおけるFirewallルールとコネクション（セッション）テーブルの確認例
- 　ここではJuniperSRXにおけるFirewallルールとコネクション（セッション）テーブルの例を確認します<br>
-  
