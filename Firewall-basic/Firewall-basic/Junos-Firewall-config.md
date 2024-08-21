@@ -1,5 +1,5 @@
 
-# Firewallルール設定について　　
+# JuniperSRXにおけるFirewallルール設定について　　
 
 [元に戻る](./JunosSRX-Firewall-Basic.md) <br>
 
