@@ -4,7 +4,11 @@
 ## Firewallとは
 ファイアウォール（英: Firewall）は、コンピュータネットワークにおいて、ネットワークの結節、コンピュータセキュリティの保護、その他の目的のため、通過させてはいけない通信を阻止するシステムを指す。<br> 
 
-https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB
+https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB<br>
+
+　**【Firewallのイメージ】**<br>
+  
+  ![Diagram](./image/Firewall-overview.jpg)<br>
 
 ## Firewallによるフィルタリング方式
 Firewallにおけるフィルタリング方式は以下の３つに分類されます<br> 
