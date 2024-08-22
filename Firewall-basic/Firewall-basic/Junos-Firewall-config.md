@@ -24,6 +24,9 @@ JuniperSRXにおいてはSecurity ZoneとSecurity Policyにより通過するト
   ３　設定の反映<br>
   　作成したルールを保存します(commit)<br>
     *注意！： commitしないとSRXに設定情報が反映されません！！<br>
+
+   **JunosにおけるFirewallルール反映までの流れ**<br>
+ ![Diagram](./image/Firewall-rule-flow.jpg)<br>
   
 ### 1 　objectの作成
 　ルール適用時の対象サブネット（ホスト）等を指定する際に使用 <br>
