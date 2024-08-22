@@ -51,6 +51,6 @@ Firewallにおけるフィルタリング方式は以下の３つに分類され
  
 
  Juniper SRXのステートフルインスペクション形Firewallの動作についてはこちらで紹介します<br>
-[JuniperSRXにおけるFirewallの設定](./JunosSRX-Firewall-config.md) <br>
+[JuniperSRXにおけるFirewallの設定](./Firewall-config.md) <br>
 
  　　　　　　　　　　
