@@ -104,7 +104,6 @@ commit checkコマンドによりcommitエラーがないか確認するのも�
  ![Diagram](./image/Firewall-rule-example1.jpg)<br>
  ![Diagram](./image/Firewall-rule-example2.jpg)<br>
  ![Diagram](./image/Firewall-rule-example3.jpg)<br>
- ![Diagram](./image/Firewall-rule-example4.jpg)<br>
  ![Diagram](./image/Firewall-rule-example5.jpg)<br>
  ![Diagram](./image/Firewall-rule-example6.jpg)<br>
  ![Diagram](./image/Firewall-rule-example7.jpg)<br>
