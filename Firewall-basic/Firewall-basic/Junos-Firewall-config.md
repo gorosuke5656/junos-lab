@@ -100,7 +100,8 @@ commit checkコマンドによりcommitエラーがないか確認するのも�
 
 
 ### 3　JuniperSRXでステートフルインスペクション形Firewallの動作を確認してみましょう！
-**JunosにおけるZoneとSecurity Policyのイメージ**<br>
+**JuniperSRXにおける動作確認例**<br>
+
  ![Diagram](./image/Firewall-rule-example1.jpg)<br>
 
 
