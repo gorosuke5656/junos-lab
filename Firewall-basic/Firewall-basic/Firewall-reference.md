@@ -15,6 +15,10 @@
 TCPアプリケーションのタイムアウト値を確認する場合は以下で確認します<br> 
 　>request pfe execute target fpc0 command "show usp app-def tcp"<br> 
 
+（参考）<br> 
+[Juniper]SRX アプリケーション別のタイムアウト設定<br>
+ https://www.harumaki.net/2014/01/28/juniper-srx-atimeout-configure/
+
 
 
 ### Juniper SRX（Junos OS） 非対称ルーティング を許可する方法
