@@ -11,6 +11,8 @@
 ### ６　広告したいNWを指定してBGPのエクスポートポリシーに適用します
 ### ７　再度ピアの確認と経路情報の送受信を確認します
 
+
+
 ### １　ＡＳ内で動作するIGPとしてOSPFを設定します。
 【VR1】
 　#set routing-instances VR1 protocols ospf area 0 interface fe-0/0/5.0<br>
