@@ -31,9 +31,9 @@
 Groups: 2 Peers: 2 Down peers: 0<br>
 Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped... <br>
 50.5.1.1              65001        657        657       0       0     4:53:23 Establ<br>
-  VR1.inet.0: 0/1/1/0<br>
+　VR1.inet.0: 0/1/1/0<br>
 50.6.1.1              65001        656        657       0       0     4:53:23 Establ<br>
-  VR2.inet.0: 0/1/1/0<br>
+　VR2.inet.0: 0/1/1/0<br>
 
 
 ### 4 ピアが張れていますが、経路情報は送受信されていないことを確認します
