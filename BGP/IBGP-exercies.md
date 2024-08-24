@@ -72,5 +72,15 @@ inet.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)<br>
   　　Prefix                  Nexthop              MED     Lclpref    AS path<br>
   　　　10.1.6.0/24             50.6.1.1             100        I<br>
 
+  **【IBGPを設定します】**<br>
+  ![Diagram](./images/ibgp-topology-to-cisco.jpg)<br>
+
+  **【IBGPを設定します】**<br>
+  ![Diagram](./images/ibgp-topology-to-cisco-cisco-config.jpg)<br>
+
+ 
+  **【IBGPを設定します】**<br>
+  ![Diagram](./images/iibgp-topology-to-cisco-juniper-config.jpg)<br> 
+
   
 
