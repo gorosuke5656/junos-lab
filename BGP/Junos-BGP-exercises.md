@@ -23,8 +23,11 @@ Juniperネットワーク社のJunosを使用したBGPネットワーク演習�
   ![Diagram](./images/bgp-v4-topology.jpg)<br>
 
 
+
 ２　BGPネットワーク演習(IPv4/IPv6)<br>
 　(1) AS内でのIBGP設定(IS-IS設定）と確認：　[次のチャプターへ進む](./IBGP-exercies-IS-IS.md) <br>
+
+
 
  **【BGPネットワーク演習(V4/V6）のトポロジー】**<br>
   ![Diagram](./images/bgp-v6-topology.jpg)<br>
