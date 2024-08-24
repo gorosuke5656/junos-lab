@@ -19,9 +19,15 @@ Juniperネットワーク社のJunosを使用したBGPネットワーク演習�
 　(8) AS間の経路冗長化の設定と確認[次のチャプターへ進む](./AS_Redandace.md) <br>
 　(9) BGPルートリフレクターの設定と確認[次のチャプターへ進む](./BGP-route-refrecter.md) <br> 
 
+ **【BGPネットワーク演習(V4）のトポロジー】**<br>
+  ![Diagram](./images/bgp-v4-topology.jpg)<br>
+
 
 ２　BGPネットワーク演習(IPv4/IPv6)<br>
 　(1) AS内でのIBGP設定(IS-IS設定）と確認：　[次のチャプターへ進む](./IBGP-exercies-IS-IS.md) <br>
+
+ **【BGPネットワーク演習(V4/V6）のトポロジー】**<br>
+  ![Diagram](./images/bgp-v6-topology.jpg)<br>
 
 
 ## 参考資料
