@@ -62,15 +62,15 @@ inet.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)<br>
  #### 再度ピアの確認及び経路受信を確認します
 　show bgp neighbor instance VR1<br>
  　(途中省略)<br>
-  　Received prefixes:            １　　　　　　　　　　　→　経路受信あり
-    Advertised prefixes:          １　　　　　　　　　　　→　経路送信あり
+  　Received prefixes:            １　　　　　　　　　　　→　経路受信あり<br>
+    Advertised prefixes:          １　　　　　　　　　　　→　経路送信あり<br>
 　
- show route receive-protocol bgp 50.6.1.1<br>
- inet.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)<br>
-　VR1.inet.0: 11 destinations, 11 routes (11 active, 0 holddown, 0 hidden)<br>
-　VR2.inet.0: 11 destinations, 12 routes (11 active, 0 holddown, 0 hidden)<br>
-  Prefix                  Nexthop              MED     Lclpref    AS path<br>
-  10.1.6.0/24             50.6.1.1             100        I<br>
+　 show route receive-protocol bgp 50.6.1.1<br>
+ 　　inet.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)<br>
+　　　　VR1.inet.0: 11 destinations, 11 routes (11 active, 0 holddown, 0 hidden)<br>
+　　　　VR2.inet.0: 11 destinations, 12 routes (11 active, 0 holddown, 0 hidden)<br>
+  　　Prefix                  Nexthop              MED     Lclpref    AS path<br>
+  　　　10.1.6.0/24             50.6.1.1             100        I<br>
 
   
 
