@@ -2,6 +2,9 @@
 
 # IBGPによるネットワーク演習
 
+**【IBGPを設定します】**<br>
+  ![Diagram](./images/ibgp-topology.jpg)<br>
+
 ## 実習内容<br>
 ### １　AS内で動作するIGPとしてOSPFを設定します。
 【VR1】
