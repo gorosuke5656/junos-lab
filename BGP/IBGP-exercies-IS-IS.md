@@ -18,9 +18,9 @@ IS-ISはOSPFと同様なリンクステートルーティングプロトコル<b
    
 （参考）<br>
 IS-ISはじめの一歩<br>
-     https://www.janog.gr.jp/meeting/janog44/program/isis/<br>
+　https://www.janog.gr.jp/meeting/janog44/program/isis/<br>
 IS-IS　wikipedia<br>
-　　　　https://ja.wikipedia.org/wiki/IS-IS<br>
+　https://ja.wikipedia.org/wiki/IS-IS<br>
 
 **IS-ISにおけるNSAPアドレスフォーマットについて**
 
