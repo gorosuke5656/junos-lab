@@ -86,6 +86,15 @@ inet.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)<br>
 
 
   #### 参考：policy-optionsにおけるroute-filterの使い方
+  　route-filterはIPアドレスをキーにして経路制御する場合に使用する<br>
+   　以下のオプションがある<br>
+    　exact<br>
+     　　指定したプレフィックスのみ指定する<br>
+      orlonger<br>
+      　　指定した以上のプレフィックスを指定する<br>
+      longer<br>
+      　　指定したプレフィックスより長いもの<br>
+        
 
   
 
