@@ -24,7 +24,7 @@ Juniperネットワーク社のJunosを使用したBGPネットワーク演習�
 
 ## 参考資料
   [Junos　BGPユーザガイド](https://www.juniper.net/documentation/jp/ja/software/junos/bgp/topics/topic-map/bgp-overview.html)<br>
-  [Junos BGPRouting](https://www.infraexpert.com/infra/study04.html)<br>
+  [Junos BGP Routing](https://www.infraexpert.com/infra/study04.html)<br>
    
 
 ## その他　
