@@ -8,8 +8,7 @@ IS-ISはOSPFと同様なリンクステートルーティングプロトコル<b
  リンクステートデータベース（LSDB）により最小経路（SPF）を計算<br>
  もともとOSIにおいてCLNS（Connectionless Network　ServiceのIGPとして制定<br>
 　　　　　　　　　　　　　　　　　　　　　　→　IS-ISの情報交換にはOSIパケットを使用<br>
-**Intergrated IS-ISとは**
-Intergrated IS-IS(統合IS-IS）<br>
+**Intergrated IS-IS(統合IS-IS）とは**<br>
    IETFでTCP/IPに拡張したものでCLNS上でも IP上でも機能するように改良<br>
 
 統合IS-ISでは以下のように使用される<br>
