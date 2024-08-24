@@ -47,8 +47,16 @@ Advertised prefixes:          0　　　　　　　　　　　→　経路送�
 show route receive-protocol bgp 50.6.1.1<br>
 inet.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)<br>
 　VR1.inet.0: 11 destinations, 11 routes (11 active, 0 holddown, 0 hidden)<br>
- 
   VR2.inet.0: 11 destinations, 11 routes (11 active, 0 holddown, 0 hidden)<br>
+
+つまりこの状態ではBGPで経路を学習していないことがわかります<br>
+
+#### Poricy-optionsによる広告経路の指定
+　広告したいNWを指定して、BGPのエクスポートポリシーに適用します
+  （例：VR1からVR2に対してBGPにより経路を広告させる場合）<br>
+　#set policy-options policy-statement INTERNAL-NETWORK-VR1 term 1 from route-filter 10.1.6.0/24 exact<br>
+　#set policy-options policy-statement INTERNAL-NETWORK-VR1 term 1 then accept<br>
+　#set routing-instances VR1 protocols bgp group INTERNAL export INTERNAL-NETWORK-VR1<br>
 
   
 
