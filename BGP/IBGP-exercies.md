@@ -38,10 +38,10 @@
 
 ### 4 ピアが張れていますが、経路情報は送受信されていないことを確認します
 #### BGPネイバーの確認
-> show bgp neighbor instance VR1<br>
+show bgp neighbor instance VR1<br>
 (途中省略)<br>
-    Received prefixes:            0　　　　　　　　　　　→　経路受信もなし<br>
-    Advertised prefixes:          0　　　　　　　　　　　→　経路送信もなし<br>
+Received prefixes:            0　　　　　　　　　　　→　経路受信もなし<br>
+Advertised prefixes:          0　　　　　　　　　　　→　経路送信もなし<br>
 
 #### BGPピアに対する受信経路の確認
 >show route receive-protocol bgp 50.6.1.1<br>
