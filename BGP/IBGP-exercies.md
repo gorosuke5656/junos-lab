@@ -39,7 +39,7 @@
 ### 4 ピアが張れていますが、経路情報は送受信されていないことを確認します
 #### BGPネイバーの確認
 > show bgp neighbor instance VR1<br>
-　　(途中省略)<br>
+(途中省略)<br>
     Received prefixes:            0　　　　　　　　　　　→　経路受信もなし<br>
     Advertised prefixes:          0　　　　　　　　　　　→　経路送信もなし<br>
 
