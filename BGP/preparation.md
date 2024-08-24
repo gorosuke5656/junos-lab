@@ -1,7 +1,7 @@
 [目次に戻る](./Junos-BGP-exercises.md) <br>
 
 **事前準備で以下を実施します**
-
+*事前準備で以下を実施します*
 □工場出荷時設定にして改めてホスト名、rootユーザ/adminユーザを設定<br>
 
 admin@SRX100#load　factory-default<br>
