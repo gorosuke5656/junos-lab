@@ -29,7 +29,7 @@
 ### 3 設定後、対向のルータ（VR2）とピアが張れていることを確認します
 　> show bgp summary<br>
 　　Groups: 2 Peers: 2 Down peers: 0<br>
-　　Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped... 
+　　Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...<br> 
 　　　50.5.1.1              65001        657        657       0       0     4:53:23 Establ<br>
 　　　　VR1.inet.0: 0/1/1/0<br>
 　　　50.6.1.1              65001        656        657       0       0     4:53:23 Establ<br>
