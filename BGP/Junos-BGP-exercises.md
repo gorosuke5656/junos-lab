@@ -10,15 +10,15 @@ Juniperネットワーク社のJunosを使用したBGPネットワーク演習�
 
  **1 BGPネットワーク演習(IPv4)**
  
-  (1) AS内でのIBGP設定と確認：　[次のチャプターへ進む](./IBGP-exercies.md) <br>
-　(2) AS外へのEBGP設定と確認：　[次のチャプターへ進む](./EBGP-exercies.md) <br>
-　(3) NEXT-HOP属性変更による確認：　[次のチャプターへ進む](./NEXT-HOP-exercies.md) <br>
-　(4) Local Preference値属性変更による確認　[次のチャプターへ進む](./Local Preference-exercies.md) <br>
-　(5) MED値属性変更による確認　[次のチャプターへ進む](./MED-exercies.md) <br>
-　(6) AS_Pathによるフィルタリング設定と確認　[次のチャプターへ進む](./AS_Path-filter-exercies.md) <br>
-　(7) community属性の使用及び確認　[次のチャプターへ進む](./AS_Path-filter-exercies.md) <br>
-　(8) AS間の経路冗長化の設定と確認[次のチャプターへ進む](./AS_Redandace.md) <br>
-　(9) BGPルートリフレクターの設定と確認[次のチャプターへ進む](./BGP-route-refrecter.md) <br> 
+ (1) AS内でのIBGP設定と確認：　[次のチャプターへ進む](./IBGP-exercies.md) <br>
+ (2) AS外へのEBGP設定と確認：　[次のチャプターへ進む](./EBGP-exercies.md) <br>
+ (3) NEXT-HOP属性変更による確認：　[次のチャプターへ進む](./NEXT-HOP-exercies.md) <br>
+ (4) Local Preference値属性変更による確認　[次のチャプターへ進む](./Local Preference-exercies.md) <br>
+ (5) MED値属性変更による確認　[次のチャプターへ進む](./MED-exercies.md) <br>
+ (6) AS_Pathによるフィルタリング設定と確認　[次のチャプターへ進む](./AS_Path-filter-exercies.md) <br>
+ (7) community属性の使用及び確認　[次のチャプターへ進む](./AS_Path-filter-exercies.md) <br>
+ (8) AS間の経路冗長化の設定と確認[次のチャプターへ進む](./AS_Redandace.md) <br>
+ (9) BGPルートリフレクターの設定と確認[次のチャプターへ進む](./BGP-route-refrecter.md) <br> 
 
  **【BGPネットワーク演習(V4）のトポロジー】**<br>
   ![Diagram](./images/bgp-v4-topology.jpg)<br>
