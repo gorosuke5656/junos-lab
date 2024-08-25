@@ -9,6 +9,7 @@ Juniperネットワーク社のJunosを使用したBGPネットワーク演習�
 〇　環境準備：　[次のチャプターへ進む](./preparation.md) <br>
 
  **1 BGPネットワーク演習(IPv4)**
+ 
   (1) AS内でのIBGP設定と確認：　[次のチャプターへ進む](./IBGP-exercies.md) <br>
 　(2) AS外へのEBGP設定と確認：　[次のチャプターへ進む](./EBGP-exercies.md) <br>
 　(3) NEXT-HOP属性変更による確認：　[次のチャプターへ進む](./NEXT-HOP-exercies.md) <br>
