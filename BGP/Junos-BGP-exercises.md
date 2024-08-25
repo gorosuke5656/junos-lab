@@ -6,9 +6,9 @@ Juniperネットワーク社のJunosを使用したBGPネットワーク演習�
 　　　　　　　　　　　　私自身が受講した講習及び自宅で検証した内容を元に作成しています）<br>
 
 ## 使用した器材
-　juniper SRX100×３台<br>
-  juniper vSRX(Ver22）×１台<br>
-  Cisco867VAE　×１台<br>
+juniper SRX100×３台<br>
+juniper vSRX(Ver22）×１台<br>
+Cisco867VAE　×１台<br>
        
 ## 内容<br>
 〇　環境準備：　[次のチャプターへ進む](./preparation.md) <br>
