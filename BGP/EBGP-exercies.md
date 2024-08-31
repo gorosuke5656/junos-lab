@@ -46,4 +46,28 @@
   
  **【BFDを使用した構成】**<br>
  ![Diagram](./images/ebgp-bfd-3.jpg)<br>
+ 
+ ### BFDの設定例<br>
+ **【AS65000(CORE)での設定】**<br>
+
+ AS65001配下のサブネット(50.5.1.1/32、50.6.1.1/32）に対するStatic経路をBFDで記述<br>
+
+
+set routing-instances VR2 routing-options static route 1.1.1.1/32 next-hop 172.16.200.1<br>
+
+set routing-instances VR2 routing-options static route 50.5.1.1/32 next-hop 172.16.5.254<br>
+set routing-instances VR2 routing-options static route 50.5.1.1/32 qualified-next-hop 172.16.6.254 
+preference 10<br>
+set routing-instances VR2 routing-options static route 50.5.1.1/32 qualified-next-hop 172.16.6.254
+bfd-liveness-detection minimum-interval 60<br>
+set routing-instances VR2 routing-options static route 50.5.1.1/32 bfd-liveness-detection 
+minimum-interval 60<br>
+
+
+
+set routing-instances VR2 routing-options static route 50.6.1.1/32 next-hop 172.16.6.254<br>
+set routing-instances VR2 routing-options static route 50.6.1.1/32 qualified-next-hop 172.16.5.254 
+bfd-liveness-detection minimum-interval 60<br>
+set routing-instances VR2 routing-options static route 50.6.1.1/32 bfd-liveness-detection 
+minimum-interval 60<br>
 
