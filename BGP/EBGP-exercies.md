@@ -52,7 +52,6 @@
 
  AS65001配下のサブネット(50.5.1.1/32、50.6.1.1/32）に対するStatic経路をBFDで記述<br>
 
-
 set routing-instances VR2 routing-options static route 1.1.1.1/32 next-hop 172.16.200.1<br>
 
 set routing-instances VR2 routing-options static route 50.5.1.1/32 next-hop 172.16.5.254<br>
@@ -63,11 +62,50 @@ bfd-liveness-detection minimum-interval 60<br>
 set routing-instances VR2 routing-options static route 50.5.1.1/32 bfd-liveness-detection 
 minimum-interval 60<br>
 
-
-
 set routing-instances VR2 routing-options static route 50.6.1.1/32 next-hop 172.16.6.254<br>
 set routing-instances VR2 routing-options static route 50.6.1.1/32 qualified-next-hop 172.16.5.254 
 bfd-liveness-detection minimum-interval 60<br>
 set routing-instances VR2 routing-options static route 50.6.1.1/32 bfd-liveness-detection 
 minimum-interval 60<br>
 
+
+ AS65001配下のサブネット(10.1.5.0/24、10.1.6.0/24）に対するStatic経路をBFDで記述<br>
+set routing-instances VR2 routing-options static route 10.1.5.0/24 next-hop 172.16.5.254<br>
+set routing-instances VR2 routing-options static route 10.1.5.0/24 qualified-next-hop 172.16.6.254 
+preference 10<br>
+set routing-instances VR2 routing-options static route 10.1.5.0/24 qualified-next-hop 172.16.6.254 
+bfd-liveness-detection minimum-interval 60<br>
+set routing-instances VR2 routing-options static route 10.1.5.0/24 bfd-liveness-detection 
+minimum-interval 60<br>
+
+set routing-instances VR2 routing-options static route 10.1.6.0/24 next-hop 172.16.6.254<br>
+set routing-instances VR2 routing-options static route 10.1.6.0/24 qualified-next-hop 172.16.5.254 
+preference 10<br>
+set routing-instances VR2 routing-options static route 10.1.6.0/24 qualified-next-hop 172.16.5.254 
+bfd-liveness-detection minimum-interval 60<br>
+set routing-instances VR2 routing-options static route 10.1.6.0/24 bfd-liveness-detection 
+minimum-interval 60<br>
+
+
+**【AS65001(VR1/VR2)での設定】**<br>
+
+AS65000向けのデフォルトルート並びにループバックアドレスに対するStatic経路をBFDで記述<br>
+set routing-instances VR1 routing-options static route 0.0.0.0/0 next-hop 172.16.6.1<br>
+set routing-instances VR1 routing-options static route 0.0.0.0/0 bfd-liveness-detection 
+minimum-interval 60<br>
+set routing-instances VR1 routing-options static route 2.2.2.2/32 next-hop 172.16.6.1<br>
+set routing-instances VR1 routing-options static route 2.2.2.2/32 bfd-liveness-detection 
+minimum-interval 60<br>
+
+set routing-instances VR2 routing-options static route 0.0.0.0/0 next-hop 172.16.5.1<br>
+set routing-instances VR2 routing-options static route 0.0.0.0/0 bfd-liveness-detection 
+minimum-interval 60<br>
+set routing-instances VR2 routing-options static route 2.2.2.2/32 next-hop 172.16.5.1<br>
+set routing-instances VR2 routing-options static route 2.2.2.2/32 bfd-liveness-detection 
+minimum-interval 60<br>
+
+
+#### AS65001内のIGP(OSPF）でデフォルトルートを通知する設定を実施<br>
+
+AS65001内のルータ間はお互いにOSPFで経路を交換していますが、お互いにデフォルトルートを通知しあうことにより<br>
+AS65000向けの回線が断になった場合においても迂回してAS65000に接続できるようにします<br>
