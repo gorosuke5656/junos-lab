@@ -110,12 +110,19 @@ minimum-interval 60<br>
 AS65001内のルータ間はお互いにOSPFで経路を交換していますが、お互いにデフォルトルートを通知しあうことにより<br>
 AS65000向けの回線が断になった場合においても迂回してAS65000に接続できるようにします<br>
 
+以下でJuniperにおける設定例を示します<br>
+
  **【JuniperによるOSPFに対するデフォルトルートの通知】**<br>
   ![Diagram](./images/ospf-default-route-export-1.jpg)<br>
+  
   ![Diagram](./images/ospf-default-route-export-2.jpg)<br>
+  
   ![Diagram](./images/ospf-default-route-export-3.jpg)<br>
+  
   ![Diagram](./images/ospf-default-route-export-4.jpg)<br>
+  
   ![Diagram](./images/ospf-default-route-export-5.jpg)<br>
+  
   ![Diagram](./images/ospf-default-route-export-6.jpg)<br>
   
   
