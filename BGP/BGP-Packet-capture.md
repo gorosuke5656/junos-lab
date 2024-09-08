@@ -17,5 +17,5 @@
 パケットを取得する際はサイズ指定するようにしましょう！<br>
 ![Diagram](./images/bgp-packet-capture-5.jpg)<br>
 
-![Diagram](./images/bgp-packet-capture-6.jpg)<br>
+![Diagram](./images/bgp-packet-capture-7.jpg)<br>
 
