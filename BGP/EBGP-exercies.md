@@ -126,4 +126,16 @@ AS65000向けの回線が断になった場合においても迂回してAS65000
   ![Diagram](./images/ospf-default-route-export-6.jpg)<br>
   
   
+#### AS65000～AS65001間のBFDの状態確認<br>
 
+![Diagram](./images/bfd-1.jpg)<br>
+  
+  ![Diagram](./images/bfd-2.jpg)<br>
+  
+  ![Diagram](./images/bfd-3.jpg)<br>
+  
+  ![Diagram](./images/bfd-4.jpg)<br>
+  
+  ![Diagram](./images/bfd-5.jpg)<br>
+  
+  ![Diagram](./images/bfd-6.jpg)<br>
