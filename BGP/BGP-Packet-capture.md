@@ -13,9 +13,13 @@
 
 ![Diagram](./images/bgp-packet-capture-4.jpg)<br>
 
-##パケット取得の注意点<br>
-パケットを取得する際はサイズ指定するようにしましょう！<br>
 ![Diagram](./images/bgp-packet-capture-5.jpg)<br>
 
+##パケット取得の注意点<br>
+パケットを取得する際はサイズ指定するようにしましょう！<br>
+
+□取得できていない場合<br>
+![Diagram](./images/bgp-packet-capture-6.jpg)<br>
+□取得できた場合<br>
 ![Diagram](./images/bgp-packet-capture-7.jpg)<br>
 
