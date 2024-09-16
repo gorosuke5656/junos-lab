@@ -141,3 +141,10 @@ AS65000向けの回線が断になった場合においても迂回してAS65000
   ![Diagram](./images/bfd-6.jpg)<br>
 
  ### EBGPの設定例<br>
+EBGP接続は通常、対向のASルータの物理アドレスと直接ピアを構成しますが、今回は冗長性を考慮し、対向ルータのループバックアドレスアドレスにピアを張ります<br>
+そのため、TTLを以下のように変更しています<br>
+
+set routing-instance VR2 protocols bgp group EXTERNAL multihop ttl 2<br>
+
+ ![Diagram](./images/ebgp-config-1.jpg)<br>
+  ![Diagram](./images/ebgp-config-2.jpg)<br>
