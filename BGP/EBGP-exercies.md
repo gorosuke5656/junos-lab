@@ -139,3 +139,5 @@ AS65000向けの回線が断になった場合においても迂回してAS65000
   ![Diagram](./images/bfd-5.jpg)<br>
   
   ![Diagram](./images/bfd-6.jpg)<br>
+
+ ### EBGPの設定例<br>
