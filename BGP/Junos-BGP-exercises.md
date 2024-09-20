@@ -22,8 +22,7 @@ Cisco867VAE　×１台<br>
  (5) MED値属性変更による確認　[次のチャプターへ進む](./MED-exercies.md) <br>
  (6) AS_Pathによるフィルタリング設定と確認　[次のチャプターへ進む](./AS_Path-filter-exercies.md) <br>
  (7) community属性の使用及び確認　[次のチャプターへ進む](./AS_Path-filter-exercies.md) <br>
- (8) AS間の経路冗長化の設定と確認[次のチャプターへ進む](./AS_Redandace.md) <br>
- (9) BGPルートリフレクターの設定と確認[次のチャプターへ進む](./BGP-route-refrecter.md) <br> 
+ (8) BGPルートリフレクターの設定と確認[次のチャプターへ進む](./BGP-route-refrecter.md) <br> 
 
  **【BGPネットワーク演習(V4）のトポロジー】**<br>
   ![Diagram](./images/bgp-v4-topology.jpg)<br>
