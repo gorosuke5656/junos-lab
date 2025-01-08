@@ -24,7 +24,7 @@
  　　1.0.0.0/24の経路を知っておく必要があります。。<br>
 
    以下の方法で解決が可能ですが、(3)のNEXT-HOP属性を変更することにより疎通が可能です！<br>
-  　![Diagram](./images/NEXT-HOP-2.jpg)<br> 
+  　<br> 
 
 　　(3)のNEXT-HOP属性を変更した場合のイメージを下記に示します。<br>
   　 ![Diagram](./images/NEXT-HOP-3.jpg)<br>
