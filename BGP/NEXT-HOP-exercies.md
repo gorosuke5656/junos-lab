@@ -32,19 +32,5 @@
 
   
   
-  
-  
-  
  
-![Diagram](./images/bfd-1.jpg)<br>
-  
-  ![Diagram](./images/bfd-2.jpg)<br>
-  
-  ![Diagram](./images/bfd-3.jpg)<br>
-  
-  ![Diagram](./images/bfd-4.jpg)<br>
-  
-  ![Diagram](./images/bfd-5.jpg)<br>
-  
-  ![Diagram](./images/bfd-6.jpg)<br>
 
