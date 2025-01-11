@@ -52,6 +52,25 @@
    ![Diagram](./images/NEXT-HOP-5.jpg)<br>
    ![Diagram](./images/NEXT-HOP-6.jpg)<br>
    ![Diagram](./images/NEXT-HOP-7.jpg)<br>
+    【Next-Hop属性機能確認】<br>
+     〇 回線断を模擬します<br>
+　　 　　　VR2においてCORE向けインタフェースのDownを実施<br>
+    ![Diagram](./images/NEXT-HOP-7.jpg)<br>
+　（障害による回線断を想定）<br>
+[edit]<br>
+admin@SRX100H2# set interfaces fe-0/0/0 disable<br>
+[edit]<br>
+admin@SRX100H2# commit<br>
+commit complete<br>
+[edit]<br>
+admin@SRX100H2#<br>
+
+![Diagram](./images/NEXT-HOP-8.jpg)<br>
+![Diagram](./images/NEXT-HOP-9.jpg)<br>
+![Diagram](./images/NEXT-HOP-10.jpg)<br>
+![Diagram](./images/NEXT-HOP-11.jpg)<br>
+![Diagram](./images/NEXT-HOP-12.jpg)<br>
+
    
 
      
