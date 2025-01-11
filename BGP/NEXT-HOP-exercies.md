@@ -71,7 +71,9 @@ admin@SRX100H2#<br>
 ![Diagram](./images/NEXT-HOP-11.jpg)<br>
 ![Diagram](./images/NEXT-HOP-12.jpg)<br>
 ![Diagram](./images/NEXT-HOP-13.jpg)<br>
-![Diagram](./images/NEXT-HOP-14.jpg)<br>  
+![Diagram](./images/NEXT-HOP-14.jpg)<br>
+![Diagram](./images/NEXT-HOP-15.jpg)<br>
+
 
      
 
