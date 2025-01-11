@@ -28,9 +28,36 @@
    
    (3)のNEXT-HOP属性を変更することにより疎通が可能です！<br>
   　 
-
 　　(3)のNEXT-HOP属性を変更した場合のイメージを下記に示します。<br>
   　 ![Diagram](./images/NEXT-HOP-3.jpg)<br>
+
+   ### NEXT-HOP属性変更の設定と確認
+  （実施手順）<br>
+  【事前準備】<br>
+　　AS65001への経路確認を確認します<br>
+　　　ア　各ルータからAS65001向けの経路情報<br>
+　　　イ　AS65001（2.2.2.2）からの受信経路<br>
+  【Next-Hop属性機能確認】<br>
+     〇 回線断を模擬します<br>
+　　 　　　VR2においてCORE向けインタフェースのDownを実施<br>
+     〇 回線断におけるAS65001(VR2)のBGP経路情報の確認します<br>
+     〇 Next-Hop属性変更によるPolicy設定の実施します<br>
+     〇 Next-Hop属性変更後におけるAS65001(VR2)のBGP路情報の確認します<br>
+  【現状復帰】
+     回線断を復旧させます<br>
+
+  【事前準備】<br>
+　 　AS65001への経路確認を確認します<br>
+   ![Diagram](./images/NEXT-HOP-4.jpg)<br>
+   ![Diagram](./images/NEXT-HOP-5.jpg)<br>
+   ![Diagram](./images/NEXT-HOP-6.jpg)<br>
+   ![Diagram](./images/NEXT-HOP-7.jpg)<br>
+   
+
+     
+
+
+    
   
 
   
