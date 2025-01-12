@@ -41,6 +41,10 @@ LOCAL_PREFアトリビュートは、内部ASのIBGPネイバールータに対�
 　 ①　POD６において200.200.200.0/24の経路にLocal-Preferrenceを200に設定します<br>
 　 ②　POD６において200.200.200.0/24に対する経路情報を確認します<br>
 　　　　→　どのようになっているでしょうか？？<br>
+    ![Diagram](./images/Local-preference-3.jpg)<br>
+    ![Diagram](./images/Local-preference-4.jpg)<br>
+    ![Diagram](./images/Local-preference-5.jpg)<br>
+    ![Diagram](./images/Local-preference-6.jpg)<br>
   
   
  
