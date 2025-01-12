@@ -35,7 +35,12 @@ MEDはメトリックとも呼ばれます<br>
    〇 BGPネイバーをリセット後、　COREにおいて10.1.6.0/24の経路を確認し、MED値が付与されていることを確認します<br>
 　 〇 AS65000のVR1から10.1.6.0/24に対してTracerouteを実施し、通信経路を確認します！
 
-   
-  
+ ![Diagram](./images/MED-2.jpg)<br>
+ ![Diagram](./images/MED-3.jpg)<br>
+ ![Diagram](./images/MED-4.jpg)<br>
+ ![Diagram](./images/MED-5.jpg)<br>
+ ![Diagram](./images/MED-6.jpg)<br>
+ ![Diagram](./images/MED-7.jpg)<br>
+ ![Diagram](./images/MED-8.jpg)<br>
   
  
