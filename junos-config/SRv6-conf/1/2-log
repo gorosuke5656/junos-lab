@@ -1,0 +1,71 @@
+monitor tr      interface traffic ge
+                                            ^
+syntax error, expecting <command>.
+admin@VSRX22.4-2> monitor interface traffic ge                                                                 traffic interface ge-0/0/admin@VSRX22.4-2> monitor traffic interface ge-0/0/                      0.10 
+verbose output suppressed, use <detail> or <extensive> for full protocol decode
+Address resolution is ON. Use <no-resolve> to avoid any reverse lookup delay.
+Address resolution timeout is 4s.
+Listening on ge-0/0/0.10, capture size 96 bytes
+
+23:30:52.942063 Out IS-IS, L1 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:30:52.976566  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:30:53.804243  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:30:55.948333  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:30:56.484190  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:30:56.619143 Out IS-IS, L2 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:30:58.525155  In IS-IS, L1 CSNP, src-id 1921.6800.0001.00, length 47
+23:30:58.543588  In IS-IS, L2 CSNP, src-id 1921.6800.0001.00, length 47
+23:30:58.890111  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:30:59.244019  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+Reverse lookup for fe80::20c:2900:a5b:c070 failed (check DNS reachability).
+Other reverse lookup failures will not be reported.
+Use <no-resolve> to avoid reverse lookups on IP addresses.
+
+23:30:59.863024  In IP6 fe80::20c:2900:a5b:c070 > fe80::20c:2900:a2f:cedc: ICMP6, neighbor solicitation, who has fe80::20c:2900:a2f:cedc, length 32
+23:30:59.863063 Out IP6 truncated-ip6 - 14 bytes missing!fe80::20c:2900:a2f:cedc > fe80::20c:2900:a5b:c070: ICMP6, neighbor advertisement[|icmp6]
+23:31:00.114984 Out IS-IS, L1 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:01.152469  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:01.853282  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:03.731317  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:04.249566  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:04.630368 Out IS-IS, L2 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:06.226381  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:06.576263  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:06.999685  In IS-IS, L1 CSNP, src-id 1921.6800.0001.00, length 47
+23:31:07.019607  In IS-IS, L2 CSNP, src-id 1921.6800.0001.00, length 47
+23:31:08.097783 Out IS-IS, L1 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:08.704372  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:08.960012  In ES-IS, ISH, length 39
+23:31:09.554983  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:11.099474  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:11.629074 Out IS-IS, L2 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:12.080457  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:13.863080  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:14.404230  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:16.046556 Out IS-IS, L1 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:16.089513  In IS-IS, L1 CSNP, src-id 1921.6800.0001.00, length 47
+23:31:16.111395  In IS-IS, L2 CSNP, src-id 1921.6800.0001.00, length 47
+23:31:16.362103  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:17.015552  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:18.621409  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:19.118036 Out IS-IS, L2 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:19.670856  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:21.011222  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:22.465885  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:22.852670 Out IS-IS, L1 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:23.723841  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:25.061223  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:25.073149  In IS-IS, L1 CSNP, src-id 1921.6800.0001.00, length 47
+23:31:25.089603  In IS-IS, L2 CSNP, src-id 1921.6800.0001.00, length 47
+23:31:26.259316  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:27.192676 Out IS-IS, L2 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:27.963551  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:29.253513  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:29.932818 Out IS-IS, L1 Lan IIH, src-id 1921.6800.0002, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:30.528905  In IS-IS, L2 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+23:31:32.019567  In IS-IS, L1 Lan IIH, src-id 1921.6800.0001, lan-id 1921.6800.0001.03, prio 64, length 47
+^C
+56 packets received by filter
+0 packets dropped by kernel
+
+admin@VSRX22.4-2> 

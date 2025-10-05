@@ -1,0 +1,5 @@
+admin@SRX100B> ssh admin@172.16.210.1 routing-instance VR1
+Password:root123
+IBGP-R>en
+Password:admin
+IBGP-R#

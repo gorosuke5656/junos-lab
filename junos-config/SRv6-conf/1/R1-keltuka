@@ -1,0 +1,538 @@
+show isis asd      djacency 
+Interface             System         L State         Hold (secs) SNPA
+ge-0/0/0.10           VSRX22.4-1     1  Up                     8  0:c:29:5b:c0:70
+ge-0/0/0.10           VSRX22.4-1     2  Up                     7  0:c:29:5b:c0:70
+ge-0/0/0.20           VSRX22.4-1     1  Up                     7  0:c:29:5b:c0:70
+ge-0/0/0.20           VSRX22.4-1     2  Up                     7  0:c:29:5b:c0:70
+
+admin@VSRX22.4-2> admin@VSRX22.4-2> show isis adjacency    detail 
+VSRX22.4-1
+  Interface: ge-0/0/0.10, Level: 1, State: Up, Expires in 8 secs
+  Priority: 64, Up/Down transitions: 1, Last transition: 00:34:44 ago
+  Circuit type: 3, Speaks: IP, IPv6, MAC address: 0:c:29:5b:c0:70
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  LAN id: VSRX22.4-1.03, IP addresses: 10.1.0.1
+  IPv6 addresses: fe80::20c:2900:a5b:c070
+  IPv6 Global Interface Address: 2001:10:10:10::1
+
+VSRX22.4-1
+  Interface: ge-0/0/0.10, Level: 2, State: Up, Expires in 6 secs
+  Priority: 64, Up/Down transitions: 1, Last transition: 00:34:44 ago
+  Circuit type: 3, Speaks: IP, IPv6, MAC address: 0:c:29:5b:c0:70
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  LAN id: VSRX22.4-1.03, IP addresses: 10.1.0.1
+  IPv6 addresses: fe80::20c:2900:a5b:c070
+  IPv6 Global Interface Address: 2001:10:10:10::1
+
+VSRX22.4-1
+  Interface: ge-0/0/0.20, Level: 1, State: Up, Expires in 8 secs
+  Priority: 64, Up/Down transitions: 1, Last transition: 00:34:21 ago
+---(more)---                                          Circuit type: 3, Speaks: IP, IPv6, MAC address: 0:c:29:5b:c0:70
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  LAN id: VSRX22.4-1.02, IP addresses: 10.2.0.1
+  IPv6 addresses: fe80::20c:2900:145b:c070
+  IPv6 Global Interface Address: 2001:20:20:20::1
+
+VSRX22.4-1
+  Interface: ge-0/0/0.20, Level: 2, State: Up, Expires in 7 secs
+  Priority: 64, Up/Down transitions: 1, Last transition: 00:34:21 ago
+  Circuit type: 3, Speaks: IP, IPv6, MAC address: 0:c:29:5b:c0:70
+  Topologies: Unicast
+  Restart capable: Yes, Adjacency advertisement: Advertise
+  LAN id: VSRX22.4-1.02, IP addresses: 10.2.0.1
+  IPv6 addresses: fe80::20c:2900:145b:c070
+  IPv6 Global Interface Address: 2001:20:20:20::1
+
+admin@VSRX22.4-2> show isis route 
+ IS-IS routing table             Current version: L1: 5 L2: 6
+IPv4/IPv6 Routes
+----------------
+Prefix             L Version   Metric Type Interface       NH   Via                 Backup Score
+2001:db8:0:a0::/64 1       5       10 int  ge-0/0/0.10     IPV6 VSRX22.4-1         
+                                           ge-0/0/0.20     IPV6 VSRX22.4-1         
+2001:db8:0:b0::/64 1       5        0 int 
+2001:db8:12::1/128 1       5       10 int  ge-0/0/0.10     IPV6 VSRX22.4-1         
+                                           ge-0/0/0.20     IPV6 VSRX22.4-1         
+
+SRV6 Routes
+-----------
+Prefix             L Version   Metric Type Interface       NH     Via
+2001:db8:0:b0::/64 1       5        0 int 
+2001:db8:0:b0:d01::/128 1       5        0 int 
+SRv6->INET6.3 Routes
+--------------------
+Prefix             L Version   Metric Type Interface       NH   Via                 Backup Score
+2001:db8:0:a0::/64 1       5       10 int  ge-0/0/0.10     SRv6 TCNH
+                                           ge-0/0/0.20     SRv6 TCNH
+2001:db8:0:a0:d01::/128 1       5       10 int ge-0/0/0.10 SRv6 TCNH
+                                           ge-0/0/0.20     SRv6 TCNH
+
+admin@VSRX22.4-2> hs      show route protocol isis 
+
+inet.0: 6 destinations, 6 routes (6 active, 0 holddown, 0 hidden)
+
+iso.0: 1 destinations, 1 routes (1 active, 0 holddown, 0 hidden)
+
+inet6.0: 14 destinations, 14 routes (14 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+2001:db8:0:a0::/64 *[IS-IS/15] 00:34:47, metric 10
+                    >  to fe80::20c:2900:a5b:c070 via ge-0/0/0.10
+                       to fe80::20c:2900:145b:c070 via ge-0/0/0.20
+2001:db8:0:b0::/64 *[IS-IS/15] 00:35:26, metric 0
+                       Reject
+2001:db8:0:b0:d01::/128
+                   *[IS-IS/15] 00:35:26, metric 0
+                       Receive
+2001:db8:12::1/128 *[IS-IS/15] 00:34:47, metric 10
+                    >  to fe80::20c:2900:a5b:c070 via ge-0/0/0.10
+                       to fe80::20c:2900:145b:c070 via ge-0/0/0.20
+
+inet6.3: 2 destinations, 2 routes (2 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+---(more)---                                        2001:db8:0:a0::/64 *[SRV6-ISIS/14] 00:34:47, metric 10
+                    >  to fe80::20c:2900:a5b:c070 via ge-0/0/0.10, SRV6-Tunnel, Dest: 2001:db8:0:a0::
+                       to fe80::20c:2900:145b:c070 via ge-0/0/0.20, SRV6-Tunnel, Dest: 2001:db8:0:a0::
+2001:db8:0:a0:d01::/128
+                   *[SRV6-ISIS/14] 00:34:47, metric 10
+                       to fe80::20c:2900:a5b:c070 via ge-0/0/0.10, SRV6-Tunnel, Dest: 2001:db8:0:a0:d01::
+                    >  to fe80::20c:2900:145b:c070 via ge-0/0/0.20, SRV6-Tunnel, Dest: 2001:db8:0:a0:d01::
+
+admin@VSRX22.4-2> show isis database 
+IS-IS level 1 link-state database:
+LSP ID                      Sequence Checksum Lifetime Attributes
+VSRX22.4-1.00-00                 0xd   0xcdee      672 L1 L2
+VSRX22.4-1.02-00                 0x5    0x772      686 L1 L2
+VSRX22.4-1.03-00                 0x5   0xff78      657 L1 L2
+VSRX22.4-2.00-00                 0xc   0x3a47      754 L1 L2
+  4 LSPs
+
+IS-IS level 2 link-state database:
+LSP ID                      Sequence Checksum Lifetime Attributes
+VSRX22.4-1.00-00                0x12   0x84d9      796 L1 L2
+VSRX22.4-1.02-00                 0x5    0x772      796 L1 L2
+VSRX22.4-1.03-00                 0x5   0xff78      636 L1 L2
+VSRX22.4-2.00-00                0x10   0x262f      754 L1 L2
+  4 LSPs
+
+admin@VSRX22.4-2> admin@VSRX22.4-2> show isis database    extensive 
+IS-IS level 1 link-state database:
+
+VSRX22.4-1.00-00 Sequence: 0xd, Checksum: 0xcdee, Lifetime: 669 secs
+   IS neighbor: VSRX22.4-1.02                 Metric:       10
+     Two-way fragment: VSRX22.4-1.02-00, Two-way first fragment: VSRX22.4-1.02-00
+   IS neighbor: VSRX22.4-1.03                 Metric:       10
+     Two-way fragment: VSRX22.4-1.03-00, Two-way first fragment: VSRX22.4-1.03-00
+   IP prefix: 10.1.0.0/24                     Metric:       10 Internal Up
+   IP prefix: 10.2.0.0/24                     Metric:       10 Internal Up
+   V6 prefix: 2001:10:10:10::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:20:20:20::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:0:a0::/64              Metric:        0 Internal Up
+   V6 prefix: 2001:db8:12::/64                Metric:        0 Internal Up
+   V6 prefix: 2001:db8:12::1/128              Metric:        0 Internal Up
+
+  Header: LSP ID: VSRX22.4-1.00-00, Length: 411 bytes
+    Allocated length: 411 bytes, Router ID: 10.1.0.1
+    Remaining lifetime: 669 secs, Level: 1, Interface: 74
+    Estimated free bytes: 0, Actual free bytes: 0
+    Aging timer expires in: 669 secs
+    Protocols: IP, IPv6
+
+  Packet: LSP ID: VSRX22.4-1.00-00, Length: 411 bytes, Lifetime : 1198 secs
+---(more)---                                            Checksum: 0xcdee, Sequence: 0xd, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 18, Packet version: 1, Max area: 0
+
+  TLVs:
+    Area address: 49.0001 (3)
+    LSP Buffer Size: 1492
+    Speaks: IP
+    Speaks: IPV6
+    IP router id: 10.1.0.1
+    IP address: 10.1.0.1
+    IPv6 TE Router ID: 2001:db8:12::1
+    Hostname: VSRX22.4-1
+    SRv6 Locator: 2001:db8:0:a0::/64, Metric: 0, MTID: 0, Flags: 0x0, Algorithm: 0
+      SRv6 SID: 2001:db8:0:a0:d01::, Flavor: USD
+    IPv6 prefix: 2001:db8:12::1/128 Metric 0 Up
+    IPv6 prefix: 2001:db8:12::/64 Metric 0 Up
+    IPv6 prefix: 2001:db8:0:a0::/64 Metric 0 Up
+    IPv6 prefix: 2001:10:10:10::/64 Metric 10 Up
+    IPv6 prefix: 2001:20:20:20::/64 Metric 10 Up
+    IP prefix: 10.2.0.0/24, Internal, Metric: default 10, Up
+    IP prefix: 10.1.0.0/24, Internal, Metric: default 10, Up
+    IP extended prefix: 10.2.0.0/24 metric 10 up
+---(more 11%)---                                            IP extended prefix: 10.1.0.0/24 metric 10 up
+    Router Capability:  Router ID 10.1.0.1, Flags: 0x00
+      SPRING Algorithm - Algo: 0
+      SPRING Algorithm - Algo: 1
+      SRv6 Capability - Flags: 0
+      Node MSD Advertisement Sub-TLV:Type:  23, Length: 10
+      SRv6 Maximum Segments Left MSD:Type:  41, Value: 0
+      SRv6 Maximum Pop MSD:Type:  42, Value: 0
+      SRv6 Maximum Insert MSD:Type:  43, Value: 0
+      SRv6 Maximum Encap MSD:Type:  44, Value: 0
+      SRv6 Maximum End D MSD:Type:  45, Value: 0
+      IPv6 TE Router Id: 2001:db8:12::1
+    IS neighbor: VSRX22.4-1.03, Internal, Metric: default 10
+    IS neighbor: VSRX22.4-1.02, Internal, Metric: default 10
+    Extended IS Reachability TLV, Type: 22, Length: 90
+    IS extended neighbor: VSRX22.4-1.03, Metric: default 10 SubTLV len: 34
+      IP address: 10.1.0.1
+      IPv6 address: 2001:10:10:10::1
+      Local interface index: 73, Remote interface index: 0
+    IS extended neighbor: VSRX22.4-1.02, Metric: default 10 SubTLV len: 34
+      IP address: 10.2.0.1
+      IPv6 address: 2001:20:20:20::1
+      Local interface index: 74, Remote interface index: 0
+---(more 17%)---                                          No queued transmissions
+
+VSRX22.4-1.02-00 Sequence: 0x5, Checksum: 0x772, Lifetime: 683 secs
+   IS neighbor: VSRX22.4-1.00                 Metric:        0
+     Two-way fragment: VSRX22.4-1.00-00, Two-way first fragment: VSRX22.4-1.00-00
+   IS neighbor: VSRX22.4-2.00                 Metric:        0
+     Two-way fragment: VSRX22.4-2.00-00, Two-way first fragment: VSRX22.4-2.00-00
+
+  Header: LSP ID: VSRX22.4-1.02-00, Length: 76 bytes
+    Allocated length: 284 bytes, Router ID: 0.0.0.0
+    Remaining lifetime: 683 secs, Level: 1, Interface: 74
+    Estimated free bytes: 208, Actual free bytes: 208
+    Aging timer expires in: 683 secs
+
+  Packet: LSP ID: VSRX22.4-1.02-00, Length: 76 bytes, Lifetime : 1198 secs
+    Checksum: 0x772, Sequence: 0x5, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 18, Packet version: 1, Max area: 0
+
+  TLVs:
+    IS neighbor: VSRX22.4-1.00, Internal, Metric: default 0
+    IS neighbor: VSRX22.4-2.00, Internal, Metric: default 0
+    Extended IS Reachability TLV, Type: 22, Length: 22
+---(more 23%)---                                            IS extended neighbor: VSRX22.4-1.00, Metric: default 0 SubTLV len: 0
+    IS extended neighbor: VSRX22.4-2.00, Metric: default 0 SubTLV len: 0
+  No queued transmissions
+
+VSRX22.4-1.03-00 Sequence: 0x5, Checksum: 0xff78, Lifetime: 655 secs
+   IS neighbor: VSRX22.4-1.00                 Metric:        0
+     Two-way fragment: VSRX22.4-1.00-00, Two-way first fragment: VSRX22.4-1.00-00
+   IS neighbor: VSRX22.4-2.00                 Metric:        0
+     Two-way fragment: VSRX22.4-2.00-00, Two-way first fragment: VSRX22.4-2.00-00
+
+  Header: LSP ID: VSRX22.4-1.03-00, Length: 76 bytes
+    Allocated length: 284 bytes, Router ID: 0.0.0.0
+    Remaining lifetime: 655 secs, Level: 1, Interface: 74
+    Estimated free bytes: 208, Actual free bytes: 208
+    Aging timer expires in: 655 secs
+
+  Packet: LSP ID: VSRX22.4-1.03-00, Length: 76 bytes, Lifetime : 1198 secs
+    Checksum: 0xff78, Sequence: 0x5, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 18, Packet version: 1, Max area: 0
+
+  TLVs:
+    IS neighbor: VSRX22.4-1.00, Internal, Metric: default 0
+---(more 28%)---                                            IS neighbor: VSRX22.4-2.00, Internal, Metric: default 0
+    Extended IS Reachability TLV, Type: 22, Length: 22
+    IS extended neighbor: VSRX22.4-1.00, Metric: default 0 SubTLV len: 0
+    IS extended neighbor: VSRX22.4-2.00, Metric: default 0 SubTLV len: 0
+  No queued transmissions
+
+VSRX22.4-2.00-00 Sequence: 0xc, Checksum: 0x3a47, Lifetime: 751 secs
+   IS neighbor: VSRX22.4-1.02                 Metric:       10
+     Two-way fragment: VSRX22.4-1.02-00, Two-way first fragment: VSRX22.4-1.02-00
+   IS neighbor: VSRX22.4-1.03                 Metric:       10
+     Two-way fragment: VSRX22.4-1.03-00, Two-way first fragment: VSRX22.4-1.03-00
+   IP prefix: 10.1.0.0/24                     Metric:       10 Internal Up
+   IP prefix: 10.2.0.0/24                     Metric:       10 Internal Up
+   V6 prefix: 2001:10:10:10::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:20:20:20::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:0:b0::/64              Metric:        0 Internal Up
+   V6 prefix: 2001:db8:12::/64                Metric:        0 Internal Up
+   V6 prefix: 2001:db8:12::2/128              Metric:        0 Internal Up
+
+  Header: LSP ID: VSRX22.4-2.00-00, Length: 411 bytes
+    Allocated length: 1492 bytes, Router ID: 10.1.0.2
+    Remaining lifetime: 751 secs, Level: 1, Interface: 0
+    Estimated free bytes: 1036, Actual free bytes: 1081
+---(more 34%)---                                            Aging timer expires in: 751 secs
+    Protocols: IP, IPv6
+
+  Packet: LSP ID: VSRX22.4-2.00-00, Length: 411 bytes, Lifetime : 1198 secs
+    Checksum: 0x3a47, Sequence: 0xc, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 18, Packet version: 1, Max area: 0
+
+  TLVs:
+    Area address: 49.0001 (3)
+    LSP Buffer Size: 1492
+    Speaks: IP
+    Speaks: IPV6
+    IP router id: 10.1.0.2
+    IP address: 10.1.0.2
+    IPv6 TE Router ID: 2001:db8:12::2
+    Hostname: VSRX22.4-2
+    IP prefix: 10.1.0.0/24, Internal, Metric: default 10, Up
+    IP prefix: 10.2.0.0/24, Internal, Metric: default 10, Up
+    IP extended prefix: 10.1.0.0/24 metric 10 up
+    IP extended prefix: 10.2.0.0/24 metric 10 up
+    IPv6 prefix: 2001:10:10:10::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:0:b0::/64 Metric 0 Up
+---(more 40%)---                                            IPv6 prefix: 2001:20:20:20::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:12::2/128 Metric 0 Up
+    IPv6 prefix: 2001:db8:12::/64 Metric 0 Up
+    Router Capability:  Router ID 10.1.0.2, Flags: 0x00
+      SPRING Algorithm - Algo: 0
+      SPRING Algorithm - Algo: 1
+      SRv6 Capability - Flags: 0
+      Node MSD Advertisement Sub-TLV:Type:  23, Length: 10
+      SRv6 Maximum Segments Left MSD:Type:  41, Value: 0
+      SRv6 Maximum Pop MSD:Type:  42, Value: 0
+      SRv6 Maximum Insert MSD:Type:  43, Value: 0
+      SRv6 Maximum Encap MSD:Type:  44, Value: 0
+      SRv6 Maximum End D MSD:Type:  45, Value: 0
+      IPv6 TE Router Id: 2001:db8:12::2
+    SRv6 Locator: 2001:db8:0:b0::/64, Metric: 0, MTID: 0, Flags: 0x0, Algorithm: 0
+      SRv6 SID: 2001:db8:0:b0:d01::, Flavor: USD
+    IS neighbor: VSRX22.4-1.03, Internal, Metric: default 10
+    IS neighbor: VSRX22.4-1.02, Internal, Metric: default 10
+    Extended IS Reachability TLV, Type: 22, Length: 90
+    IS extended neighbor: VSRX22.4-1.03, Metric: default 10 SubTLV len: 34
+      IP address: 10.1.0.2
+      IPv6 address: 2001:10:10:10::2
+      Local interface index: 73, Remote interface index: 0
+---(more 46%)---                                            IS extended neighbor: VSRX22.4-1.02, Metric: default 10 SubTLV len: 34
+      IP address: 10.2.0.2
+      IPv6 address: 2001:20:20:20::2
+      Local interface index: 74, Remote interface index: 0
+  No queued transmissions
+
+IS-IS level 2 link-state database:
+
+VSRX22.4-1.00-00 Sequence: 0x12, Checksum: 0x84d9, Lifetime: 793 secs
+   IS neighbor: VSRX22.4-1.02                 Metric:       10
+     Two-way fragment: VSRX22.4-1.02-00, Two-way first fragment: VSRX22.4-1.02-00
+   IS neighbor: VSRX22.4-1.03                 Metric:       10
+     Two-way fragment: VSRX22.4-1.03-00, Two-way first fragment: VSRX22.4-1.03-00
+   IP prefix: 10.1.0.0/24                     Metric:       10 Internal Up
+   IP prefix: 10.2.0.0/24                     Metric:       10 Internal Up
+   V6 prefix: 2001:10:10:10::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:20:20:20::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:0:a0::/64              Metric:        0 Internal Up
+   V6 prefix: 2001:db8:0:b0::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:12::/64                Metric:        0 Internal Up
+   V6 prefix: 2001:db8:12::1/128              Metric:        0 Internal Up
+   V6 prefix: 2001:db8:12::2/128              Metric:       10 Internal Up
+
+---(more 52%)---                                          Header: LSP ID: VSRX22.4-1.00-00, Length: 496 bytes
+    Allocated length: 496 bytes, Router ID: 10.1.0.1
+    Remaining lifetime: 793 secs, Level: 2, Interface: 74
+    Estimated free bytes: 0, Actual free bytes: 0
+    Aging timer expires in: 793 secs
+    Protocols: IP, IPv6
+
+  Packet: LSP ID: VSRX22.4-1.00-00, Length: 496 bytes, Lifetime : 1198 secs
+    Checksum: 0x84d9, Sequence: 0x12, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 20, Packet version: 1, Max area: 0
+
+  TLVs:
+    Area address: 49.0001 (3)
+    LSP Buffer Size: 1492
+    Speaks: IP
+    Speaks: IPV6
+    IP router id: 10.1.0.1
+    IP address: 10.1.0.1
+    IPv6 TE Router ID: 2001:db8:12::1
+    Hostname: VSRX22.4-1
+    SRv6 Locator: 2001:db8:0:a0::/64, Metric: 0, MTID: 0, Flags: 0x0, Algorithm: 0
+      SRv6 SID: 2001:db8:0:a0:d01::, Flavor: USD
+---(more 57%)---                                            SRv6 Locator: 2001:db8:0:b0::/64, Metric: 10, MTID: 0, Flags: 0x0, Algorithm: 0
+      Prefix-Attribute-Flags: 0x40(X:0,R:1,N:0,A:0)
+      SRv6 SID: 2001:db8:0:b0:d01::, Flavor: USD
+    IPv6 prefix: 2001:db8:12::1/128 Metric 0 Up
+    IPv6 prefix: 2001:db8:12::/64 Metric 0 Up
+    IPv6 prefix: 2001:db8:0:a0::/64 Metric 0 Up
+    IPv6 prefix: 2001:10:10:10::/64 Metric 10 Up
+    IPv6 prefix: 2001:20:20:20::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:12::2/128 Metric 10 Up
+    IPv6 prefix: 2001:db8:0:b0::/64 Metric 10 Up
+      3 bytes of subtlvs
+      Prefix-Attribute-Flags: 0x40(X:0,R:1,N:0,A:0)
+    IP prefix: 10.2.0.0/24, Internal, Metric: default 10, Up
+    IP prefix: 10.1.0.0/24, Internal, Metric: default 10, Up
+    IP extended prefix: 10.2.0.0/24 metric 10 up
+    IP extended prefix: 10.1.0.0/24 metric 10 up
+    Router Capability:  Router ID 10.1.0.1, Flags: 0x00
+      SPRING Algorithm - Algo: 0
+      SPRING Algorithm - Algo: 1
+      SRv6 Capability - Flags: 0
+      Node MSD Advertisement Sub-TLV:Type:  23, Length: 10
+      SRv6 Maximum Segments Left MSD:Type:  41, Value: 0
+      SRv6 Maximum Pop MSD:Type:  42, Value: 0
+---(more 63%)---                                              SRv6 Maximum Insert MSD:Type:  43, Value: 0
+      SRv6 Maximum Encap MSD:Type:  44, Value: 0
+      SRv6 Maximum End D MSD:Type:  45, Value: 0
+      IPv6 TE Router Id: 2001:db8:12::1
+    IS neighbor: VSRX22.4-1.03, Internal, Metric: default 10
+    IS neighbor: VSRX22.4-1.02, Internal, Metric: default 10
+    Extended IS Reachability TLV, Type: 22, Length: 90
+    IS extended neighbor: VSRX22.4-1.03, Metric: default 10 SubTLV len: 34
+      IP address: 10.1.0.1
+      IPv6 address: 2001:10:10:10::1
+      Local interface index: 73, Remote interface index: 0
+    IS extended neighbor: VSRX22.4-1.02, Metric: default 10 SubTLV len: 34
+      IP address: 10.2.0.1
+      IPv6 address: 2001:20:20:20::1
+      Local interface index: 74, Remote interface index: 0
+  No queued transmissions
+
+VSRX22.4-1.02-00 Sequence: 0x5, Checksum: 0x772, Lifetime: 793 secs
+   IS neighbor: VSRX22.4-1.00                 Metric:        0
+     Two-way fragment: VSRX22.4-1.00-00, Two-way first fragment: VSRX22.4-1.00-00
+   IS neighbor: VSRX22.4-2.00                 Metric:        0
+     Two-way fragment: VSRX22.4-2.00-00, Two-way first fragment: VSRX22.4-2.00-00
+
+---(more 69%)---                                          Header: LSP ID: VSRX22.4-1.02-00, Length: 76 bytes
+    Allocated length: 284 bytes, Router ID: 0.0.0.0
+    Remaining lifetime: 793 secs, Level: 2, Interface: 74
+    Estimated free bytes: 208, Actual free bytes: 208
+    Aging timer expires in: 793 secs
+
+  Packet: LSP ID: VSRX22.4-1.02-00, Length: 76 bytes, Lifetime : 1198 secs
+    Checksum: 0x772, Sequence: 0x5, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 20, Packet version: 1, Max area: 0
+
+  TLVs:
+    IS neighbor: VSRX22.4-1.00, Internal, Metric: default 0
+    IS neighbor: VSRX22.4-2.00, Internal, Metric: default 0
+    Extended IS Reachability TLV, Type: 22, Length: 22
+    IS extended neighbor: VSRX22.4-1.00, Metric: default 0 SubTLV len: 0
+    IS extended neighbor: VSRX22.4-2.00, Metric: default 0 SubTLV len: 0
+  No queued transmissions
+
+VSRX22.4-1.03-00 Sequence: 0x5, Checksum: 0xff78, Lifetime: 633 secs
+   IS neighbor: VSRX22.4-1.00                 Metric:        0
+     Two-way fragment: VSRX22.4-1.00-00, Two-way first fragment: VSRX22.4-1.00-00
+   IS neighbor: VSRX22.4-2.00                 Metric:        0
+---(more 75%)---                                             Two-way fragment: VSRX22.4-2.00-00, Two-way first fragment: VSRX22.4-2.00-00
+
+  Header: LSP ID: VSRX22.4-1.03-00, Length: 76 bytes
+    Allocated length: 284 bytes, Router ID: 0.0.0.0
+    Remaining lifetime: 633 secs, Level: 2, Interface: 74
+    Estimated free bytes: 208, Actual free bytes: 208
+    Aging timer expires in: 633 secs
+
+  Packet: LSP ID: VSRX22.4-1.03-00, Length: 76 bytes, Lifetime : 1198 secs
+    Checksum: 0xff78, Sequence: 0x5, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+    Packet type: 20, Packet version: 1, Max area: 0
+
+  TLVs:
+    IS neighbor: VSRX22.4-1.00, Internal, Metric: default 0
+    IS neighbor: VSRX22.4-2.00, Internal, Metric: default 0
+    Extended IS Reachability TLV, Type: 22, Length: 22
+    IS extended neighbor: VSRX22.4-1.00, Metric: default 0 SubTLV len: 0
+    IS extended neighbor: VSRX22.4-2.00, Metric: default 0 SubTLV len: 0
+  No queued transmissions
+
+VSRX22.4-2.00-00 Sequence: 0x10, Checksum: 0x262f, Lifetime: 751 secs
+   IS neighbor: VSRX22.4-1.02                 Metric:       10
+---(more 81%)---                                             Two-way fragment: VSRX22.4-1.02-00, Two-way first fragment: VSRX22.4-1.02-00
+   IS neighbor: VSRX22.4-1.03                 Metric:       10
+     Two-way fragment: VSRX22.4-1.03-00, Two-way first fragment: VSRX22.4-1.03-00
+   IP prefix: 10.1.0.0/24                     Metric:       10 Internal Up
+   IP prefix: 10.2.0.0/24                     Metric:       10 Internal Up
+   V6 prefix: 2001:10:10:10::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:20:20:20::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:0:a0::/64              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:0:b0::/64              Metric:        0 Internal Up
+   V6 prefix: 2001:db8:12::/64                Metric:        0 Internal Up
+   V6 prefix: 2001:db8:12::1/128              Metric:       10 Internal Up
+   V6 prefix: 2001:db8:12::2/128              Metric:        0 Internal Up
+
+  Header: LSP ID: VSRX22.4-2.00-00, Length: 496 bytes
+    Allocated length: 1492 bytes, Router ID: 10.1.0.2
+    Remaining lifetime: 751 secs, Level: 2, Interface: 0
+    Estimated free bytes: 951, Actual free bytes: 996
+    Aging timer expires in: 751 secs
+    Protocols: IP, IPv6
+
+  Packet: LSP ID: VSRX22.4-2.00-00, Length: 496 bytes, Lifetime : 1198 secs
+    Checksum: 0x262f, Sequence: 0x10, Attributes: 0x3 <L1 L2>
+    NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
+---(more 86%)---                                            Packet type: 20, Packet version: 1, Max area: 0
+
+  TLVs:
+    Area address: 49.0001 (3)
+    LSP Buffer Size: 1492
+    Speaks: IP
+    Speaks: IPV6
+    IP router id: 10.1.0.2
+    IP address: 10.1.0.2
+    IPv6 TE Router ID: 2001:db8:12::2
+    Hostname: VSRX22.4-2
+    IP prefix: 10.1.0.0/24, Internal, Metric: default 10, Up
+    IP prefix: 10.2.0.0/24, Internal, Metric: default 10, Up
+    IP extended prefix: 10.1.0.0/24 metric 10 up
+    IP extended prefix: 10.2.0.0/24 metric 10 up
+    IPv6 prefix: 2001:10:10:10::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:0:b0::/64 Metric 0 Up
+    IPv6 prefix: 2001:20:20:20::/64 Metric 10 Up
+    IPv6 prefix: 2001:db8:12::2/128 Metric 0 Up
+    IPv6 prefix: 2001:db8:12::/64 Metric 0 Up
+    IPv6 prefix: 2001:db8:12::1/128 Metric 10 Up
+    IPv6 prefix: 2001:db8:0:a0::/64 Metric 10 Up
+      3 bytes of subtlvs
+---(more 92%)---                                              Prefix-Attribute-Flags: 0x40(X:0,R:1,N:0,A:0)
+    Router Capability:  Router ID 10.1.0.2, Flags: 0x00
+      SPRING Algorithm - Algo: 0
+      SPRING Algorithm - Algo: 1
+      SRv6 Capability - Flags: 0
+      Node MSD Advertisement Sub-TLV:Type:  23, Length: 10
+      SRv6 Maximum Segments Left MSD:Type:  41, Value: 0
+      SRv6 Maximum Pop MSD:Type:  42, Value: 0
+      SRv6 Maximum Insert MSD:Type:  43, Value: 0
+      SRv6 Maximum Encap MSD:Type:  44, Value: 0
+      SRv6 Maximum End D MSD:Type:  45, Value: 0
+      IPv6 TE Router Id: 2001:db8:12::2
+    SRv6 Locator: 2001:db8:0:b0::/64, Metric: 0, MTID: 0, Flags: 0x0, Algorithm: 0
+      SRv6 SID: 2001:db8:0:b0:d01::, Flavor: USD
+    SRv6 Locator: 2001:db8:0:a0::/64, Metric: 10, MTID: 0, Flags: 0x0, Algorithm: 0
+      Prefix-Attribute-Flags: 0x40(X:0,R:1,N:0,A:0)
+      SRv6 SID: 2001:db8:0:a0:d01::, Flavor: USD
+    IS neighbor: VSRX22.4-1.03, Internal, Metric: default 10
+    IS neighbor: VSRX22.4-1.02, Internal, Metric: default 10
+    Extended IS Reachability TLV, Type: 22, Length: 90
+    IS extended neighbor: VSRX22.4-1.03, Metric: default 10 SubTLV len: 34
+      IP address: 10.1.0.2
+      IPv6 address: 2001:10:10:10::2
+---(more 98%)---                                              Local interface index: 73, Remote interface index: 0
+    IS extended neighbor: VSRX22.4-1.02, Metric: default 10 SubTLV len: 34
+      IP address: 10.2.0.2
+      IPv6 address: 2001:20:20:20::2
+      Local interface index: 74, Remote interface index: 0
+  No queued transmissions
+
+admin@VSRX22.4-2> show isis database 
+IS-IS level 1 link-state database:
+LSP ID                      Sequence Checksum Lifetime Attributes
+VSRX22.4-1.00-00                 0xd   0xcdee      647 L1 L2
+VSRX22.4-1.02-00                 0x5    0x772      661 L1 L2
+VSRX22.4-1.03-00                 0x5   0xff78      633 L1 L2
+VSRX22.4-2.00-00                 0xc   0x3a47      729 L1 L2
+  4 LSPs
+
+IS-IS level 2 link-state database:
+LSP ID                      Sequence Checksum Lifetime Attributes
+VSRX22.4-1.00-00                0x12   0x84d9      771 L1 L2
+VSRX22.4-1.02-00                 0x5    0x772      771 L1 L2
+VSRX22.4-1.03-00                 0x5   0xff78      611 L1 L2
+VSRX22.4-2.00-00                0x10   0x262f      729 L1 L2
+  4 LSPs
+
+admin@VSRX22.4-2> 

@@ -1,0 +1,70 @@
+admin@VSRX22.4-1> ...terface ge-0/0/0.10 size 10000 write-file bgp.pcap
+Address resolution is ON. Use <no-resolve> to avoid any reverse lookup delay.
+Address resolution timeout is 4s.
+Listening on ge-0/0/0.10, capture size 10000 bytes
+
+^C
+109 packets received by filter
+0 packets dropped by kernel
+
+admin@VSRX22.4-1> file list
+
+/var/home/admin/:
+.ssh/
+bgp.pcap
+
+/var/home/admin/bgp.pcap
+
+admin@VSRX22.4-1>
+
+
+admin@VSRX22.4-2> clear bgp neighbor all
+Cleared 2 connections
+
+admin@VSRX22.4-2> show bgp source-packet-routing
+
+admin@VSRX22.4-2> show bgp source-packet-routing ?
+Possible completions:
+  <[Enter]>            Execute this command
+  rib-sharding         Name of rib shard
+  srgb                 Show BGP source-packet-routing srgb
+  |                    Pipe through a command
+admin@VSRX22.4-2> show bgp summary
+Threading mode: BGP I/O
+Default eBGP mode: advertise - accept, receive - accept
+Groups: 2 Peers: 2 Down peers: 0
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+inet.0
+                       1          0          0          0          0          0
+inet6.0
+                       0          0          0          0          0          0
+bgp.l3vpn-inet6.0
+                       0          0          0          0          0          0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+1.1.1.1               65000          5          4       0       2          16 Establ
+  inet.0: 0/0/0/0
+  inet6.0: 0/0/0/0
+  bgp.l3vpn-inet6.0: 0/0/0/0
+2001:db8:12::1        65000          4          3       0       2          20 Establ
+  inet.0: 0/1/1/0
+
+admin@VSRX22.4-2> show bgp summary
+Threading mode: BGP I/O
+Default eBGP mode: advertise - accept, receive - accept
+Groups: 2 Peers: 2 Down peers: 0
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+inet.0
+                       1          0          0          0          0          0
+inet6.0
+                       0          0          0          0          0          0
+bgp.l3vpn-inet6.0
+                       0          0          0          0          0          0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+1.1.1.1               65000          5          4       0       2          20 Establ
+  inet.0: 0/0/0/0
+  inet6.0: 0/0/0/0
+  bgp.l3vpn-inet6.0: 0/0/0/0
+2001:db8:12::1        65000          4          3       0       2          24 Establ
+  inet.0: 0/1/1/0
+
+admin@VSRX22.4-2>

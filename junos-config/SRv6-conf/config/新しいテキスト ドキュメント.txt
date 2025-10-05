@@ -1,0 +1,35 @@
+admin@VSRX22.4-1> ...ce ge-0/0/0.10 size 10000 write-file srv6.pcap
+Address resolution is ON. Use <no-resolve> to avoid any reverse lookup delay.
+Address resolution timeout is 4s.
+Listening on ge-0/0/0.10, capture size 10000 bytes
+
+^C
+63 packets received by filter
+0 packets dropped by kernel
+
+admin@VSRX22.4-1> file list
+
+/var/home/admin/:
+.ssh/
+srv6.pcap
+
+admin@VSRX22.4-1>
+
+
+
+
+admin@VSRX22.4-2> clear isis adjacency all
+
+
+admin@VSRX22.4-2> show isis adjacency
+Interface             System         L State         Hold (secs) SNPA
+ge-0/0/0.10           VSRX22.4-1     2  New                   26
+ge-0/0/1.0            VSRX2          2  New                   19  0:c:29:18:99:9a
+
+
+admin@VSRX22.4-2> show isis adjacency
+Interface             System         L State         Hold (secs) SNPA
+ge-0/0/0.10           VSRX22.4-1     2  Up                    20
+ge-0/0/1.0            VSRX2          2  Up                    21  0:c:29:18:99:9a
+
+admin@VSRX22.4-2>

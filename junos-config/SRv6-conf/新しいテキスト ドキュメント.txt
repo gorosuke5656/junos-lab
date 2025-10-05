@@ -1,0 +1,56 @@
+1. SRv6機能の有効化
+
+set routing-options source-packet-routing srv6
+
+2. SRv6ロケータの設定
+
+SRv6ロケータ（Locator）を設定します。
+
+set routing-options source-packet-routing srv6 locator LOC1 prefix 2001:db8:10::/64
+
+3. エンドSIDの設定
+
+特定のエンドポイントSID（END-SID）を設定します。
+
+set routing-options source-packet-routing srv6 end-sid 2001:db8:10:0:2:: flavor usd
+
+    Flavor USD: Unidirectional Segment Delivery（単方向セグメントデリバリ）
+
+4. IS-ISの設定
+
+IS-ISでSRv6を有効化し、IPv6とSRv6情報が広報されるように設定します。
+
+set protocols isis source-packet-routing srv6
+set protocols isis ipv6-routing
+set protocols isis interface lo0.0
+set protocols isis interface ge-0/0/0.0
+
+5. ループバックアドレスの設定
+
+各ルーターのループバックインターフェースにIPv6アドレスを設定します。
+
+set interfaces lo0 unit 0 family inet6 address 2001:db8::10/128
+
+6. インターフェースの設定
+
+IPv6アドレスを物理インターフェースに設定します。
+
+set interfaces ge-0/0/0 unit 0 family inet6 address 2001:db8:10::1/64
+
+7. 動作確認
+
+設定後、以下のコマンドでSRv6とIS-ISの状態を確認します。
+
+show isis overview
+show isis database
+show source-packet-routing srv6
+
+ポイントのまとめ
+
+    SRv6有効化: set routing-options source-packet-routing srv6
+    ロケータ: 2001:db8:10::/64
+    END-SID: 2001:db8:10:0:2::
+    IS-ISでSRv6の有効化: set protocols isis source-packet-routing srv6
+
+この設定で、IS-IS経由でSRv6のロケータおよびSIDが広報され、提示された出力のようになります。
+
