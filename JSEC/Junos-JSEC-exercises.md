@@ -1,9 +1,9 @@
 本内容な以前受講したJunos Security（JSEC）で実施した演習内容+αを紹介します<cr>
 
-演習の内容<cr>
+演習の内容 <cr>
 
-1　演習環境<cr>
-2　JSEC演習<cr>
+1　演習環境 <cr>
+2　JSEC演習 <cr>
 (1) Zone<cr>
 (2) Security polices<cr>
 (3) Firewall User Authentication<cr>
