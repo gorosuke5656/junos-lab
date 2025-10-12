@@ -17,7 +17,8 @@
 　
 
 ３　Zone：Untrustに対してpingを除くアクセスを許可するように変更します<br>
-　　設定内容<br>
+　　【設定内容】<br>
  　　#set security zone security-zone Untrust host-inbound-traffic system-services ping except<br>
+   
 　　上記設定後、Ubuntu又はVSRXからUntrustに対してsshは成功するがpingが失敗することを確認します<br>　　　
 
