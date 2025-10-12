@@ -2,7 +2,7 @@
 
 演習の内容 <br>
 
-1　演習環境 <cr>
+1　演習環境 [次のチャプターへ進む](./Exercise-environment.md) <br>
 2　JSEC演習 <br>
 (1) Zone: [次のチャプターへ進む](./Zone.md) <br>
 (2) Security polices: [次のチャプターへ進む](./Security-policies.md) <br>
