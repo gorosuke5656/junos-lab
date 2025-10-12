@@ -1,6 +1,8 @@
 今回の演習で使用する演習環境は以下のようになっています！！<br>
 
 
+![Diagram](./images/Exercise-environment.jpg)<br>
+
 
 
 VM環境に構成されたUbuntuとVSRXと接続されたSRX100が2方向で対向のSRX100に接続されています<br>
