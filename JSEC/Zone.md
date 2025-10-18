@@ -1,7 +1,7 @@
 １　SRX100H2の各VRに対して以下の条件でZoneを設定します<br>
 　【VR1】<br>
 　　　Zone名：Untrust-VR1　対象INF：fe-0/0/3<br>　　　
-      Zone名:Trust-VR1　　対象INF :fe-0/0/2<br>
+      Zone名:  Trust-VR1　　対象INF :fe-0/0/2<br>
 　【VR2】<br>
       Zone名: Untrust-VR2　対象INF:fe-0/0/7<br>　　　
       Zone名: Trust-VR2　　対象INF:fe-0/0/6<br>
