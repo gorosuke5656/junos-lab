@@ -1,4 +1,4 @@
-![Diagram](./images/zone-1.jpg)<br>
+![Diagram](./images/Zone-1.jpg)<br>
 
 
 １　SRX100H2の各VRに対して以下の条件でZoneを設定します<br>
