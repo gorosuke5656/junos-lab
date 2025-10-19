@@ -1,3 +1,6 @@
+![Diagram](./images/zone-1.jpg)<br>
+
+
 １　SRX100H2の各VRに対して以下の条件でZoneを設定します<br>
 　【VR1】<br>
 　　　Zone名：Untrust-VR1　対象INF：fe-0/0/3<br>　　　
