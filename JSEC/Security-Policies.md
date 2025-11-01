@@ -19,16 +19,12 @@
      
   (3) Loggerコマンドを使用して、Syslogサーバにログが残ることを確認します<br>
 
-２　SRXにおけるSyslog設定
-　(1)　SRX100H2での設定及び確認
-　　　Security Policyを設定し、SRXの内部ストレージにログを格納します。
+２　SRXにおけるSyslog設定<br>
+　(1)　SRX100H2での設定及び確認<br>
+　　　Security Policyを設定し、SRXの内部ストレージにログを格納します<br>
 
-　(2) SRX100Bでの設定及び確認
-　　　Security Policyを設定し、Syslogサーバにログを転送します
+　(2) SRX100Bでの設定及び確認<br>
+　　　Security Policyを設定し、Syslogサーバにログを転送します<br>
 
  
 
-３　Zone：Untrustに対してpingを除くアクセスを許可するように変更します<br>
-　　【設定内容】<br>
- 　#set security zone security-zone Untrust host-inbound-traffic system-services ping   
-   except<br>
