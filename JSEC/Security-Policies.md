@@ -1,4 +1,4 @@
-![Diagram](./images/security-policy-1.jpg)<br>
+![Diagram](./images/Security-policy-1.jpg)<br>
 
 【事前準備】<br>
 １　Linux（Ubuntu）において以下の設定及び確認を実施します
