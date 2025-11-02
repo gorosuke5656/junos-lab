@@ -5,7 +5,7 @@
 1　演習環境 [次のチャプターへ進む](./Exercise-environment.md) <br>
 2　JSEC演習 <br>
 (1) Zone: [次のチャプターへ進む](./Zone.md) <br>
-(2) Security polices: [次のチャプターへ進む](./Security-policies.md) <br>
+(2) Security polices: [次のチャプターへ進む](./Security-Policies.md) <br>
 (3) Firewall User Authentication: [次のチャプターへ進む](./Firewall-User-Authentication.md)<br>
 (4) Screen options:[次のチャプターへ進む](./Screen-options.md)<br>
 (5) NAT:[次のチャプターへ進む](./NAT.md)<br>
