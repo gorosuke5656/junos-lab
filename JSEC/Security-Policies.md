@@ -27,11 +27,48 @@
   　![Diagram](./images/Security-policy-4.jpg)<br>
 
 ２　SRXにおけるSyslog設定<br>
-　(1)　SRX100H2での設定及び確認<br>
+　(1)　SRX100H2(VR設定あり）での設定及び確認<br>
 　　　Security Policyを設定し、SRXの内部ストレージにログを格納します<br>
+　【関連設定】
 
-　(2) SRX100Bでの設定及び確認<br>
+
+　(2) SRX100(VR設定なし）での設定及び確認<br>
 　　　Security Policyを設定し、Syslogサーバにログを転送します<br>
+
+　【関連設定】<br>
+  　 （Security-Policy設定<br>
+     admin@SRX100> show configuration security policies | display set<br>
+     set security policies from-zone trust to-zone untrust policy trust-to-untrust match source-address any<br>
+     set security policies from-zone trust to-zone untrust policy trust-to-untrust match destination-address any<br>
+     set security policies from-zone trust to-zone untrust policy trust-to-untrust match application any<br>
+     set security policies from-zone trust to-zone untrust policy trust-to-untrust then permit<br>
+     set security policies from-zone untrust to-zone trust policy untrust-to-trust match source-address any<br>
+     set security policies from-zone untrust to-zone trust policy untrust-to-trust match destination-address any<br>
+     set security policies from-zone untrust to-zone trust policy untrust-to-trust match application any<br>
+     set security policies from-zone untrust to-zone trust policy untrust-to-trust then permit<br>
+    set security policies default-policy deny-all<br>
+　　（Syslog設定）<br>
+       admin@SRX100> show configuration system syslog | display set<br>
+                     set system syslog archive size 100k<br>
+                     set system syslog archive files 3<br>
+                     set system syslog user * any emergency<br>
+                     set system syslog host 130.230.0.1 user info<br>
+                     set system syslog host 130.230.0.1 source-address 172.16.100.254<br>
+                     set system syslog file messages any critical<br>
+                     set system syslog file messages authorization info<br>
+                     set system syslog file interactive-commands interactive-commands error<br>
+                     set system syslog file kmd daemon info<br>
+                     set system syslog file kmd match KMD<br>
+                     set system syslog file kmd archive size 500k<br>
+                     set system syslog file Policylog user info<br>
+                     set system syslog file Policylog explicit-priority<br>
+
+admin@SRX100>
+    
+
+
+    
+   
 
  
 
