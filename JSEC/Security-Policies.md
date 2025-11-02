@@ -47,8 +47,9 @@
      set security policies from-zone untrust to-zone trust policy untrust-to-trust match application any<br>
      set security policies from-zone untrust to-zone trust policy untrust-to-trust then permit<br>
     set security policies default-policy deny-all<br>
+    
 　　（Syslog設定）<br>
-       admin@SRX100> show configuration system syslog | display set<br
+       admin@SRX100> show configuration system syslog | display set<br>
                      set system syslog host 130.230.0.1 user info<br>
                      set system syslog host 130.230.0.1 source-address 172.16.100.254<br>
                      set system syslog file Policylog user info<br>
