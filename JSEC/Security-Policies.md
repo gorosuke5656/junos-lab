@@ -26,10 +26,28 @@
   (3) Loggerコマンドを使用して、Syslogサーバにログが残ることを確認します<br>
   　![Diagram](./images/Security-policy-4.jpg)<br>
 
-２　SRXにおけるSyslog設定<br>
+２　SRXにおけるSecuirty-policy設定及びSyslog設定<br>
 　(1)　SRX100H2(VR設定あり）での設定及び確認<br>
 　　　Security Policyを設定し、SRXの内部ストレージにログを格納します<br>
-　【関連設定】
+　【設定手順】<br>
+    ア）Policyで使用するAddressbookを作成します<br>
+　　　　Zone　　　　　　Address Name<br>
+　　　　Trust　　　　　　Client_Net　　　　　　　10.1.7.0/24 (VR2の場合）<br>
+　　　　Untrust　　　　 Server_Net              130.230.0.0/24<br>
+
+　　イ）SRX100H２のVR1において以下のPolicyを適用します（ActionはPermit）<br>
+　　　　方向　　　　　　　　　　Name　　　　　　　Ｓ　　　　　　Ｄ　　　　　　Service<br>　　
+　　　　Trust→Untrust　  Client_to_Server　Client_Net　 Server_Net　　 ping/http<br>　
+　　　　Untrust→Trust　  Server_to_Client　Server_Net　Client_Net　　 ping/ssh<br>
+
+　　ウ）Default-Policyは"Deny-all"に設定してください<br>
+　　
+    エ）全てのPolicyに対してセッション開始時と終了時にログが残るように設定します<br>
+　　オ）SRX100H2でログを残す設定を実施します。
+　　　（細部は別スライド）　
+　　　
+④　通信を発生させSRX100（VR2）の内部ログに残るかを確認します
+
 
 
 　(2) SRX100(VR設定なし）での設定及び確認<br>
