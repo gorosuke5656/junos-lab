@@ -22,6 +22,7 @@
 　　　　　$sudo service rsyslog restart<br>
      
   (3) Loggerコマンドを使用して、Syslogサーバにログが残ることを確認します<br>
+  　　![Diagram](./images/Security-policy-4.jpg)<br>
 
 ２　SRXにおけるSyslog設定<br>
 　(1)　SRX100H2での設定及び確認<br>
