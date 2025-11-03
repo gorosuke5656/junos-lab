@@ -1,4 +1,4 @@
-[始めに戻る](./Junos-JSEC-exercises.md) <br>
+<img width="160" height="116" alt="image" src="https://github.com/user-attachments/assets/93a3742a-f3ce-4b2c-b6bb-54ea9bd53be1" />[始めに戻る](./Junos-JSEC-exercises.md) <br>
 
  ### Security-policy設定の構成<br>
 
@@ -43,17 +43,17 @@
 　　ウ）Default-Policyは"Deny-all"に設定してください<br>
 　　
     エ）全てのPolicyに対してセッション開始時と終了時にログが残るように設定します<br>
-　　オ）SRX100H2でログを残す設定を実施します。
-　　　（細部は別スライド）　
+　　オ）SRX100H2でログを残す設定を実施します<br>
+
+　　　（細部は別スライド）<br>　
 　　　
-④　通信を発生させSRX100（VR2）の内部ログに残るかを確認します
-
-
+　〇　通信を発生させSRX100（VR2）の内部ログに残るかを確認します<br>
+【設定結果】<br>
 
 　(2) SRX100(VR設定なし）での設定及び確認<br>
 　　　Security Policyを設定し、Syslogサーバにログを転送します<br>
-
-　【関連設定】<br>
+　【設定】
+　【設定結果】<br>
   　 （Security-Policy設定)<br>
      admin@SRX100> show configuration security policies | display set<br>
      set security policies from-zone trust to-zone untrust policy trust-to-untrust match source-address any<br>
