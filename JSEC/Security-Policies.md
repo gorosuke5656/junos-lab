@@ -4,6 +4,8 @@
 
 ![Diagram](./images/Security-policy-1.jpg)<br>
 
+今回はSRX100(VR設定なし）とSRX100(VR設定あり：VR2）のみSecuirty-policy及びSyslog設定を実施します<br>
+
 【事前準備】<br>
 １　Linux（Ubuntu）において以下の設定及び確認を実施します
 　(1) Python2を使用して簡易Webサーバーを起動します<br>
