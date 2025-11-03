@@ -1,4 +1,4 @@
-<img width="160" height="116" alt="image" src="https://github.com/user-attachments/assets/93a3742a-f3ce-4b2c-b6bb-54ea9bd53be1" />[始めに戻る](./Junos-JSEC-exercises.md) <br>
+[始めに戻る](./Junos-JSEC-exercises.md) <br>
 
  ### Security-policy設定の構成<br>
 
