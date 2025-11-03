@@ -51,7 +51,8 @@
 　　　
 　〇　通信を発生させSRX100（VR2）の内部ログに残るかを確認します<br>
 【設定結果】<br>
-
+　　ア）Policyで使用するAddressbookを作成します<br>
+  　　
 　(2) SRX100(VR設定なし）での設定及び確認<br>
 　　　Security Policyを設定し、Syslogサーバにログを転送します<br>
 　【設定】
