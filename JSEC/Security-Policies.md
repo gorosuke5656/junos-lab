@@ -52,8 +52,12 @@
 　〇　通信を発生させSRX100（VR2）の内部ログに残るかを確認します<br>
 【設定結果】<br>
 　　ア）Policyで使用するAddressbookを作成します<br>
-  　　
-　(2) SRX100(VR設定なし）での設定及び確認<br>
+  　　set security zones security-zone untrust-VR2 address-book address Server-net 130.230.0.0/24<br>
+　　　set security zones security-zone trust-VR2 address-book address Client-Net 10.1.7.0/24<br>
+
+    イ）
+ 
+ 　　(2) SRX100(VR設定なし）での設定及び確認<br>
 　　　Security Policyを設定し、Syslogサーバにログを転送します<br>
 　【設定】
 　【設定結果】<br>
