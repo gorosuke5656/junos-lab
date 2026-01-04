@@ -10,7 +10,7 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
 
  (2) 起動方法及び停止方法
  停止時の動作<br>
- >request system power-offコマンドにより電源停止を実施しましょう<br>
+ "request system power-off"コマンドにより電源停止を実施しましょう<br>
  <img width="1044" height="600" alt="image" src="https://github.com/user-attachments/assets/573a3e19-4555-4ee8-80d0-3c74163a5b9d" />
 
 ###　3 事前準備<br>
