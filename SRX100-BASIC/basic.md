@@ -93,21 +93,13 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
 
 #### IS-ISのパケットを取得<br>
 <img width="1037" height="751" alt="image" src="https://github.com/user-attachments/assets/94281363-0b8c-4d53-806a-4927b36c4f53" />
-
 <img width="1051" height="741" alt="image" src="https://github.com/user-attachments/assets/5a83a7af-eae2-491b-813c-e2ad5fcc17e3" />
+<img width="1044" height="738" alt="image" src="https://github.com/user-attachments/assets/75202268-59bf-4772-81fb-1e5feb974a5c" /><br>
 
- <img width="1044" height="738" alt="image" src="https://github.com/user-attachments/assets/75202268-59bf-4772-81fb-1e5feb974a5c" />
+バーチャルルーターを実施した今回の内容は以下のブログでも紹介しています！！<br> 
 
-
-
- 
-
-
-
-
-
-
-
+JuniperSRXのバーチャルルーターを使ってみる<br>
+https://gorosuke5656.hatenablog.com/entry/2025/09/14/122216<br>
 
 
 
