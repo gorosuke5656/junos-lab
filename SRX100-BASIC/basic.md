@@ -15,9 +15,27 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
 
 ###　3 事前準備<br>
 以下の４つについて説明します<br>
-(1) passwordリカバリーを実施する<br>  
+(1) passwordリカバリーを実施する<br> 
+  SRXシリーズデバイスの root パスワードを忘れた場合は、パスワードリカバリを使用して root パスワードをリセットすることができます<br> 
+  この手順では、ウォッチドッグを無効にして、システムがシングルユーザーモードで 適切に起動できるようにします<br>
+
+  <img width="1016" height="588" alt="image" src="https://github.com/user-attachments/assets/9bf60b09-1ae4-4acb-ae21-da9ba83fceff" />
+
+（設定例）<br>
+
+<img width="1028" height="688" alt="image" src="https://github.com/user-attachments/assets/d80fa1f0-2a02-479b-b3b7-5b2ac96dec19" />
+<img width="1042" height="689" alt="image" src="https://github.com/user-attachments/assets/86a0a4a5-484d-4dc8-966c-bf5621cf158b" />
+<img width="1037" height="658" alt="image" src="https://github.com/user-attachments/assets/5d2d8f80-4e6d-4676-bd2e-e2ba93a15881" />
+<img width="1028" height="683" alt="image" src="https://github.com/user-attachments/assets/b2bd5786-4883-4d28-aedb-a8ae9a822af7" />
+
+(2) rootパスワード及び管理者パスワードを設定する<br>
+
+
+
+
+
 (2) deleteコマンドにより設定を初期化する<br>
-(3) rootパスワード及び管理者パスワードを設定する<br>
+
 (4) commitにより設定を反映する<br>
 
 
