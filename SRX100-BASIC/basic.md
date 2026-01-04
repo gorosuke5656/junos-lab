@@ -49,15 +49,34 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
   バーチャルルータの数だけ独自のルーティングテーブルを保持することができます。SRXでは、機種ごとにバーチャルルータの最大数が異なります。<br>
    SRX100の場合 3 です ⇒　と言われていますが。。３以上バーチャルルーターを設定できそうです！<br>
 
-####　バーチャルルータの設定例<br>
+#### バーチャルルータの設定例<br>
 ここでは、SRX100１台に３つのバーチャルルータ(VR）を設定し、確認した例を紹介します！<br> 
-今回の構成図<br>
-<img width="1054" height="784" alt="image" src="https://github.com/user-attachments/assets/f1abfacc-6f81-44f2-94cb-785a6f974c35" />
+〇　今回の構成図<br>
+<img width="1054" height="784" alt="image" src="https://github.com/user-attachments/assets/f1abfacc-6f81-44f2-94cb-785a6f974c35" /><br>
+
+上図の通り３つのバーチャルルータを設定します。　ルーティングプロトコルはIS-ISを使用します<br>
+
+今回は、対向装置が接続されていないインタフェースを強制的にUPさせます！<br>
+<img width="1040" height="779" alt="image" src="https://github.com/user-attachments/assets/fe6f43b7-da9a-4a42-a05e-6a6218f54adc" /><br>
+
+【例：Fe-0/0/5を強制的にUP】
+<img width="1043" height="705" alt="image" src="https://github.com/user-attachments/assets/71ee74f7-cc17-4270-a7e8-2b885db00ab3" /><br>
+
+〇 今回の設定<br>
+<img width="974" height="567" alt="image" src="https://github.com/user-attachments/assets/ea5016f8-6e9c-4434-9d1e-3142936cb327" />
+
+今回の設定要領<br>
+<img width="1043" height="681" alt="image" src="https://github.com/user-attachments/assets/28208255-5dc1-4ecb-afbb-eb684992da82" />
+
+ Routingに専念するためにセキュリティ設定を無効化します<br>
+ <img width="1032" height="174" alt="image" src="https://github.com/user-attachments/assets/7d2d515a-4bb0-47fb-8184-3cd5bef25b99" />
+
+　SRX1台で3つのバーチャルルータ-（VR）に設定します<br>
+ <img width="1033" height="286" alt="image" src="https://github.com/user-attachments/assets/e5bebc90-37ab-4fb5-bced-89787929655c" />
 
 
- (2) セキュリバーチャルルータ（VR）とは
-　
-ティ設定の解除<br> 
+
+
 
 ### ５　参考資料
 　(1)　レスキューconfigについて<br> 
