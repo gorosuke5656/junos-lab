@@ -74,6 +74,37 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
 　SRX1台で3つのバーチャルルータ-（VR）に設定します<br>
  <img width="1033" height="286" alt="image" src="https://github.com/user-attachments/assets/e5bebc90-37ab-4fb5-bced-89787929655c" />
 
+  ループバックアドレスを作成し、各VRに割りあてます<br>
+<img width="1034" height="259" alt="image" src="https://github.com/user-attachments/assets/fcf965bf-72e8-40bd-933e-af00824116ec" />
+
+　Policy-Optionsを設定し、各VRのポリシーを許可します<br>
+ <img width="1028" height="658" alt="image" src="https://github.com/user-attachments/assets/f08b7f29-74b9-4a93-be55-241ada9661c2" />
+
+ ３台のVRに対してIS-IS設定を実施します<br>
+ <img width="1031" height="694" alt="image" src="https://github.com/user-attachments/assets/df873fa0-7d4b-4e32-b8f7-a91364ca9c9b" />
+
+ 設定後、IS-IS関連コマンドで確認します<br>
+ (1)  show isis overview<br>
+ <img width="1015" height="693" alt="image" src="https://github.com/user-attachments/assets/c60fc1ab-217a-4f6a-bc2b-01dba7b30543" />
+ (2)  show isis adjacency<br>
+ <img width="1033" height="667" alt="image" src="https://github.com/user-attachments/assets/47f54936-4b92-4713-ae82-e056e4076cab" />
+ (3)  show isis database<br>
+ <img width="1022" height="666" alt="image" src="https://github.com/user-attachments/assets/56176f0c-3d95-44b6-b8f7-787772f6996e" />
+
+#### IS-ISのパケットを取得<br>
+<img width="1037" height="751" alt="image" src="https://github.com/user-attachments/assets/94281363-0b8c-4d53-806a-4927b36c4f53" />
+
+
+ 
+
+
+ 
+
+
+
+
+
+
 
 
 
