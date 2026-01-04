@@ -34,7 +34,7 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
 
 (3) deleteコマンドにより設定を初期化する<br>
 
-<img width="798" height="472" alt="image" src="https://github.com/user-attachments/assets/7313fb78-11a2-4c1a-97a6-eed22971ba9b" />
+<img width="798" height="472" alt="image" src="https://github.com/user-attachments/assets/7313fb78-11a2-4c1a-97a6-eed22971ba9b" /><br>
 　　⇒　注意事項：このままcommitしてもエラーになるので注意しましょう！！<br> 
 　　　（最低限rootパスワード設定を実施しないとcommitできません！）<br>
 
