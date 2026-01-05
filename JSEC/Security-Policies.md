@@ -27,7 +27,7 @@
 　　　Security Policyを設定し、SRXの内部ストレージにログを格納します<br>
 
  #### 【設定手順】<br>
-    <img width="1039" height="690" alt="image" src="https://github.com/user-attachments/assets/dcd878c2-00aa-449a-8bfe-1fb37e6409ed" />
+   <img width="1039" height="690" alt="image" src="https://github.com/user-attachments/assets/dcd878c2-00aa-449a-8bfe-1fb37e6409ed" />
 　　　（細部は別スライド）<br>　
 
 　〇　通信を発生させSRX100（VR2）の内部ログに残るかを確認します<br>
