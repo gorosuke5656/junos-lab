@@ -1,8 +1,8 @@
 [始めに戻る](./Junos-JSEC-exercises.md) <br>
 
  ### Security-policy設定の構成<br>
+<img width="1044" height="732" alt="image" src="https://github.com/user-attachments/assets/7e2ec66a-d21a-46c4-9663-0f01a7231915" />
 
-![Diagram](./images/Security-policy-1.jpg)<br>
 
 今回はSRX100(VR設定なし）とSRX100(VR設定あり：VR2）のみSecuirty-policy及びSyslog設定を実施します<br>
 
