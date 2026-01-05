@@ -16,7 +16,8 @@
 　　　<img width="1023" height="637" alt="image" src="https://github.com/user-attachments/assets/752a57ca-f066-44b9-bde1-f6b11b6aafb9" />
    
      〇rsyslogサーバーの起動状態の確認<br>
-       <img width="1030" height="658" alt="image" src="https://github.com/user-attachments/assets/679e7447-a717-45dd-9a2f-8279bfdab2a1" />
+   <img width="1038" height="647" alt="image" src="https://github.com/user-attachments/assets/d79a73c2-929b-4afd-932d-2de8ddf1a75d" />
+
 
      
   (3) Loggerコマンドを使用して、Syslogサーバにログが残ることを確認します<br>
