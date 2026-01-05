@@ -15,7 +15,7 @@
  　　〇 設定ファイル　”/etc/rsyslog.conf”に以下の内容を編集/追加<br>
 　　　<img width="1023" height="637" alt="image" src="https://github.com/user-attachments/assets/752a57ca-f066-44b9-bde1-f6b11b6aafb9" />
    
-     〇 rsyslogサーバーの起動状態の確認<br>
+  　〇rsyslogサーバーの状態確認<br>
    <img width="1038" height="647" alt="image" src="https://github.com/user-attachments/assets/d79a73c2-929b-4afd-932d-2de8ddf1a75d" />
      
   (3) Loggerコマンドを使用して、Syslogサーバにログが残ることを確認します<br>
