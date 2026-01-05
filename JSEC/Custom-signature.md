@@ -39,6 +39,20 @@ Junosコマンド "show security idp attack table”による確認<br>
 <img width="1030" height="691" alt="image" src="https://github.com/user-attachments/assets/d3aeb167-f285-4e78-b3e1-3cafc6384842" />
 
 
+【SRXでの検知情報をSyslogサーバに転送】<br>
+
+<img width="1041" height="644" alt="image" src="https://github.com/user-attachments/assets/b512461f-0be5-4cc3-a18a-4339d2260895" />
+
+<img width="1034" height="634" alt="image" src="https://github.com/user-attachments/assets/86e8a064-9b78-4eb0-8837-aeec304d7872" />
+
+<img width="1024" height="632" alt="image" src="https://github.com/user-attachments/assets/d0c9a09b-b31c-418d-a000-1696702ab552" />
+
+<img width="1024" height="623" alt="image" src="https://github.com/user-attachments/assets/32fd4881-92c4-4de9-a04e-af7bb2d6101d" />
+
+
+
+
+
 
 
 
