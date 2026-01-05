@@ -19,7 +19,8 @@
    <img width="1038" height="647" alt="image" src="https://github.com/user-attachments/assets/d79a73c2-929b-4afd-932d-2de8ddf1a75d" />
      
   (3) Loggerコマンドを使用して、Syslogサーバにログが残ることを確認します<br>
-  　![Diagram](./images/Security-policy-4.jpg)<br>
+  　<img width="1038" height="633" alt="image" src="https://github.com/user-attachments/assets/79b1f881-309a-4893-a1d0-a37d6f803b8c" />
+
 
 ２　SRXにおけるSecuirty-policy設定及びSyslog設定<br>
 　(1)　SRX100H2(VR設定あり）での設定及び確認<br>
