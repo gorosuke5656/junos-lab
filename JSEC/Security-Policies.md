@@ -6,8 +6,8 @@
 
 今回はSRX100(VR設定なし）とSRX100(VR設定あり：VR2）のみSecuirty-policy及びSyslog設定を実施します<br>
 
-【事前準備】<br>
-１　Linux（Ubuntu）において以下の設定及び確認を実施します
+#### 【事前準備】<br>
+１　Linux（Ubuntu）において以下の設定及び確認を実施します<br>
 　(1) Python2を使用して簡易Webサーバーを起動します<br>
 　　　<img width="1041" height="690" alt="image" src="https://github.com/user-attachments/assets/d3033a24-77fe-4103-b7ce-56bfff7a10dc" />
 
@@ -24,10 +24,11 @@
 ２　SRXにおけるSecuirty-policy設定及びSyslog設定<br>
 　(1)　SRX100H2(VR設定あり）での設定及び確認<br>
 　　　Security Policyを設定し、SRXの内部ストレージにログを格納します<br>
-　【設定手順】<br>
+
+ #### 【設定手順】<br>
     <img width="1039" height="690" alt="image" src="https://github.com/user-attachments/assets/dcd878c2-00aa-449a-8bfe-1fb37e6409ed" />
 　　　（細部は別スライド）<br>　
-　　　
+
 　〇　通信を発生させSRX100（VR2）の内部ログに残るかを確認します<br>
 【設定結果】<br>
 　　ア）Policyで使用するAddressbookを作成します<br>
