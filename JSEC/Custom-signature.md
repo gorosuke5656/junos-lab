@@ -28,8 +28,18 @@
 <img width="1039" height="679" alt="image" src="https://github.com/user-attachments/assets/d2bb3bd5-9a4a-4419-b921-a46d6b44c205" /><br>
 
 Junosコマンド "show security flow session”による確認<br>
+<img width="1031" height="681" alt="image" src="https://github.com/user-attachments/assets/8c8ed8b5-813d-481b-b913-2a6103051178" /><br>
 
-<img width="1031" height="681" alt="image" src="https://github.com/user-attachments/assets/8c8ed8b5-813d-481b-b913-2a6103051178" />
+
+Junosコマンド "show security idp attack table”による確認<br>
+<img width="1035" height="691" alt="image" src="https://github.com/user-attachments/assets/cba83292-938c-40c4-af03-5485c1280f90" />
+
+<img width="1033" height="676" alt="image" src="https://github.com/user-attachments/assets/47117caf-2a7d-47a1-b18a-c753242d7e82" />
+
+<img width="1030" height="691" alt="image" src="https://github.com/user-attachments/assets/d3aeb167-f285-4e78-b3e1-3cafc6384842" />
+
+
+
 
 
 
