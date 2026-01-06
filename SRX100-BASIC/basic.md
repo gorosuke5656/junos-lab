@@ -13,7 +13,7 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
  "request system power-off"コマンドにより電源停止を実施しましょう<br>
  <img width="1044" height="600" alt="image" src="https://github.com/user-attachments/assets/573a3e19-4555-4ee8-80d0-3c74163a5b9d" />
 
-###　3 事前準備<br>
+### 3 事前準備<br>
 以下の４つについて説明します<br>
 (1) passwordリカバリーを実施する<br> 
   SRXシリーズデバイスの root パスワードを忘れた場合は、パスワードリカバリを使用して root パスワードをリセットすることができます<br> 
