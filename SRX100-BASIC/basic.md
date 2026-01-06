@@ -103,8 +103,35 @@ https://gorosuke5656.hatenablog.com/entry/2025/09/14/122216<br>
 
 
 
-### ５　参考資料
-　(1)　レスキューconfigについて<br> 
+### ５　参考資料<br>
+　(1)　レスキューconfigについて<br>
+　ご自宅のSRX100のランプ状態ってこんな感じになっていないでしょうか～？？<br>
+ <img width="1035" height="651" alt="image" src="https://github.com/user-attachments/assets/4ec6d2c3-0250-42e6-b11e-6ead103dda8a" />
+
+ resure config(レスキューconfig) について
+　SRXの工場出荷時の状態では、レスキューコンフィグと呼ばれるコンフィグが設定されていないためフロントパネルのALARMがオレンジ色に点灯しています<br>
+　このレスキューコンフィグを作成することでアラームランプが点灯しなくなります<br>
+　　（レスキューコンフィグとは設定ミス等で通信障害が発生したりアクセスができなくなった場合に備えて、管理者が予め保存して緊急時に読み込ませるコンフィグです。）<br> 
+
+  <img width="1042" height="511" alt="image" src="https://github.com/user-attachments/assets/d05bdc26-9fae-4ada-ad95-00c77a482570" />
+
+  レスキューconfigの作成方法<br>
+  <img width="972" height="386" alt="image" src="https://github.com/user-attachments/assets/2762a3a2-19e6-42a3-b651-b6ee818efdba" />
+
+  Autorecovery 機能について説明します<br>
+   Junosには 「自動リカバリ (autorecovery)」 機能があり、管理者がログインできなくなったときにシステムを工場出荷時状態に戻す（リカバリする）仕組みがあります<br>
+   具体的には、root パスワードを忘れた ときなどに役立ちます<br>
+   デフォルトでは システムが一定時間ログイン不能な状態 になると、デバイスが自動的にリカバリを行います<br>
+
+   Autorecovery機能の有効化について<br>
+   <img width="1043" height="581" alt="image" src="https://github.com/user-attachments/assets/ac71b073-ab48-4228-8989-37130f8f850c" />
+
+
+
+
+
+
+ 
 　(2)  インタフェースの強制UP方法<br> 
 　(3)　内部INFを使用したバーチャルルータ（ＶＲ）設定<br> 
   (4)  SRXの初期化要領について<br> 
