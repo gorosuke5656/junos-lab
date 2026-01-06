@@ -54,7 +54,7 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
 〇　今回の構成図<br>
 <img width="1054" height="784" alt="image" src="https://github.com/user-attachments/assets/f1abfacc-6f81-44f2-94cb-785a6f974c35" /><br>
 
-上図の通り３つのバーチャルルータを設定します。　ルーティングプロトコルはIS-ISを使用します<br>
+上図の通り３つのバーチャルルータを設定します<br> ルーティングプロトコルはIS-ISを使用します<br>
 
 今回は、対向装置が接続されていないインタフェースを強制的にUPさせます！<br>
 <img width="1040" height="779" alt="image" src="https://github.com/user-attachments/assets/fe6f43b7-da9a-4a42-a05e-6a6218f54adc" /><br>
