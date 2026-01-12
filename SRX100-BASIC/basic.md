@@ -44,12 +44,12 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
 
 
 ### 4 各種設定紹介
- (1) バーチャルルータ（VR）の設定と確認<br>
+ #### (1) バーチャルルータ（VR）の設定と確認<br>
   バーチャルルータとは、仮想的なルータのことです。これにより、1つの物理的な SRX上に複数の仮想的なルータを存在させることができるので、<br>
   バーチャルルータの数だけ独自のルーティングテーブルを保持することができます。SRXでは、機種ごとにバーチャルルータの最大数が異なります。<br>
    SRX100の場合 3 です ⇒　と言われていますが。。３以上バーチャルルーターを設定できそうです！<br>
 
-#### バーチャルルータの設定例<br>
+##### バーチャルルータの設定例<br>
 ここでは、SRX100１台に３つのバーチャルルータ(VR）を設定し、確認した例を紹介します！<br> 
 〇　今回の構成図<br>
 <img width="1054" height="784" alt="image" src="https://github.com/user-attachments/assets/f1abfacc-6f81-44f2-94cb-785a6f974c35" /><br>
@@ -91,7 +91,7 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
  (3)  show isis database<br>
  <img width="1022" height="666" alt="image" src="https://github.com/user-attachments/assets/56176f0c-3d95-44b6-b8f7-787772f6996e" />
 
-#### IS-ISのパケットを取得<br>
+##### IS-ISのパケットを取得<br>
 <img width="1037" height="751" alt="image" src="https://github.com/user-attachments/assets/94281363-0b8c-4d53-806a-4927b36c4f53" />
 <img width="1051" height="741" alt="image" src="https://github.com/user-attachments/assets/5a83a7af-eae2-491b-813c-e2ad5fcc17e3" />
 <img width="1044" height="738" alt="image" src="https://github.com/user-attachments/assets/75202268-59bf-4772-81fb-1e5feb974a5c" /><br>
@@ -101,10 +101,7 @@ SRX100は1Uのコンパクト設計でありながら、最大で700Mbpsのフ�
 JuniperSRXのバーチャルルーターを使ってみる<br>
 https://gorosuke5656.hatenablog.com/entry/2025/09/14/122216<br>
 
-
-
-### ５　参考資料<br>
-　(1)　レスキューconfigについて<br>
+#### (2)　レスキューconfigについて<br>
 　ご自宅のSRX100のランプ状態ってこんな感じになっていないでしょうか～？？<br>
  <img width="1035" height="651" alt="image" src="https://github.com/user-attachments/assets/4ec6d2c3-0250-42e6-b11e-6ead103dda8a" />
 
@@ -127,14 +124,11 @@ https://gorosuke5656.hatenablog.com/entry/2025/09/14/122216<br>
    <img width="1043" height="581" alt="image" src="https://github.com/user-attachments/assets/ac71b073-ab48-4228-8989-37130f8f850c" />
 
 
-
-
-
-
- 
-　(2)  インタフェースの強制UP方法<br> 
-　(3)　内部INFを使用したバーチャルルータ（ＶＲ）設定<br> 
-  (4)  SRXの初期化要領について<br> 
-　(5)　Configファイルの保存及び読み出し<br> 
-　(6)　リモートホストへのSSH接続時でwarningが出た場合の対処例<br> 
+#### (3)　内部インタフェースを使用したバーチャルルーター（VR）間接続について<br> 
+  
+#### (4) SRXの初期化要領について<br> 
+　
+#### (5)　Configファイルの保存及び読み出し<br> 
+　
+#### (6)　リモートホストへのSSH接続時でwarningが出た場合の対処例<br> 
 
