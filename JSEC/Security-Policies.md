@@ -26,11 +26,22 @@
 　(1)　SRX100H2(VR設定あり）での設定及び確認<br>
 　　　Security Policyを設定し、SRXの内部ストレージにログを格納します<br>
 
- #### 【設定手順】<br>
+#### 【設定手順】<br>
    <img width="1039" height="690" alt="image" src="https://github.com/user-attachments/assets/dcd878c2-00aa-449a-8bfe-1fb37e6409ed" />
-　　　（細部は別スライド）<br>　
 
-　〇　通信を発生させSRX100（VR2）の内部ログに残るかを確認します<br>
+#### 【設定内容】<br>
+<img width="1040" height="687" alt="image" src="https://github.com/user-attachments/assets/fc3cce7f-a330-4d35-a22a-335c11528ccb" />
+
+<img width="1030" height="676" alt="image" src="https://github.com/user-attachments/assets/7e95ba91-07e5-4de3-95af-d75aa529be1b" />
+
+<img width="1035" height="684" alt="image" src="https://github.com/user-attachments/assets/16ad05ad-fdfb-40c0-8e40-91793ccda4b2" />
+
+#### 【設定後の確認】<br>
+
+
+
+
+   
 【設定結果】<br>
 　　ア）Policyで使用するAddressbookを作成します<br>
   　　set security zones security-zone untrust-VR2 address-book address Server-net 130.230.0.0/24<br>
