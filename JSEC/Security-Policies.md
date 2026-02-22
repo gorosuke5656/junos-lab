@@ -42,6 +42,15 @@
 
 <img width="1040" height="784" alt="image" src="https://github.com/user-attachments/assets/532b4cf2-9732-4d8e-bf98-9504c2212c0c" />
 
+<img width="1041" height="785" alt="image" src="https://github.com/user-attachments/assets/a942e827-f6df-4d04-b841-843fe76daff3" />
+
+##### Secuirty　Policies設定およびSyslog設定<br>
+１　SRX100BにおいてUntrust⇔Trust間の全ての通信を許可及びセッションログを残す設定を実施します<br>
+２　SRX100Bにおいてsyslog設定（内部及びsyslogサーバ）を実施します<br>
+３　UbuntuからSRX100BH（VR2）に対してpingを送信します<br>
+４　SRX100Bにおいて内部ログがあるかを確認します<br>
+　　 Syslogサーバ（Ubunｔu）においてもログがあるかを確認します<br>
+
 
 
    
