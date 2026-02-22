@@ -38,44 +38,10 @@
 
 #### 【設定後の確認】<br>
 
+<img width="1047" height="785" alt="image" src="https://github.com/user-attachments/assets/ff14f7e3-a8aa-4c14-b6a1-10b55f907dfd" />
+
+<img width="1040" height="784" alt="image" src="https://github.com/user-attachments/assets/532b4cf2-9732-4d8e-bf98-9504c2212c0c" />
 
 
 
    
-【設定結果】<br>
-　　ア）Policyで使用するAddressbookを作成します<br>
-  　　set security zones security-zone untrust-VR2 address-book address Server-net 130.230.0.0/24<br>
-　　　set security zones security-zone trust-VR2 address-book address Client-Net 10.1.7.0/24<br>
-
-    イ）
- 
- 　　(2) SRX100(VR設定なし）での設定及び確認<br>
-　　　Security Policyを設定し、Syslogサーバにログを転送します<br>
-　【設定】
-　【設定結果】<br>
-  　 （Security-Policy設定)<br>
-     admin@SRX100> show configuration security policies | display set<br>
-     set security policies from-zone trust to-zone untrust policy trust-to-untrust match source-address any<br>
-     set security policies from-zone trust to-zone untrust policy trust-to-untrust match destination-address any<br>
-     set security policies from-zone trust to-zone untrust policy trust-to-untrust match application any<br>
-     set security policies from-zone trust to-zone untrust policy trust-to-untrust then permit<br>
-     set security policies from-zone untrust to-zone trust policy untrust-to-trust match source-address any<br>
-     set security policies from-zone untrust to-zone trust policy untrust-to-trust match destination-address any<br>
-     set security policies from-zone untrust to-zone trust policy untrust-to-trust match application any<br>
-     set security policies from-zone untrust to-zone trust policy untrust-to-trust then permit<br>
-     set security policies default-policy deny-all<br>
-    
-　　（Syslog設定）<br>
-       admin@SRX100> show configuration system syslog | display set<br>
-                     set system syslog host 130.230.0.1 user info<br>
-                     set system syslog host 130.230.0.1 source-address 172.16.100.254<br>
-                     set system syslog file Policylog user info<br>
-                     set system syslog file Policylog explicit-priority<br>
-    
-
-
-    
-   
-
- 
-
