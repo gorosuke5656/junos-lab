@@ -51,6 +51,13 @@
 ４　SRX100Bにおいて内部ログがあるかを確認します<br>
 　　 Syslogサーバ（Ubunｔu）においてもログがあるかを確認します<br>
 
+<img width="1054" height="789" alt="image" src="https://github.com/user-attachments/assets/3e6af81c-dae1-49f8-8f80-8c1f78656085" />
+
+<img width="1037" height="790" alt="image" src="https://github.com/user-attachments/assets/cd173abc-44c1-4e8a-9cd1-0716222aadd2" />
+
+
+
+
 
 
    
