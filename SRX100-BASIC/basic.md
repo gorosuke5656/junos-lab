@@ -105,8 +105,8 @@ https://gorosuke5656.hatenablog.com/entry/2025/09/14/122216<br>
 　ご自宅のSRX100のランプ状態ってこんな感じになっていないでしょうか～？？<br>
  <img width="1035" height="651" alt="image" src="https://github.com/user-attachments/assets/4ec6d2c3-0250-42e6-b11e-6ead103dda8a" />
 
- #### resure config(レスキューconfig) について<br>
-　resure config(レスキューコンフィグ)とは設定ミス等で通信障害が発生したりアクセスができなくなった場合
+ #### resue config(レスキューconfig) について<br>
+　resue config(レスキューコンフィグ)とは設定ミス等で通信障害が発生したりアクセスができなくなった場合
   に備えて、管理者が予め保存して緊急時に読み込ませるコンフィグです。）<br> 
  
 　Juniper SRXの工場出荷時の状態では、レスキューコンフィグと呼ばれるコンフィグが設定されていないため
@@ -116,19 +116,21 @@ https://gorosuke5656.hatenablog.com/entry/2025/09/14/122216<br>
  
   <img width="1042" height="511" alt="image" src="https://github.com/user-attachments/assets/d05bdc26-9fae-4ada-ad95-00c77a482570" />
 
-  #### resure configの作成方法<br>
+  ##### resue configの作成方法<br>
   <img width="972" height="386" alt="image" src="https://github.com/user-attachments/assets/2762a3a2-19e6-42a3-b651-b6ee818efdba" />
 
-  Autorecovery 機能について説明します<br>
-   Junosには 「自動リカバリ (autorecovery)」 機能があり、管理者がログインできなくなったときにシステムを工場出荷時状態に戻す（リカバリする）仕組みがあります<br>
+#### (3) Autorecovery機能について<br>
+   Junosには 「自動リカバリ (Autorecovery)」 機能があり、管理者がログインできなくなったときに
+   システムを工場出荷時状態に戻す（リカバリする）仕組みがあります<br>
+   
    具体的には、root パスワードを忘れた ときなどに役立ちます<br>
    デフォルトでは システムが一定時間ログイン不能な状態 になると、デバイスが自動的にリカバリを行います<br>
 
-   Autorecovery機能の有効化について<br>
+ ##### Autorecovery機能の有効化について<br>
    <img width="1043" height="581" alt="image" src="https://github.com/user-attachments/assets/ac71b073-ab48-4228-8989-37130f8f850c" />
 
 
-#### (3)　内部インタフェースを使用したバーチャルルーター（VR）間接続について<br> 
+##### (3)　内部インタフェースを使用したバーチャルルーター（VR）間接続について<br> 
   
 #### (4) SRXの初期化要領について<br> 
 　
