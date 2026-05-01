@@ -116,7 +116,7 @@ https://gorosuke5656.hatenablog.com/entry/2025/09/14/122216<br>
  
   <img width="1042" height="511" alt="image" src="https://github.com/user-attachments/assets/d05bdc26-9fae-4ada-ad95-00c77a482570" />
 
-  レスキューconfigの作成方法<br>
+  #### resure configの作成方法<br>
   <img width="972" height="386" alt="image" src="https://github.com/user-attachments/assets/2762a3a2-19e6-42a3-b651-b6ee818efdba" />
 
   Autorecovery 機能について説明します<br>
