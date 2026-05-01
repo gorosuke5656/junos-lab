@@ -105,11 +105,15 @@ https://gorosuke5656.hatenablog.com/entry/2025/09/14/122216<br>
 　ご自宅のSRX100のランプ状態ってこんな感じになっていないでしょうか～？？<br>
  <img width="1035" height="651" alt="image" src="https://github.com/user-attachments/assets/4ec6d2c3-0250-42e6-b11e-6ead103dda8a" />
 
- resure config(レスキューconfig) について
-　SRXの工場出荷時の状態では、レスキューコンフィグと呼ばれるコンフィグが設定されていないためフロントパネルのALARMがオレンジ色に点灯しています<br>
-　このレスキューコンフィグを作成することでアラームランプが点灯しなくなります<br>
-　　（レスキューコンフィグとは設定ミス等で通信障害が発生したりアクセスができなくなった場合に備えて、管理者が予め保存して緊急時に読み込ませるコンフィグです。）<br> 
-
+ #### resure config(レスキューconfig) について<br>
+　resure config(レスキューコンフィグ)とは設定ミス等で通信障害が発生したりアクセスができなくなった場合
+  に備えて、管理者が予め保存して緊急時に読み込ませるコンフィグです。）<br> 
+ 
+　Juniper SRXの工場出荷時の状態では、レスキューコンフィグと呼ばれるコンフィグが設定されていないため
+  フロントパネルのALARMがオレンジ色に点灯しています<br>
+　
+  このレスキューコンフィグを作成することでアラームランプが点灯しなくなります<br>
+ 
   <img width="1042" height="511" alt="image" src="https://github.com/user-attachments/assets/d05bdc26-9fae-4ada-ad95-00c77a482570" />
 
   レスキューconfigの作成方法<br>
