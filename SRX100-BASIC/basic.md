@@ -130,10 +130,13 @@ https://gorosuke5656.hatenablog.com/entry/2025/09/14/122216<br>
    <img width="1043" height="581" alt="image" src="https://github.com/user-attachments/assets/ac71b073-ab48-4228-8989-37130f8f850c" />
 
 
-##### (3)　内部インタフェースを使用したバーチャルルーター（VR）間接続について<br> 
+##### (4)　内部インタフェースを使用したバーチャルルーター（VR）間接続について<br> 
+
+
   
 #### (4) SRXの初期化要領について<br> 
-　
+
+ 
 #### (5)　Configファイルの保存及び読み出し<br> 
 　
 #### (6)　リモートホストへのSSH接続時でwarningが出た場合の対処例<br> 
