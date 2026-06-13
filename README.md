@@ -3,8 +3,8 @@ juniperに関する検証資料が入っています！<br>
 last update　20260614<br>
 
 ## 自宅ラボ環境について<br>
-Juniper SRX100　×　4<br>
-Juniper SRX220  ×　2<br>
+Juniper SRX100　× 4<br>
+Juniper SRX220  × 2<br>
 Juniper vSRX(Ver15,Ver22)<br>
 
 ## 内容<br>
