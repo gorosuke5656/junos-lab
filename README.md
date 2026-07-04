@@ -14,3 +14,4 @@ BGPネットワーク演習 　　　　　　　　　　：[次のチャプタ
 Junos FIrewall基礎 　　　　　　　　　　：[次のチャプターへ進む](./Firewall-basic/Firewall-basic/JunosSRX-Firewall-Basic.md/)<br>
 ネットワークセキュリティ演習（JSEC相当）：[次のチャプターへ進む](./JSEC/Junos-JSEC-exercises.md) <br>
 MPLSネットワーク演習　　　　　　　　　　：[次のチャプターへ進む](./Junos-MPLS-exercises.md) <br>
+RESTAPIおよびPythonによるJunos管理　　 ：[次のチャプターへ進む](./RESTAPI&Pyhon.md) <br>
