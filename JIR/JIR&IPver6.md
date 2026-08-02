@@ -16,8 +16,8 @@
 ### ２ Junos IPVer6演習<br>
 　- [(1) IPVer6基本設定](#IPVer6Basic)<br>
 　- [(2) RAによるIPVer6アドレスの広報設定と確認](#RA-Advertize)<br>　
- - [(3) OSPFVer3及びAddress-family設定](#OSPFVer3-Addressfamily)<br>
-　- [(4) IS-IS](#IS-IS-V6/Routing)<br>
+  - [(3) OSPFVer3及びAddress-family設定](#OSPFVer3-Addressfamily)<br>
+  - [(4) IS-IS](#IS-IS-V6/Routing)<br>
   - [(5) BGP4+](#BGP4+-Routing)<br>
 
 
