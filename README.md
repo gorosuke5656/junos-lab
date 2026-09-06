@@ -6,6 +6,7 @@ last update　20260614<br>
 Juniper SRX100　× 4<br>
 Juniper SRX220  × 2<br>
 Juniper vSRX(Ver15,Ver22)<br>
+Juniper EX2200　× 3(一時借用）<br>
 
 ## 内容<br>
 SRX100の取り扱い基礎　　　　　　　　　　：[進む](./SRX100-BASIC/basic.md) <br>
