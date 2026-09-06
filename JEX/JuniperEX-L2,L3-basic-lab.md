@@ -1,18 +1,14 @@
-#Juniper EX-L2/L3-basic-lab<br>
+# Juniper EX-L2/L3-basic-lab<br>
 ### LastUpdate:2026/09/06<br>
 
-### 参考資料<br>
 
-
-# １　Basic-NW-labの実習構成<br>
-## 構成はEX2200が３台になります。me0（管理インタフェース）経由で設定します<br>
-### その１<br>
-<img width="1385" height="706" alt="image" src="https://github.com/user-attachments/assets/d6eb29fb-801c-4241-86ad-e64340bf11a0" />
+# １　実習構成<br>
+## 構成はEX2200が3台になります。me0（管理インタフェース）経由で設定します<br>
+### 構成図
 
 
 
-# 2 　#Juniper EX-L2/L3-basic-labで取り上げる内容<br>
-
+# ２ 　#Juniper EX-L2/L3-basic-labで取り上げる内容<br>
  - [(1) システム設定と確認](#system-basic-conf)<br>
  - [(2) インタフェース設定と確認](#interface-conf)<br> 
  - [(3) LLDP設定と確認](#lldp-conf)<br>  
