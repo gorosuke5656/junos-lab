@@ -23,7 +23,7 @@
 # 【参考資料】<br>
 - [EX2200におけるJunosアップグレード方法](#ex2000-junos-verup)<br>
 
-#ex2000-junos-verup
+# ex2000-junos-verup
 
 ### 参考<br>
 
