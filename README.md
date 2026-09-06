@@ -1,6 +1,6 @@
 # junos-lab
 juniperに関する検証資料が入っています！<br>
-last update　20260614<br>
+last update　2026/09/06<br>
 
 ## 自宅ラボ環境について<br>
 Juniper SRX100　× 4<br>
