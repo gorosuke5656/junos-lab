@@ -9,15 +9,16 @@
 
 
 # ２ 　#Juniper EX-L2/L3-basic-labで取り上げる内容<br>
- - [(1) システム設定と確認](#system-basic-conf)<br>
- - [(2) インタフェース設定と確認](#interface-conf)<br> 
- - [(3) LLDP設定と確認](#lldp-conf)<br>  
- - [(4) STP設定と確認](#stp-conf)<br>
- - [(5) LAG設定と確認](#lag-conf)<br>
- - [(6) RTG設定と確認](#rtg-conf)<br>
- - [(7) 経路制御設定と確認](#ospf-conf)<br>
- - [(8) Firewall-filter設定と確認](#firewall-filter-conf)<br>
+ - [(1) 基本設定と確認](#system-basic-conf)<br>
+ - [(2) LLDP設定と確認](#lldp-conf)<br>  
+ - [(3) STP設定と確認](#stp-conf)<br>
+ - [(4) LAG設定と確認](#lag-conf)<br>
+ - [(5) RTG設定と確認](#rtg-conf)<br>
+ - [(6) 経路制御設定と確認](#ospf-conf)<br>
+ - [(7) Firewall-filter設定と確認](#firewall-filter-conf)<br>
  - [(8) Virtual-chassis設定と確認](#Virtual-chassis-conf)<br>
+
+# system-basic-conf
 
 
 # lldp-conf
