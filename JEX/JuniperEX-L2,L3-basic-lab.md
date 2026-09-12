@@ -5,6 +5,8 @@
 # １　実習構成<br>
 ## 構成はEX2200が3台になります。me0（管理インタフェース）経由で設定します<br>
 ### 構成図
+<img width="1380" height="679" alt="image" src="https://github.com/user-attachments/assets/87d506b2-1c44-4f91-ab11-adcf92025c94" />
+
 
 
 
