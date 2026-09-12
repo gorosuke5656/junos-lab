@@ -20,17 +20,36 @@
  - [(7) Firewall-filter設定と確認](#firewall-filter-conf)<br>
  - [(8) Virtual-chassis設定と確認](#Virtual-chassis-conf)<br>
 
+ # 【参考資料】<br>
+- [EX2200におけるJunosアップグレード方法](#ex2000-junos-verup)<br>
+
 # system-basic-conf
 <img width="1383" height="674" alt="image" src="https://github.com/user-attachments/assets/361067a9-90cb-479f-b609-227668cb8cf1" />
 
 
-
 # lldp-conf
+## 参考資料<br>
+### lldpの概要<br>
+ https://www.juniper.net/documentation/jp/ja/software/junos/multicast-l2/topics/concept/layer-2-services-lldp-overview.html<br>
+### lldpの設定<br>
+https://www.juniper.net/documentation/jp/ja/software/junos/multicast-l2/topics/task/layer-2-services-lldp-configuring.html<br>
+ 
+<img width="1382" height="672" alt="image" src="https://github.com/user-attachments/assets/e0a92581-7efe-43f5-b265-8c1055160c82" />
+
+<img width="1393" height="676" alt="image" src="https://github.com/user-attachments/assets/98036695-89b8-42ca-9d84-9d9d3a97a564" />
+
+<img width="1388" height="662" alt="image" src="https://github.com/user-attachments/assets/c55ee808-bb84-4ef9-b01f-043c872d0754" />
+
+<img width="1396" height="656" alt="image" src="https://github.com/user-attachments/assets/095e991e-2234-4c0e-a208-7bcc8f59e0a0" />
 
 
 
-# 【参考資料】<br>
-- [EX2200におけるJunosアップグレード方法](#ex2000-junos-verup)<br>
+
+
+
+
+
+
 
 # ex2000-junos-verup
 ### 全体構成(FTPクライアントはFFFTPを使用）<br>
