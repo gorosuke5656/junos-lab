@@ -1,5 +1,5 @@
 # Juniper EX-L2/L3-basic-lab<br>
-### LastUpdate:2026/09/06<br>
+### LastUpdate:2026/09/12<br>
 
 
 # １　実習構成<br>
@@ -7,6 +7,8 @@
 ### 構成図
 <img width="1380" height="679" alt="image" src="https://github.com/user-attachments/assets/87d506b2-1c44-4f91-ab11-adcf92025c94" />
 
+### 今回使用するJunos Ver
+<img width="1387" height="567" alt="image" src="https://github.com/user-attachments/assets/6a0f6e19-7fd7-4109-8c58-c42d8e15d917" />
 
 
 
