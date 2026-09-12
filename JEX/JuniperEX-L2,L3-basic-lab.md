@@ -10,8 +10,6 @@
 ### 今回使用するJunos Ver
 <img width="1387" height="567" alt="image" src="https://github.com/user-attachments/assets/6a0f6e19-7fd7-4109-8c58-c42d8e15d917" />
 
-
-
 # ２ 　#Juniper EX-L2/L3-basic-labで取り上げる内容<br>
  - [(1) 基本設定と確認](#system-basic-conf)<br>
  - [(2) LLDP設定と確認](#lldp-conf)<br>  
@@ -23,6 +21,8 @@
  - [(8) Virtual-chassis設定と確認](#Virtual-chassis-conf)<br>
 
 # system-basic-conf
+<img width="1383" height="674" alt="image" src="https://github.com/user-attachments/assets/361067a9-90cb-479f-b609-227668cb8cf1" />
+
 
 
 # lldp-conf
