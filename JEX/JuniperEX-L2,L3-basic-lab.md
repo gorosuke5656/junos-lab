@@ -67,7 +67,7 @@ https://www.juniper.net/documentation/jp/ja/software/junos/multicast-l2/topics/t
 #### LLDPのパケットを取得してみましょう！<br>
 <img width="1387" height="671" alt="image" src="https://github.com/user-attachments/assets/c699a106-e78a-4ac9-a5cf-cfb3e5f7af69" />
 
-#### 【monitor traffic コマンドについて<br>
+#### 【monitor traffic コマンドについて】<br>
 
 https://www.juniper.net/documentation/jp/ja/software/junos/network-mgmt/topics/topic-map/analyze-network-traffic-by-using-packet-capture.html<br>
 
