@@ -1,5 +1,5 @@
 # Juniper EX-L2/L3-basic-lab<br>
-### LastUpdate:2026/09/12<br>
+### LastUpdate:2026/09/14<br>
 
 
 # １　実習構成<br>
