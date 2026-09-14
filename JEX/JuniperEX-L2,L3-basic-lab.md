@@ -40,7 +40,10 @@ https://www.juniper.net/documentation/jp/ja/software/junos/multicast-l2/topics/t
 
 <img width="1388" height="662" alt="image" src="https://github.com/user-attachments/assets/c55ee808-bb84-4ef9-b01f-043c872d0754" />
 
-<img width="1396" height="656" alt="image" src="https://github.com/user-attachments/assets/095e991e-2234-4c0e-a208-7bcc8f59e0a0" />
+<img width="1385" height="676" alt="image" src="https://github.com/user-attachments/assets/ecd1cef1-355f-4b3d-8ec5-3debf976b4f8" />
+
+<img width="1388" height="681" alt="image" src="https://github.com/user-attachments/assets/154f3b93-e46d-41b9-8e7f-e9d337784a1a" />
+
 
 
 
