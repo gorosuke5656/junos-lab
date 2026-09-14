@@ -13,7 +13,7 @@
 # ２ 　#Juniper EX-L2/L3-basic-labで取り上げる内容<br>
  - [(1) 基本設定と確認](#system-basic-conf)<br>
  - [(2) LLDP設定と確認](#lldp-conf)<br>  
- - [(3) STP設定と確認](#stp-conf)<br>
+ - [(3) RSTP/STP設定と確認](#rstp-stp-conf)<br>
  - [(4) LAG設定と確認](#lag-conf)<br>
  - [(5) RTG設定と確認](#rtg-conf)<br>
  - [(6) 経路制御設定と確認](#ospf-conf)<br>
@@ -58,6 +58,48 @@ https://www.juniper.net/documentation/jp/ja/software/junos/multicast-l2/topics/t
 <img width="1392" height="673" alt="image" src="https://github.com/user-attachments/assets/f90997db-d4e8-4c76-aba9-c6f53f4f608d" />
 
 <img width="1392" height="674" alt="image" src="https://github.com/user-attachments/assets/1dd785f9-afaa-4c28-8d3f-d6f343a64d3d" />
+
+#### LLDPでこんなこともわかりました！<br>
+<img width="1394" height="629" alt="image" src="https://github.com/user-attachments/assets/e50c2881-07aa-42bc-a90e-965c7a5bc0d9" />
+
+<img width="1393" height="646" alt="image" src="https://github.com/user-attachments/assets/dfbaba28-f518-4028-a007-014161bed459" />
+
+#### LLDPのパケットを取得してみましょう！<br>
+<img width="1387" height="671" alt="image" src="https://github.com/user-attachments/assets/c699a106-e78a-4ac9-a5cf-cfb3e5f7af69" />
+
+#### 【monitor traffic コマンドについて<br>
+
+https://www.juniper.net/documentation/jp/ja/software/junos/network-mgmt/topics/topic-map/analyze-network-traffic-by-using-packet-capture.html<br>
+
+（注意)<br>
+　monitor traffic interface は、指定したインタフェースを通過するすべてのパケットをキャプチャする機能ではありません<br>
+ Junosのmonitor trafficはRouting Engineに関連するトラフィックを対象とするため、通常のTransit Trafficのキャプチャには利用できません<br>
+
+ 今回はLLDPというスイッチ自身が送受信する制御系のフレームを対象としているため、LLDPDUをキャプチャして確認が可能なのです！<br>
+       →　通常のTransit Trafficはポートミラーリング設定で取得しましょう！<br>
+
+　　
+　関連ドキュメント<br>
+
+　https://www.juniper.net/documentation/us/en/software/junos/cli-reference/topics/ref/command/monitor-traffic.html?utm_source=chatgpt.com<br>
+
+
+公式説明に、"Display packet headers or packets received and sent from the Routing Engine."とあります～<br>
+
+<img width="1387" height="682" alt="image" src="https://github.com/user-attachments/assets/940f1720-f573-4abf-b0aa-411f2889f325" />
+
+<img width="1384" height="639" alt="image" src="https://github.com/user-attachments/assets/a0ebfcad-1c1f-45ef-bbac-aac27dcd8acc" />
+
+<img width="1392" height="639" alt="image" src="https://github.com/user-attachments/assets/a0569935-f144-403e-b31f-f333eff60573" />
+
+##### monitor traffic コマンドでSizeオプションを使用<br>
+<img width="1390" height="606" alt="image" src="https://github.com/user-attachments/assets/9f17d10d-935d-44ae-b2dd-59f004ca45bd" />
+
+<img width="1391" height="639" alt="image" src="https://github.com/user-attachments/assets/ed0ec388-abf4-48bd-a90f-d0b2ddb7d05e" />
+
+
+# rstp-stp-conf
+
 
 
 
