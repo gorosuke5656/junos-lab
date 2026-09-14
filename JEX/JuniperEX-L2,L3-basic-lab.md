@@ -40,9 +40,29 @@ https://www.juniper.net/documentation/jp/ja/software/junos/multicast-l2/topics/t
 
 <img width="1388" height="662" alt="image" src="https://github.com/user-attachments/assets/c55ee808-bb84-4ef9-b01f-043c872d0754" />
 
-<img width="1385" height="676" alt="image" src="https://github.com/user-attachments/assets/ecd1cef1-355f-4b3d-8ec5-3debf976b4f8" />
+<img width="1389" height="675" alt="image" src="https://github.com/user-attachments/assets/ce4095e6-5320-4e40-ad6a-50d20f7b8405" />
 
-<img width="1388" height="681" alt="image" src="https://github.com/user-attachments/assets/154f3b93-e46d-41b9-8e7f-e9d337784a1a" />
+<img width="1386" height="679" alt="image" src="https://github.com/user-attachments/assets/a2f3698e-3aac-4401-b766-5da7dbb669ce" />
+
+<img width="1389" height="686" alt="image" src="https://github.com/user-attachments/assets/88514362-b582-4a1a-9435-69f0a0a2e521" />
+
+<img width="1385" height="604" alt="image" src="https://github.com/user-attachments/assets/29bbea15-5c5a-4eca-acbc-061b749b3f5d" />
+
+<img width="1388" height="689" alt="image" src="https://github.com/user-attachments/assets/58c5a7cc-f510-4e29-8bcf-0fd25b4b28b4" />
+
+<img width="1394" height="655" alt="image" src="https://github.com/user-attachments/assets/c6efff51-7633-4b91-899b-71a23da83a97" />
+
+#### LLDP設定後の確認<br>
+<img width="1390" height="628" alt="image" src="https://github.com/user-attachments/assets/3e6457c4-475e-4ec2-960d-6d70e7b46a47" />
+
+<img width="1392" height="673" alt="image" src="https://github.com/user-attachments/assets/f90997db-d4e8-4c76-aba9-c6f53f4f608d" />
+
+<img width="1392" height="674" alt="image" src="https://github.com/user-attachments/assets/1dd785f9-afaa-4c28-8d3f-d6f343a64d3d" />
+
+
+
+
+
 
 
 
