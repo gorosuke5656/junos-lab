@@ -71,12 +71,15 @@ https://www.juniper.net/documentation/jp/ja/software/junos/multicast-l2/topics/t
 
 https://www.juniper.net/documentation/jp/ja/software/junos/network-mgmt/topics/topic-map/analyze-network-traffic-by-using-packet-capture.html<br>
 
-（注意)<br>
-　monitor traffic interface は、指定したインタフェースを通過するすべてのパケットをキャプチャする機能ではありません<br>
- Junosのmonitor trafficはRouting Engineに関連するトラフィックを対象とするため、通常のTransit Trafficのキャプチャには利用できません<br>
-
- 今回はLLDPというスイッチ自身が送受信する制御系のフレームを対象としているため、LLDPDUをキャプチャして確認が可能なのです！<br>
-       →　通常のTransit Trafficはポートミラーリング設定で取得しましょう！<br>
+> **注意**
+>
+> `monitor traffic interface` は、指定したインタフェースを通過する
+> **すべてのパケットをキャプチャできる機能ではありません。**
+>
+> Junos の `monitor traffic` は、主に **Routing Engine（RE）に関連する
+> トラフィック**を対象としています。
+>
+> そのため、通常の **Transit Traffic** のキャプチャには利用できません。
 
 　　
 　関連ドキュメント<br>
