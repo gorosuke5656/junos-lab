@@ -80,6 +80,22 @@ https://www.juniper.net/documentation/jp/ja/software/junos/network-mgmt/topics/t
 > トラフィック**を対象としています。
 >
 > そのため、通常の **Transit Traffic** のキャプチャには利用できません。
+>
+> #### 今回はLLDPパケットをキャプチャしてみます！
+
+今回確認する **LLDP** は、スイッチ自身が送受信する制御系のフレームです。
+
+そのため、`monitor traffic` を使用して **LLDPDU（LLDP Data Unit）を
+キャプチャし、実際のパケットを確認することができます。**
+
+> **ポイント**
+>
+> - LLDPなど、スイッチ自身が送受信する制御系トラフィック
+>   → `monitor traffic` で確認可能
+> - 通常のTransit Traffic
+>   → `monitor traffic` では確認できない
+> - Transit Trafficを確認したい場合
+>   → **ポートミラーリング**を利用する
 
 　　
 　関連ドキュメント<br>
