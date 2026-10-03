@@ -14,11 +14,12 @@
  - [(1) 基本設定と確認](#system-basic-conf)<br>
  - [(2) LLDP設定と確認](#lldp-conf)<br>  
  - [(3) RSTP/STP設定と確認](#rstp-stp-conf)<br>
- - [(4) LAG設定と確認](#lag-conf)<br>
- - [(5) RTG設定と確認](#rtg-conf)<br>
- - [(6) 経路制御設定と確認](#ospf-conf)<br>
- - [(7) Firewall-filter設定と確認](#firewall-filter-conf)<br>
- - [(8) Virtual-chassis設定と確認](#Virtual-chassis-conf)<br>
+ - [(4) LAG設定と確認](#vlan-conf)<br>
+ - [(5) LAG設定と確認](#lag-conf)<br>
+ - [(6) RTG設定と確認](#rtg-conf)<br>
+ - [(7) 経路制御設定と確認](#ospf-conf)<br>
+ - [(8) Firewall-filter設定と確認](#firewall-filter-conf)<br>
+ - [(9) Virtual-chassis設定と確認](#Virtual-chassis-conf)<br>
 
  # 【参考資料】<br>
 - [EX2200におけるJunosアップグレード方法](#ex2000-junos-verup)<br>
@@ -122,16 +123,48 @@ https://www.juniper.net/documentation/jp/ja/software/junos/network-mgmt/topics/t
 
 
 
+# vlan-conf
+#### 今回の構成 <br>
+<img width="1392" height="736" alt="1" src="https://github.com/user-attachments/assets/f1db0a2e-d387-4e49-a119-5fd3782f61f8" />
 
 
+#### おさらい(VLANについて） <br>
+<img width="1393" height="736" alt="2" src="https://github.com/user-attachments/assets/aa7cf0c7-8f47-4151-b5f6-6a944fda5f71" />
 
+<img width="1385" height="726" alt="3" src="https://github.com/user-attachments/assets/60e74e82-9c4b-456e-ba2d-086a00f36a92" />
 
+<img width="1381" height="720" alt="4" src="https://github.com/user-attachments/assets/a7490b72-beff-41be-9c06-fe8b6d2c7cca" />
 
+<img width="1390" height="729" alt="5" src="https://github.com/user-attachments/assets/8c29c9db-72cd-4d35-a44c-49e5b03287a6" />
 
+<img width="1392" height="729" alt="6" src="https://github.com/user-attachments/assets/19c69bb5-cd02-428a-9fd3-dba94c408c67" />
 
+<img width="1387" height="730" alt="7" src="https://github.com/user-attachments/assets/ca4d190b-a4d6-4c30-b8e2-a72057905a2d" />
 
+#### VLANの設定と確認 <br>
+<img width="1392" height="733" alt="8" src="https://github.com/user-attachments/assets/f088ad30-e806-4981-aa46-bdd7fffd9846" />
 
+<img width="1391" height="728" alt="9" src="https://github.com/user-attachments/assets/c5be1543-3bb7-4d0c-b205-d3513979d3a2" />
 
+<img width="1386" height="721" alt="10" src="https://github.com/user-attachments/assets/16b6d718-e320-4fc8-9727-99c711dccddc" />
+
+<img width="1384" height="735" alt="11" src="https://github.com/user-attachments/assets/d47f1ec9-69cb-4a4f-a451-4e870ffa5a4f" />
+
+<img width="1385" height="648" alt="12" src="https://github.com/user-attachments/assets/214b6eea-fe6f-49cd-9c97-090fffdc8a6f" />
+
+<img width="1387" height="727" alt="13" src="https://github.com/user-attachments/assets/2d982afc-2f58-4855-bca9-77a6e8291db5" />
+
+<img width="1391" height="747" alt="14" src="https://github.com/user-attachments/assets/7bd2e00a-1094-4116-8770-605089380950" />
+
+<img width="1387" height="721" alt="15" src="https://github.com/user-attachments/assets/99466b9d-7ffd-434d-9451-ba420dcb07e7" />
+
+<img width="1384" height="725" alt="16" src="https://github.com/user-attachments/assets/90037a80-1eb1-414c-b806-644f4c8f639e" />
+
+<img width="1388" height="737" alt="17" src="https://github.com/user-attachments/assets/f5d8e181-c689-467e-910f-8f858d6fc6a8" />
+
+<img width="1392" height="692" alt="18" src="https://github.com/user-attachments/assets/841493e1-9c7e-4767-b7fb-aa1e31b1b7cb" />
+
+<img width="1387" height="718" alt="20" src="https://github.com/user-attachments/assets/f4a5b71c-471b-408d-840a-07ec113d6dab" />
 
 
 
