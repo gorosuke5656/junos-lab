@@ -1,5 +1,5 @@
 # Juniper EX-L2/L3-basic-lab<br>
-### LastUpdate:2026/09/14<br>
+### LastUpdate:2026/10/03<br>
 
 
 # １　実習構成<br>
@@ -14,7 +14,7 @@
  - [(1) 基本設定と確認](#system-basic-conf)<br>
  - [(2) LLDP設定と確認](#lldp-conf)<br>  
  - [(3) RSTP/STP設定と確認](#rstp-stp-conf)<br>
- - [(4) LAG設定と確認](#vlan-conf)<br>
+ - [(4) VLAN設定と確認](#vlan-conf)<br>
  - [(5) LAG設定と確認](#lag-conf)<br>
  - [(6) RTG設定と確認](#rtg-conf)<br>
  - [(7) 経路制御設定と確認](#ospf-conf)<br>
